@@ -1,0 +1,621 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.155688,
+          33.64635
+        ]
+      },
+      "properties": {
+        "id": "e001",
+        "name": "AZ MediQuip Open House",
+        "event_type": "Open House",
+        "date": "2026-08-25",
+        "date_label": "Tue, Aug 25",
+        "start_time": "10:00 AM",
+        "end_time": "12:00 PM",
+        "venue": "AZ MediQuip",
+        "address": "AZ MediQuip",
+        "city": "Scottsdale",
+        "description": "",
+        "event_url": "",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Tuesday",
+        "color": "#22C55E"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.075098,
+          33.44823
+        ]
+      },
+      "properties": {
+        "id": "e002",
+        "name": "Scottsdale 101 Referral Network Lunch",
+        "event_type": "Networking",
+        "date": "2026-08-25",
+        "date_label": "Tue, Aug 25",
+        "start_time": "11:30 AM",
+        "end_time": "1:00 PM",
+        "venue": "Chompie's",
+        "address": "Chompie's",
+        "city": "Phoenix",
+        "description": "Held every 4th Tuesday",
+        "event_url": "https://www.facebook.com/share/18sJaUSa5v",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Tuesday",
+        "color": "#22C55E"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.587093,
+          33.197833
+        ]
+      },
+      "properties": {
+        "id": "e004",
+        "name": "Amber Rose AL Open House",
+        "event_type": "Open House",
+        "date": "2026-08-25",
+        "date_label": "Tue, Aug 25",
+        "start_time": "2:00 PM",
+        "end_time": "",
+        "venue": "Amber Rose Assisted Living",
+        "address": "1962 W Cool Water Way",
+        "city": "San Tan Valley",
+        "description": "",
+        "event_url": "",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Tuesday",
+        "color": "#22C55E"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.74806,
+          33.415142
+        ]
+      },
+      "properties": {
+        "id": "e007",
+        "name": "Mesa Chamber Leads Open House",
+        "event_type": "Open House",
+        "date": "2026-08-26",
+        "date_label": "Wed, Aug 26",
+        "start_time": "8:00 AM",
+        "end_time": "9:00 AM",
+        "venue": "Norris Air",
+        "address": "3841 E Main St",
+        "city": "Mesa",
+        "description": "",
+        "event_url": "",
+        "image_url": "",
+        "contact": "480-832-3330",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.855135,
+          33.62775
+        ]
+      },
+      "properties": {
+        "id": "e008",
+        "name": "Delivering Care",
+        "event_type": "Networking",
+        "date": "2026-08-26",
+        "date_label": "Wed, Aug 26",
+        "start_time": "8:30 AM",
+        "end_time": "10:00 AM",
+        "venue": "Bosa Donuts",
+        "address": "10427 E McDowell Mountain Ranch Rd",
+        "city": "Scottsdale",
+        "description": "",
+        "event_url": "",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.789688,
+          33.355743
+        ]
+      },
+      "properties": {
+        "id": "e009",
+        "name": "Empower Business Opportunity Networking Coffee Mixer",
+        "event_type": "Networking",
+        "date": "2026-08-26",
+        "date_label": "Wed, Aug 26",
+        "start_time": "9:00 AM",
+        "end_time": "10:00 AM",
+        "venue": "Rudy's BBQ",
+        "address": "Rudy's BBQ",
+        "city": "Gilbert",
+        "description": "Eventbrite link was truncated in source post - needs full URL",
+        "event_url": "",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.958238,
+          33.378245
+        ]
+      },
+      "properties": {
+        "id": "e010",
+        "name": "Local Lunch",
+        "event_type": "Networking",
+        "date": "2026-08-26",
+        "date_label": "Wed, Aug 26",
+        "start_time": "11:30 AM",
+        "end_time": "1:00 PM",
+        "venue": "Bonfire",
+        "address": "Bonfire",
+        "city": "Tempe",
+        "description": "Meetup event ID 315203393 - link truncated in source post",
+        "event_url": "",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.841421,
+          33.30232
+        ]
+      },
+      "properties": {
+        "id": "e011",
+        "name": "PASRS Happy Hour - August Educational Meeting",
+        "event_type": "Meeting",
+        "date": "2026-08-26",
+        "date_label": "Wed, Aug 26",
+        "start_time": "3:00 PM",
+        "end_time": "5:00 PM",
+        "venue": "The Park at Copper Creek",
+        "address": "The Park at Copper Creek",
+        "city": "Chandler",
+        "description": "",
+        "event_url": "",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.349683,
+          33.435339
+        ]
+      },
+      "properties": {
+        "id": "e012",
+        "name": "Business over Bubbly",
+        "event_type": "Networking",
+        "date": "2026-08-26",
+        "date_label": "Wed, Aug 26",
+        "start_time": "3:30 PM",
+        "end_time": "5:00 PM",
+        "venue": "Silver Birch",
+        "address": "Silver Birch",
+        "city": "Avondale",
+        "description": "",
+        "event_url": "https://fb.me/e/53EgFeQS",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.682985,
+          33.452095
+        ]
+      },
+      "properties": {
+        "id": "e013",
+        "name": "Ribbon Cutting - Handel's Ice Cream",
+        "event_type": "Networking",
+        "date": "2026-08-26",
+        "date_label": "Wed, Aug 26",
+        "start_time": "4:00 PM",
+        "end_time": "",
+        "venue": "Handel's Ice Cream",
+        "address": "2015 N Power Rd",
+        "city": "Mesa",
+        "description": "Mesa Chamber ribbon cutting - all welcome",
+        "event_url": "",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.98084,
+          33.330826
+        ]
+      },
+      "properties": {
+        "id": "e014",
+        "name": "Go Local",
+        "event_type": "Networking",
+        "date": "2026-08-26",
+        "date_label": "Wed, Aug 26",
+        "start_time": "5:00 PM",
+        "end_time": "",
+        "venue": "The Hub Ahwatukee",
+        "address": "The Hub Ahwatukee",
+        "city": "Phoenix",
+        "description": "",
+        "event_url": "https://www.facebook.com/share/1JUcJHkp8S",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.841421,
+          33.30232
+        ]
+      },
+      "properties": {
+        "id": "e015",
+        "name": "Chandler Business Alliance",
+        "event_type": "Networking",
+        "date": "2026-08-27",
+        "date_label": "Thu, Aug 27",
+        "start_time": "7:30 AM",
+        "end_time": "8:45 AM",
+        "venue": "American Legion",
+        "address": "American Legion",
+        "city": "Chandler",
+        "description": "Weekly Thursday meeting",
+        "event_url": "",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.984985,
+          33.50936
+        ]
+      },
+      "properties": {
+        "id": "e016",
+        "name": "Coffee & Donuts",
+        "event_type": "Networking",
+        "date": "2026-08-27",
+        "date_label": "Thu, Aug 27",
+        "start_time": "9:30 AM",
+        "end_time": "10:30 AM",
+        "venue": "MorningStar at Arcadia",
+        "address": "MorningStar at Arcadia",
+        "city": "Phoenix",
+        "description": "Meetup event ID 316171966 - link truncated in source post",
+        "event_url": "",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.68387,
+          33.466324
+        ]
+      },
+      "properties": {
+        "id": "e017",
+        "name": "Everything East Mesa Lunch",
+        "event_type": "Networking",
+        "date": "2026-08-27",
+        "date_label": "Thu, Aug 27",
+        "start_time": "11:30 AM",
+        "end_time": "1:00 PM",
+        "venue": "The Hub East Mesa",
+        "address": "The Hub East Mesa",
+        "city": "Mesa",
+        "description": "Guest invite - confirm your business category is open before attending",
+        "event_url": "",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.998826,
+          33.319472
+        ]
+      },
+      "properties": {
+        "id": "e018",
+        "name": "Women's Networking League",
+        "event_type": "Networking",
+        "date": "2026-08-27",
+        "date_label": "Thu, Aug 27",
+        "start_time": "11:30 AM",
+        "end_time": "1:00 PM",
+        "venue": "Native Grill",
+        "address": "Ray Rd",
+        "city": "Phoenix",
+        "description": "Meetup event ID 316022290 - link truncated in source post",
+        "event_url": "",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.177325,
+          33.663266
+        ]
+      },
+      "properties": {
+        "id": "e019",
+        "name": "Steady Steps",
+        "event_type": "Training",
+        "date": "2026-08-27",
+        "date_label": "Thu, Aug 27",
+        "start_time": "1:00 PM",
+        "end_time": "3:00 PM",
+        "venue": "EverKind AL",
+        "address": "19535 N 55th Dr",
+        "city": "Glendale",
+        "description": "Reserve your seat in advance",
+        "event_url": "",
+        "image_url": "",
+        "contact": "623-282-2093",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.674594,
+          33.467965
+        ]
+      },
+      "properties": {
+        "id": "e020",
+        "name": "Speakeasy",
+        "event_type": "Open House",
+        "date": "2026-08-27",
+        "date_label": "Thu, Aug 27",
+        "start_time": "3:30 PM",
+        "end_time": "5:00 PM",
+        "venue": "Canyon Winds",
+        "address": "2851 N Boulder Canyon",
+        "city": "Mesa",
+        "description": "",
+        "event_url": "",
+        "image_url": "",
+        "contact": "kelly@canyonwindsaz.com",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.355792,
+          33.606734
+        ]
+      },
+      "properties": {
+        "id": "e021",
+        "name": "Epic",
+        "event_type": "Networking",
+        "date": "2026-08-27",
+        "date_label": "Thu, Aug 27",
+        "start_time": "5:00 PM",
+        "end_time": "",
+        "venue": "Uptown Alley",
+        "address": "13525 N Litchfield Rd",
+        "city": "Surprise",
+        "description": "",
+        "event_url": "https://www.facebook.com/share/1D4Fyg8MkQ",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.709175,
+          33.416058
+        ]
+      },
+      "properties": {
+        "id": "e022",
+        "name": "Monthly Sandbox",
+        "event_type": "Networking",
+        "date": "2026-08-28",
+        "date_label": "Fri, Aug 28",
+        "start_time": "8:00 AM",
+        "end_time": "10:00 AM",
+        "venue": "Sunflower Cremation",
+        "address": "5650 E Main St",
+        "city": "Mesa",
+        "description": "",
+        "event_url": "",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Friday",
+        "color": "#EF4444"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.023765,
+          33.641312
+        ]
+      },
+      "properties": {
+        "id": "e023",
+        "name": "Impact for Enterprising Women",
+        "event_type": "Networking",
+        "date": "2026-08-28",
+        "date_label": "Fri, Aug 28",
+        "start_time": "11:30 AM",
+        "end_time": "1:00 PM",
+        "venue": "Chompie's",
+        "address": "32nd Street and Cactus",
+        "city": "Phoenix",
+        "description": "Bring a guest - both get $5 off lunch",
+        "event_url": "",
+        "image_url": "",
+        "contact": "impactforenterprisingwomen1@gmail.com",
+        "weekday": "Friday",
+        "color": "#EF4444"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.825419,
+          33.414885
+        ]
+      },
+      "properties": {
+        "id": "e024",
+        "name": "Ribbon Cutting - Crust Simply Italian",
+        "event_type": "Networking",
+        "date": "2026-08-28",
+        "date_label": "Fri, Aug 28",
+        "start_time": "3:00 PM",
+        "end_time": "4:00 PM",
+        "venue": "Crust Simply Italian",
+        "address": "233 E Main St STE 105",
+        "city": "Mesa",
+        "description": "Mesa Chamber ribbon cutting - non-members welcome",
+        "event_url": "",
+        "image_url": "",
+        "contact": "",
+        "weekday": "Friday",
+        "color": "#EF4444"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.92618,
+          33.496821
+        ]
+      },
+      "properties": {
+        "id": "e025",
+        "name": "4th Friday Cocktails & Connections",
+        "event_type": "Networking",
+        "date": "2026-08-28",
+        "date_label": "Fri, Aug 28",
+        "start_time": "3:30 PM",
+        "end_time": "5:00 PM",
+        "venue": "Sunrise of Scottsdale - Gold Dust",
+        "address": "Sunrise of Scottsdale - Gold Dust",
+        "city": "Scottsdale",
+        "description": "",
+        "event_url": "",
+        "image_url": "",
+        "contact": "480-609-5115 / Amy.Bloomfield@sunriseseniorliving.com",
+        "weekday": "Friday",
+        "color": "#EF4444"
+      }
+    }
+  ]
+}

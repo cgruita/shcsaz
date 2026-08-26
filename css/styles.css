@@ -1,0 +1,261 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+header {
+  padding: 1rem;
+  background: #0f2a43;
+  color: white;
+}
+
+header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+}
+
+header p {
+  margin: 0;
+  color: #b9c7d6;
+  font-size: 0.9rem;
+}
+
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  height: calc(100vh - 74px);
+}
+
+#map {
+  flex: 2 1 480px;
+  min-height: 320px;
+  position: relative;
+}
+
+/* Only applied for the no-WebGL static-map fallback - keeps the interactive
+   Mapbox GL canvas container free of flex/centering, which interfered with
+   its internal size and click hit-testing. */
+#map.static-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+#event-list {
+  flex: 1 1 280px;
+  min-width: 280px;
+  overflow-y: auto;
+  border-left: 1px solid #e2e8f0;
+}
+
+.event-row {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid #e2e8f0;
+  border-left: 4px solid var(--row-color, #6b7280);
+  cursor: pointer;
+}
+
+.event-row:hover {
+  background: #f8fafc;
+}
+
+.event-row.active {
+  background: #eef2f7;
+  border-left-width: 8px;
+}
+
+.event-row .event-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #0f2a43;
+}
+
+.event-row .event-when {
+  font-size: 0.8rem;
+  color: #475569;
+  margin-top: 0.15rem;
+}
+
+.event-row .event-where {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 0.1rem;
+}
+
+.day-header {
+  position: sticky;
+  top: 0;
+  padding: 0.5rem 0.9rem;
+  background: var(--day-color, #0f2a43);
+  color: #0f2a43;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+.event-details {
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.event-details-link {
+  font-size: 0.8rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.event-details-link:hover {
+  text-decoration: underline;
+}
+
+.event-thumb {
+  width: 100%;
+  max-width: 160px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+#map-static-notice {
+  flex: 1 1 100%;
+  padding: 0.6rem 1rem;
+  background: #eff6ff;
+  color: #1e40af;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #bfdbfe;
+}
+
+.static-map-wrap {
+  position: relative;
+}
+
+.static-map-image {
+  display: block;
+}
+
+.static-map-hotspot {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-left: -15px;
+  margin-top: -15px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.static-map-hotspot:hover {
+  background: rgba(15, 42, 67, 0.12);
+}
+
+#static-map-ring {
+  position: absolute;
+  display: none;
+  width: 34px;
+  height: 34px;
+  margin-left: -17px;
+  margin-top: -17px;
+  border: 3px solid #0f2a43;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.static-map-label {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(12px, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 3px;
+  padding: 2px 5px;
+  font-size: 11px;
+  line-height: 1.25;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.static-map-label-name {
+  display: block;
+  font-weight: 600;
+  color: #0f2a43;
+}
+
+.static-map-label-date {
+  display: block;
+  color: #475569;
+}
+
+.static-map-zoom-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.static-map-zoom-controls button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #e2e8f0;
+  background: white;
+  color: #0f2a43;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.static-map-zoom-controls button:last-child {
+  border-bottom: none;
+}
+
+.static-map-zoom-controls button:hover {
+  background: #f1f5f9;
+}
+
+#debug-panel {
+  position: fixed;
+  bottom: 8px;
+  left: 8px;
+  z-index: 1000;
+  padding: 6px 8px;
+  background: rgba(15, 42, 67, 0.85);
+  color: #e2e8f0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  line-height: 1.5;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  #map {
+    height: 55vh;
+  }
+
+  #event-list {
+    border-left: none;
+    border-top: 1px solid #e2e8f0;
+    max-height: 40vh;
+  }
+}
