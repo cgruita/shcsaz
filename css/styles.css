@@ -5,12 +5,17 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* definite height so the split panes can divide it */
+  overflow: hidden;
 }
 
 header {
   padding: 1rem;
   background: #0f2a43;
   color: white;
+  flex: none;
 }
 
 header h1 {
@@ -24,34 +29,158 @@ header p {
   font-size: 0.9rem;
 }
 
+.view-toggle {
+  margin-top: 0.6rem;
+  display: inline-flex;
+  border: 1px solid #3b5875;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.view-toggle button {
+  border: none;
+  background: transparent;
+  color: #cbd5e1;
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.9rem;
+  cursor: pointer;
+}
+
+.view-toggle button + button {
+  border-left: 1px solid #3b5875;
+}
+
+.view-toggle button.active {
+  background: #ffffff;
+  color: #0f2a43;
+  font-weight: 600;
+}
+
+/* Map pane (top) and table pane (bottom) with a draggable handle between.
+   --split is the fraction of height given to the map pane in "split" view. */
+.split {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .layout {
   display: flex;
-  flex-wrap: wrap;
-  height: calc(100vh - 74px);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.split[data-view="map"] .layout {
+  flex: 1 1 0;
+}
+.split[data-view="split"] .layout {
+  flex: var(--split, 0.6) 1 0;
+}
+.split[data-view="table"] .layout {
+  display: none;
+}
+
+.split[data-view="map"] #event-table-view {
+  display: none;
+}
+.split[data-view="split"] #event-table-view {
+  flex: calc(1 - var(--split, 0.6)) 1 0;
+}
+.split[data-view="table"] #event-table-view {
+  flex: 1 1 0;
+}
+
+.split-handle {
+  flex: none;
+  height: 16px;
+  background: #0f2a43;
+  cursor: row-resize;
+  position: relative;
+  touch-action: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+.split-handle::before,
+.split-handle::after {
+  content: "";
+  width: 70px;
+  height: 2px;
+  border-radius: 1px;
+  background: #94a3b8;
+}
+.split-handle:hover {
+  background: #1b3d5c;
+}
+.split-handle:hover::before,
+.split-handle:hover::after {
+  background: #e2e8f0;
+}
+.split-handle:active {
+  background: #2563eb;
+}
+.split-handle:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: -2px;
+}
+.split:not([data-view="split"]) .split-handle {
+  display: none;
 }
 
 #map {
-  flex: 2 1 480px;
+  flex: var(--split-x, 0.66) 1 0;
+  min-width: 0;
   min-height: 320px;
   position: relative;
 }
 
-/* Only applied for the no-WebGL static-map fallback - keeps the interactive
-   Mapbox GL canvas container free of flex/centering, which interfered with
-   its internal size and click hit-testing. */
-#map.static-fallback {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+#map.leaflet-fallback {
   background: #e5e7eb;
 }
 
 #event-list {
-  flex: 1 1 280px;
-  min-width: 280px;
+  flex: calc(1 - var(--split-x, 0.66)) 1 0;
+  min-width: 0;
+  min-height: 0; /* allow the list to shrink and scroll inside the pane */
   overflow-y: auto;
-  border-left: 1px solid #e2e8f0;
+}
+
+/* Vertical resizer between the map and the list. */
+.split-handle-v {
+  flex: none;
+  width: 16px;
+  background: #0f2a43;
+  cursor: col-resize;
+  touch-action: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+.split-handle-v::before,
+.split-handle-v::after {
+  content: "";
+  width: 2px;
+  height: 70px;
+  border-radius: 1px;
+  background: #94a3b8;
+}
+.split-handle-v:hover {
+  background: #1b3d5c;
+}
+.split-handle-v:hover::before,
+.split-handle-v:hover::after {
+  background: #e2e8f0;
+}
+.split-handle-v:active {
+  background: #2563eb;
+}
+.split-handle-v:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: -2px;
 }
 
 .event-row {
@@ -127,7 +256,7 @@ header p {
 }
 
 #map-static-notice {
-  flex: 1 1 100%;
+  flex: none;
   padding: 0.6rem 1rem;
   background: #eff6ff;
   color: #1e40af;
@@ -135,97 +264,176 @@ header p {
   border-bottom: 1px solid #bfdbfe;
 }
 
-.static-map-wrap {
-  position: relative;
-}
-
-.static-map-image {
-  display: block;
-}
-
-.static-map-hotspot {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  margin-left: -15px;
-  margin-top: -15px;
-  border: none;
-  border-radius: 50%;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-}
-
-.static-map-hotspot:hover {
-  background: rgba(15, 42, 67, 0.12);
-}
-
-#static-map-ring {
-  position: absolute;
-  display: none;
-  width: 34px;
-  height: 34px;
-  margin-left: -17px;
-  margin-top: -17px;
-  border: 3px solid #0f2a43;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.static-map-label {
-  position: absolute;
-  pointer-events: none;
-  transform: translate(12px, -50%);
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 3px;
-  padding: 2px 5px;
-  font-size: 11px;
-  line-height: 1.25;
-  white-space: nowrap;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-}
-
-.static-map-label-name {
-  display: block;
-  font-weight: 600;
+.map-popup {
+  font-size: 0.82rem;
+  line-height: 1.4;
   color: #0f2a43;
 }
 
-.static-map-label-date {
+.map-popup a {
+  color: #2563eb;
+}
+
+/* Always-on labels on the Leaflet fallback map - mirrors the GL map's boxed
+   labels. */
+.leaflet-tooltip.map-label {
+  margin: 0; /* neutralise Leaflet's direction margins - we position these ourselves */
+  padding: 3px 7px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 2px solid rgba(15, 42, 67, 0.35); /* border-color set per-pin from JS */
+  border-radius: 7px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+  color: #0f2a43;
+  font: inherit;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-shadow: 0 0 2px #fff, 0 0 2px #fff; /* keep text legible over the wash */
+}
+
+.leaflet-tooltip.map-label::before {
+  display: none; /* drop the callout arrow */
+}
+
+.leaflet-tooltip.map-label.selected {
+  border-width: 3px;
+  padding: 2px 6px;
+}
+
+.map-label-name {
   display: block;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.map-label-date {
+  display: block;
+  font-size: 10px;
   color: #475569;
 }
 
-.static-map-zoom-controls {
-  position: absolute;
-  top: 12px;
-  right: 12px;
+/* ------------------------------------------------------------------ */
+/* Table view                                                          */
+/* ------------------------------------------------------------------ */
+
+#event-table-view {
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 4px;
   overflow: hidden;
 }
 
-.static-map-zoom-controls button {
-  width: 30px;
-  height: 30px;
-  border: none;
+.table-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
   border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.table-toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+.table-toolbar select,
+.table-toolbar input {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.4rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
   background: white;
-  color: #0f2a43;
-  font-size: 16px;
-  font-weight: 600;
+}
+
+.table-toolbar .table-search input {
+  min-width: 180px;
+}
+
+.table-count {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.table-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+#events-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+#events-table thead th {
+  position: sticky;
+  top: 0;
+  background: #0f2a43;
+  color: white;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  white-space: nowrap;
+  user-select: none;
+}
+
+#events-table th[data-sort] {
   cursor: pointer;
-  padding: 0;
 }
 
-.static-map-zoom-controls button:last-child {
-  border-bottom: none;
+#events-table th[data-sort]:hover {
+  background: #1b3d5c;
 }
 
-.static-map-zoom-controls button:hover {
-  background: #f1f5f9;
+#events-table th.sorted {
+  background: #1b3d5c;
+}
+
+#events-table tbody td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+  border-left: 0 solid transparent;
+}
+
+#events-table tbody tr {
+  cursor: pointer;
+  border-left: 4px solid var(--row-color, #6b7280);
+}
+
+#events-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+#events-table tbody tr.active {
+  background: #eef2f7;
+  font-weight: 600;
+}
+
+#events-table td[data-col="name"] {
+  font-weight: 600;
+  color: #0f2a43;
+}
+
+.table-link a {
+  color: #2563eb;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.table-link a:hover {
+  text-decoration: underline;
+}
+
+.table-empty {
+  padding: 1.5rem;
+  text-align: center;
+  color: #64748b;
 }
 
 #debug-panel {
@@ -244,18 +452,43 @@ header p {
 }
 
 @media (max-width: 768px) {
+  /* No drag handle on touch - "split" just stacks the two panes and scrolls. */
+  .split {
+    overflow-y: auto;
+  }
+
+  .split-handle,
+  .split-handle-v {
+    display: none;
+  }
+
+  .split[data-view="split"] .layout,
+  .split[data-view="split"] #event-table-view {
+    flex: none;
+  }
+
+  .split[data-view="split"] .layout {
+    height: 70vh;
+  }
+
+  .split[data-view="split"] #event-table-view {
+    min-height: 70vh;
+  }
+
   .layout {
     flex-direction: column;
-    height: auto;
   }
 
   #map {
     height: 55vh;
+    flex: none;
   }
 
   #event-list {
-    border-left: none;
     border-top: 1px solid #e2e8f0;
-    max-height: 40vh;
+  }
+
+  .table-toolbar .table-search input {
+    min-width: 120px;
   }
 }

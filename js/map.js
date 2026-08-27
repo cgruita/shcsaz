@@ -13,11 +13,22 @@ function supportsWebGL() {
 }
 
 let allFeatures = [];
-let map = null;
-let staticMapState = null; // { features, center, zoom, width, height } - set when rendering the no-WebGL fallback
-const STATIC_ZOOM_MIN = 3;
-const STATIC_ZOOM_MAX = 18;
-const webglSupported = supportsWebGL();
+let map = null; // Mapbox GL map (WebGL path)
+let leaflet = null; // { map, markers: Map<id, marker> } - set when rendering the no-WebGL fallback
+let currentView = "map"; // "map" | "split" | "table"
+// mapboxgl.supported() is the authoritative check (it also rejects broken /
+// blocklisted WebGL); fall back to the generic probe if the GL script failed
+// to load at all. ?nowebgl=1 forces the Leaflet fallback for testing.
+const webglSupported =
+  !/[?&]nowebgl=1\b/.test(location.search) &&
+  (window.mapboxgl && mapboxgl.supported ? mapboxgl.supported() : supportsWebGL());
+
+// Mapbox raster tiles - rendered server-side, so they work without WebGL.
+const RASTER_TILE_URL =
+  `https://api.mapbox.com/styles/v1/mapbox/streets-v12/tiles/512/{z}/{x}/{y}@2x?access_token=${MAPBOX_TOKEN}`;
+const TILE_ATTRIBUTION =
+  '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> ' +
+  '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 
 function updateDebugPanel() {
   let panel = document.getElementById("debug-panel");
@@ -26,14 +37,11 @@ function updateDebugPanel() {
     panel.id = "debug-panel";
     document.body.appendChild(panel);
   }
-  const lines = [
-    `WebGL: ${webglSupported ? "yes" : "no"}`,
-    `Mode: ${webglSupported ? "Interactive map" : "Static fallback"}`,
-  ];
-  if (staticMapState) {
-    const shown = document.querySelectorAll(".static-map-label").length;
-    lines.push(`Zoom: ${staticMapState.zoom.toFixed(2)}`);
-    lines.push(`Labels shown: ${shown}/${staticMapState.features.length}`);
+  const mode = webglSupported ? "Interactive map (GL)" : "Leaflet fallback";
+  const lines = [`WebGL: ${webglSupported ? "yes" : "no"}`, `Mode: ${mode}`, `View: ${currentView}`];
+  if (leaflet && leaflet.map) {
+    lines.push(`Zoom: ${leaflet.map.getZoom().toFixed(2)}`);
+    lines.push(`Markers: ${leaflet.markers.size}`);
   }
   panel.innerHTML = lines.join("<br>");
 }
@@ -48,6 +56,66 @@ function escapeAttr(str) {
   return escapeHtml(str).replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
 
+function roundRectPath(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+// A stretchable ("9-patch") rounded rectangle used as the background image
+// behind the GL map's labels - Mapbox GL has no native text box, so this image
+// is fitted around the text via icon-text-fit. One is built per weekday colour
+// so the border matches the pin.
+function makeLabelBg(borderColor) {
+  const pr = 2;
+  const size = 52 * pr;
+  const margin = 2 * pr; // transparent breathing room around the box
+  const border = 2.5 * pr;
+  const outerR = 13 * pr;
+  const innerR = Math.max(1, outerR - border);
+  const boxOrigin = margin;
+  const boxSize = size - 2 * margin;
+
+  const canvas = document.createElement("canvas");
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext("2d");
+
+  // Opaque border colour filling the whole box...
+  roundRectPath(ctx, boxOrigin, boxOrigin, boxSize, boxSize, outerR);
+  ctx.fillStyle = borderColor;
+  ctx.fill();
+
+  // ...then carve the interior to fully transparent and lay in the wash, so the
+  // border stays a pure, opaque copy of the pin colour (no white bleed).
+  const inner = boxOrigin + border;
+  const innerSize = boxSize - 2 * border;
+  ctx.globalCompositeOperation = "destination-out";
+  roundRectPath(ctx, inner, inner, innerSize, innerSize, innerR);
+  ctx.fill();
+  ctx.globalCompositeOperation = "source-over";
+  roundRectPath(ctx, inner, inner, innerSize, innerSize, innerR);
+  ctx.fillStyle = "rgba(255, 255, 255, 0.72)";
+  ctx.fill();
+
+  // Fixed (non-stretched) zone must contain the entire rounded corner, or the
+  // corner arc distorts when the box is fitted to the text.
+  const fixed = margin + outerR;
+  return {
+    data: ctx.getImageData(0, 0, size, size),
+    options: {
+      pixelRatio: pr,
+      stretchX: [[fixed, size - fixed]],
+      stretchY: [[fixed, size - fixed]],
+      content: [fixed, fixed, size - fixed, size - fixed],
+    },
+  };
+}
+
 function timeToMinutes(timeStr) {
   const match = /^(\d{1,2}):(\d{2})\s*(AM|PM)$/i.exec((timeStr || "").trim());
   if (!match) return 0;
@@ -57,8 +125,22 @@ function timeToMinutes(timeStr) {
   return hours * 60 + parseInt(minutes, 10);
 }
 
+function eventWhen(p) {
+  return p.end_time ? `${p.start_time} - ${p.end_time}` : p.start_time;
+}
+
+function compareEvents(a, b) {
+  const dateDiff = a.properties.date.localeCompare(b.properties.date);
+  if (dateDiff !== 0) return dateDiff;
+  return timeToMinutes(a.properties.start_time) - timeToMinutes(b.properties.start_time);
+}
+
+// ---------------------------------------------------------------------------
+// Sidebar event list
+// ---------------------------------------------------------------------------
+
 function renderEventRow(p) {
-  const when = p.end_time ? `${p.start_time} - ${p.end_time}` : p.start_time;
+  const when = eventWhen(p);
 
   const details = [];
   if (p.image_url) {
@@ -82,11 +164,7 @@ function renderEventRow(p) {
 
 function renderEventList(features) {
   const list = document.getElementById("event-list");
-  const sorted = [...features].sort((a, b) => {
-    const dateDiff = a.properties.date.localeCompare(b.properties.date);
-    if (dateDiff !== 0) return dateDiff;
-    return timeToMinutes(a.properties.start_time) - timeToMinutes(b.properties.start_time);
-  });
+  const sorted = [...features].sort(compareEvents);
 
   const days = [];
   const daysByDate = new Map();
@@ -123,9 +201,188 @@ function renderEventList(features) {
   });
 }
 
+// ---------------------------------------------------------------------------
+// Table view (works with or without WebGL)
+// ---------------------------------------------------------------------------
+
+const TABLE_COLUMNS = [
+  { key: "date", label: "Date", get: (p) => p.date_label, sort: compareEvents },
+  {
+    key: "time",
+    label: "Time",
+    get: (p) => eventWhen(p),
+    sort: (a, b) => timeToMinutes(a.properties.start_time) - timeToMinutes(b.properties.start_time),
+  },
+  { key: "name", label: "Event", get: (p) => p.name },
+  { key: "event_type", label: "Type", get: (p) => p.event_type },
+  { key: "venue", label: "Venue", get: (p) => p.venue },
+  { key: "city", label: "City", get: (p) => p.city },
+];
+
+const tableState = { sortKey: "date", sortDir: 1, type: "all", city: "all", q: "" };
+
+function uniqueSorted(features, field) {
+  return [...new Set(features.map((f) => f.properties[field]).filter(Boolean))].sort((a, b) =>
+    a.localeCompare(b)
+  );
+}
+
+function filteredSortedFeatures() {
+  const q = tableState.q.trim().toLowerCase();
+  let rows = allFeatures.filter((f) => {
+    const p = f.properties;
+    if (tableState.type !== "all" && p.event_type !== tableState.type) return false;
+    if (tableState.city !== "all" && p.city !== tableState.city) return false;
+    if (q) {
+      const haystack = `${p.name} ${p.venue} ${p.city} ${p.event_type}`.toLowerCase();
+      if (!haystack.includes(q)) return false;
+    }
+    return true;
+  });
+
+  const col = TABLE_COLUMNS.find((c) => c.key === tableState.sortKey) || TABLE_COLUMNS[0];
+  const cmp =
+    col.sort ||
+    ((a, b) => String(col.get(a.properties)).localeCompare(String(col.get(b.properties))));
+  rows.sort((a, b) => cmp(a, b) * tableState.sortDir || compareEvents(a, b));
+  return rows;
+}
+
+function renderTableBody() {
+  const tbody = document.querySelector("#events-table tbody");
+  if (!tbody) return;
+  const rows = filteredSortedFeatures();
+
+  const countEl = document.getElementById("table-count");
+  if (countEl) {
+    countEl.textContent = `${rows.length} of ${allFeatures.length} event(s)`;
+  }
+
+  if (!rows.length) {
+    tbody.innerHTML = `<tr><td class="table-empty" colspan="${TABLE_COLUMNS.length + 1}">No events match these filters.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = rows
+    .map((f) => {
+      const p = f.properties;
+      const link = p.event_url
+        ? `<a href="${escapeAttr(p.event_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Details &#8599;</a>`
+        : p.image_url
+        ? `<a href="${escapeAttr(p.image_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Flyer &#8599;</a>`
+        : "";
+      const cells = TABLE_COLUMNS.map(
+        (c) => `<td data-col="${c.key}">${escapeHtml(String(c.get(p) ?? ""))}</td>`
+      ).join("");
+      return `<tr class="table-row" data-id="${escapeAttr(p.id)}" style="--row-color: ${escapeAttr(p.color)}">${cells}<td class="table-link">${link}</td></tr>`;
+    })
+    .join("");
+
+  tbody.querySelectorAll(".table-row").forEach((row) => {
+    row.addEventListener("click", () => selectEvent(row.dataset.id));
+  });
+  syncActiveRows();
+}
+
+function renderTable(features) {
+  const container = document.getElementById("event-table-view");
+  const types = uniqueSorted(features, "event_type");
+  const cities = uniqueSorted(features, "city");
+
+  const headerCells = TABLE_COLUMNS.map((c) => {
+    const isSort = tableState.sortKey === c.key;
+    const arrow = isSort ? (tableState.sortDir === 1 ? " ▲" : " ▼") : "";
+    return `<th data-sort="${c.key}" class="${isSort ? "sorted" : ""}" role="button" tabindex="0" aria-sort="${
+      isSort ? (tableState.sortDir === 1 ? "ascending" : "descending") : "none"
+    }">${escapeHtml(c.label)}${arrow}</th>`;
+  }).join("");
+
+  container.innerHTML = `
+    <div class="table-toolbar">
+      <label>Type
+        <select id="filter-type">
+          <option value="all">All</option>
+          ${types.map((t) => `<option value="${escapeAttr(t)}">${escapeHtml(t)}</option>`).join("")}
+        </select>
+      </label>
+      <label>City
+        <select id="filter-city">
+          <option value="all">All</option>
+          ${cities.map((c) => `<option value="${escapeAttr(c)}">${escapeHtml(c)}</option>`).join("")}
+        </select>
+      </label>
+      <label class="table-search">Search
+        <input type="search" id="filter-search" placeholder="name, venue, city..." />
+      </label>
+      <span id="table-count" class="table-count"></span>
+    </div>
+    <div class="table-scroll">
+      <table id="events-table">
+        <thead><tr>${headerCells}<th>Link</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  `;
+
+  const typeSel = container.querySelector("#filter-type");
+  const citySel = container.querySelector("#filter-city");
+  const search = container.querySelector("#filter-search");
+  typeSel.value = tableState.type;
+  citySel.value = tableState.city;
+  search.value = tableState.q;
+
+  typeSel.addEventListener("change", () => {
+    tableState.type = typeSel.value;
+    renderTableBody();
+  });
+  citySel.addEventListener("change", () => {
+    tableState.city = citySel.value;
+    renderTableBody();
+  });
+  search.addEventListener("input", () => {
+    tableState.q = search.value;
+    renderTableBody();
+  });
+
+  container.querySelectorAll("th[data-sort]").forEach((th) => {
+    const activate = () => {
+      const key = th.dataset.sort;
+      if (tableState.sortKey === key) {
+        tableState.sortDir *= -1;
+      } else {
+        tableState.sortKey = key;
+        tableState.sortDir = 1;
+      }
+      renderTable(features); // re-render header arrows + body
+    };
+    th.addEventListener("click", activate);
+    th.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        activate();
+      }
+    });
+  });
+
+  renderTableBody();
+}
+
+// ---------------------------------------------------------------------------
+// Selection - shared across map, table and sidebar
+// ---------------------------------------------------------------------------
+
+let selectedId = null;
+
+function syncActiveRows() {
+  document.querySelectorAll(".event-row, .table-row").forEach((row) => {
+    row.classList.toggle("active", row.dataset.id === selectedId);
+  });
+}
+
 function selectEvent(id) {
   const feature = allFeatures.find((f) => f.properties.id === id);
   if (!feature) return;
+  selectedId = id;
 
   if (map) {
     map.getSource("selected-event").setData({ type: "FeatureCollection", features: [feature] });
@@ -134,106 +391,73 @@ function selectEvent(id) {
       zoom: Math.max(map.getZoom(), 12),
       essential: true,
     });
-  } else {
-    updateStaticMapHighlight(feature);
+  } else if (leaflet && leaflet.map) {
+    const [lon, lat] = feature.geometry.coordinates;
+    // animate:false - an animated setView can silently no-op if the container
+    // was just un-hidden or resized, and an instant recenter is fine here.
+    leaflet.map.setView([lat, lon], Math.max(leaflet.map.getZoom(), 13), { animate: false });
+    highlightLeafletMarker(id);
+    const marker = leaflet.markers.get(id);
+    if (marker && currentView !== "table") {
+      marker.openPopup();
+      leaflet.popupId = id; // set after openPopup: it closes any prior popup first
+    }
+    updateLeafletLabels();
   }
 
-  document.querySelectorAll(".event-row").forEach((row) => {
-    row.classList.toggle("active", row.dataset.id === id);
-  });
-  const activeRow = document.querySelector(`.event-row[data-id="${CSS.escape(id)}"]`);
-  if (activeRow) activeRow.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  syncActiveRows();
+
+  for (const sel of [".event-row", ".table-row"]) {
+    const row = document.querySelector(`${sel}[data-id="${CSS.escape(id)}"]`);
+    if (row) row.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }
 }
 
-function showStaticMapNotice() {
+// ---------------------------------------------------------------------------
+// Leaflet fallback map (no WebGL)
+// ---------------------------------------------------------------------------
+
+function loadLeaflet() {
+  if (window.L) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = "vendor/leaflet/leaflet.js";
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error("Failed to load Leaflet"));
+    document.head.appendChild(script);
+  });
+}
+
+function showFallbackNotice() {
+  if (document.getElementById("map-static-notice")) return;
   const notice = document.createElement("div");
   notice.id = "map-static-notice";
   notice.textContent =
-    "Showing a static map - interactive zoom and click aren't available in this browser.";
-  document.querySelector(".layout").prepend(notice);
+    "Your browser doesn't support the full interactive map - showing a lightweight version.";
+  const split = document.getElementById("split");
+  split.parentNode.insertBefore(notice, split);
 }
 
-// Standard Web Mercator projection, same math the map tiles themselves use -
-// lets us compute pixel positions for clickable hotspots over the static image.
-function mercatorX(lon) {
-  return (lon + 180) / 360;
+function highlightLeafletMarker(id) {
+  if (!leaflet) return;
+  leaflet.markers.forEach((marker, markerId) => {
+    const selected = markerId === id;
+    marker.setStyle(
+      selected
+        ? { radius: 12, weight: 4, color: "#0f2a43" }
+        : { radius: 8, weight: 2, color: "#ffffff" }
+    );
+    const tip = marker.getTooltip();
+    const el = tip && tip.getElement();
+    if (el) el.classList.toggle("selected", selected);
+  });
 }
 
-function mercatorY(lat) {
-  const rad = (lat * Math.PI) / 180;
-  return (1 - Math.log(Math.tan(rad) + 1 / Math.cos(rad)) / Math.PI) / 2;
-}
-
-// Mapbox's Static Images API renders these GL/vector styles on a 512px tile
-// grid (not the classic 256px raster convention) - confirmed empirically by
-// sampling rendered pixels, since a 256px assumption placed markers exactly
-// one zoom level too far out and off-frame.
-const TILE_SIZE = 512;
-
-function projectToPixel(lon, lat, center, zoom, width, height) {
-  const scale = TILE_SIZE * Math.pow(2, zoom);
-  const centerX = mercatorX(center[0]) * scale;
-  const centerY = mercatorY(center[1]) * scale;
-  return {
-    x: mercatorX(lon) * scale - centerX + width / 2,
-    y: mercatorY(lat) * scale - centerY + height / 2,
-  };
-}
-
-// Replicates a "fit bounds" calculation so we know the exact center/zoom the
-// static image will use - "auto" mode doesn't tell us that, and we need the
-// same values to place hotspots at the right pixel positions.
-function fitBounds(features, width, height, padding) {
-  const lons = features.map((f) => f.geometry.coordinates[0]);
-  const lats = features.map((f) => f.geometry.coordinates[1]);
-  const minLon = Math.min(...lons);
-  const maxLon = Math.max(...lons);
-  const minLat = Math.min(...lats);
-  const maxLat = Math.max(...lats);
-
-  const fracX = Math.max(maxLon - minLon, 0.0001) / 360;
-  const fracY = Math.max(Math.abs(mercatorY(minLat) - mercatorY(maxLat)), 0.0001);
-
-  const availableW = Math.max(width - 2 * padding, 50);
-  const availableH = Math.max(height - 2 * padding, 50);
-
-  const scale = Math.min(availableW / fracX, availableH / fracY);
-  const zoom = Math.max(3, Math.min(Math.log2(scale / TILE_SIZE), 16));
-
-  return { center: [(minLon + maxLon) / 2, (minLat + maxLat) / 2], zoom };
-}
-
-function buildStaticMapUrl(features, width, height, center, zoom) {
-  const overlays = features
-    .map((f) => {
-      const [lon, lat] = f.geometry.coordinates;
-      const color = f.properties.color.replace("#", "");
-      return `pin-s+${color}(${lon},${lat})`;
-    })
-    .join(",");
-  return `https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/${overlays}/${center[0]},${center[1]},${zoom}/${width}x${height}?access_token=${MAPBOX_TOKEN}`;
-}
-
-function updateStaticMapHighlight(feature) {
-  if (!staticMapState) return;
-  const ring = document.getElementById("static-map-ring");
-  if (!ring) return;
-  const [lon, lat] = feature.geometry.coordinates;
-  const { center, zoom, width, height } = staticMapState;
-  const { x, y } = projectToPixel(lon, lat, center, zoom, width, height);
-  ring.style.left = `${x}px`;
-  ring.style.top = `${y}px`;
-  ring.style.display = "block";
-}
-
-const labelMeasureCtx = document.createElement("canvas").getContext("2d");
-
-function estimateLabelSize(name, dateLabel) {
-  labelMeasureCtx.font = "600 11px system-ui, -apple-system, sans-serif";
-  const nameWidth = labelMeasureCtx.measureText(name).width;
-  labelMeasureCtx.font = "11px system-ui, -apple-system, sans-serif";
-  const dateWidth = labelMeasureCtx.measureText(dateLabel).width;
-  return { width: Math.max(nameWidth, dateWidth) + 10, height: 30 };
+function labelHtml(p) {
+  return (
+    `<span class="map-label-name">${escapeHtml(p.name)}</span>` +
+    `<span class="map-label-date">${escapeHtml(p.date_label)}</span>`
+  );
 }
 
 function boxesOverlap(a, b, margin) {
@@ -245,97 +469,336 @@ function boxesOverlap(a, b, margin) {
   );
 }
 
-function redrawStaticMap() {
-  const { features, center, zoom, width, height } = staticMapState;
+// Permanent Leaflet tooltips don't collision-avoid on their own; replicate the
+// GL map's behaviour - a label is hidden only if it would overlap one already
+// placed. The selected event keeps its label UNLESS its popup is open, since
+// the popup already shows the same event in full (we don't want both).
+function updateLeafletLabels() {
+  if (!leaflet) return;
+  const lmap = leaflet.map;
+  const size = lmap.getSize();
+  const placed = [];
 
-  document.querySelector(".static-map-image").src = buildStaticMapUrl(features, width, height, center, zoom);
-
-  const wrap = document.querySelector(".static-map-wrap");
-  wrap.querySelectorAll(".static-map-hotspot, .static-map-label").forEach((el) => el.remove());
-
-  // Real collision detection instead of a hard zoom cutoff - a label is only
-  // skipped if it would actually overlap one already placed, same spirit as
-  // the interactive map's text-allow-overlap/text-optional behavior, so some
-  // labels are visible even at the default zoomed-out view.
-  const placedBoxes = [];
-  features.forEach((f) => {
-    const [lon, lat] = f.geometry.coordinates;
-    const { x, y } = projectToPixel(lon, lat, center, zoom, width, height);
-
-    // Skip pins that have scrolled outside the current zoomed-in frame -
-    // otherwise their labels float in the letterboxed space around the image.
-    if (x < 0 || x > width || y < 0 || y > height) return;
-
-    const hotspot = document.createElement("button");
-    hotspot.type = "button";
-    hotspot.className = "static-map-hotspot";
-    hotspot.style.left = `${x}px`;
-    hotspot.style.top = `${y}px`;
-    hotspot.setAttribute("aria-label", f.properties.name);
-    hotspot.addEventListener("click", () => selectEvent(f.properties.id));
-    wrap.appendChild(hotspot);
-
-    const { width: lw, height: lh } = estimateLabelSize(f.properties.name, f.properties.date_label);
-    const box = { left: x + 12, top: y - lh / 2, right: x + 12 + lw, bottom: y + lh / 2 };
-    if (placedBoxes.some((b) => boxesOverlap(box, b, 4))) return;
-    placedBoxes.push(box);
-
-    const label = document.createElement("div");
-    label.className = "static-map-label";
-    label.style.left = `${x}px`;
-    label.style.top = `${y}px`;
-    label.innerHTML = `<span class="static-map-label-name">${escapeHtml(f.properties.name)}</span><span class="static-map-label-date">${escapeHtml(f.properties.date_label)}</span>`;
-    wrap.appendChild(label);
+  const entries = [...leaflet.markers.entries()].sort((a, b) => {
+    if (a[0] === selectedId) return -1;
+    if (b[0] === selectedId) return 1;
+    return 0;
   });
 
-  updateDebugPanel();
+  for (const [id, marker] of entries) {
+    const tip = marker.getTooltip();
+    const el = tip && tip.getElement();
+    if (!el) continue;
+    el.style.borderColor = marker.options.fillColor;
 
-  const activeRow = document.querySelector(".event-row.active");
-  const activeFeature = activeRow && features.find((f) => f.properties.id === activeRow.dataset.id);
-  if (activeFeature) {
-    updateStaticMapHighlight(activeFeature);
-  } else {
-    document.getElementById("static-map-ring").style.display = "none";
+    // The open popup already shows this event in full - don't also show its
+    // compact label.
+    if (id === leaflet.popupId) {
+      el.style.display = "none";
+      continue;
+    }
+
+    // Measure while laid out but invisible, then place.
+    el.style.display = "";
+    el.style.visibility = "hidden";
+    const w = el.offsetWidth || 100;
+    const h = el.offsetHeight || 28;
+    const pt = lmap.latLngToContainerPoint(marker.getLatLng());
+
+    if (pt.x < -40 || pt.x > size.x + 40 || pt.y < -40 || pt.y > size.y + 40) {
+      el.style.display = "none";
+      continue;
+    }
+
+    // Try the label to the right, then left, then nudged up/down on each side -
+    // so a nearby label pushes this one aside instead of hiding it.
+    const gapX = 8;
+    const dv = h + 6;
+    const candidates = [
+      ["right", 0], ["left", 0],
+      ["right", -dv], ["left", -dv],
+      ["right", dv], ["left", dv],
+      ["right", -2 * dv], ["left", 2 * dv],
+    ];
+
+    let chosen = null;
+    for (const [dir, dy] of candidates) {
+      const left = dir === "right" ? pt.x + gapX : pt.x - gapX - w;
+      const b = { left, right: left + w, top: pt.y + dy - h / 2, bottom: pt.y + dy + h / 2 };
+      if (!placed.some((p) => boxesOverlap(b, p, 3))) {
+        chosen = { dir, dy, box: b };
+        break;
+      }
+    }
+    if (!chosen && id === selectedId) {
+      const b = { left: pt.x + gapX, right: pt.x + gapX + w, top: pt.y - h / 2, bottom: pt.y + h / 2 };
+      chosen = { dir: "right", dy: 0, box: b };
+    }
+    if (!chosen) {
+      el.style.display = "none";
+      continue;
+    }
+
+    tip.options.direction = chosen.dir;
+    tip.options.offset = L.point(chosen.dir === "right" ? gapX : -gapX, chosen.dy);
+    tip.update(); // re-reads direction/offset and repositions
+    el.style.visibility = "";
+    placed.push(chosen.box);
   }
 }
 
-function adjustStaticZoom(delta) {
-  if (!staticMapState) return;
-  staticMapState.zoom = Math.max(STATIC_ZOOM_MIN, Math.min(staticMapState.zoom + delta, STATIC_ZOOM_MAX));
-  redrawStaticMap();
+function popupHtml(p) {
+  const parts = [
+    `<strong>${escapeHtml(p.name)}</strong>`,
+    `${escapeHtml(p.date_label)} &middot; ${escapeHtml(eventWhen(p))}`,
+    `${escapeHtml(p.venue)}${p.city ? `, ${escapeHtml(p.city)}` : ""}`,
+  ];
+  if (p.event_url) {
+    parts.push(
+      `<a href="${escapeAttr(p.event_url)}" target="_blank" rel="noopener">View details &#8599;</a>`
+    );
+  }
+  return `<div class="map-popup">${parts.join("<br>")}</div>`;
 }
 
-function renderStaticMap(features) {
+function renderLeafletMap(features) {
   const mapEl = document.getElementById("map");
-  mapEl.classList.add("static-fallback");
-  // Clamp once, up front - the Static Images API caps requests at 1280px, and
-  // hotspot positions must be computed against the SAME size actually rendered,
-  // not the (possibly larger) container size, or pins and hit-targets drift apart.
-  const width = Math.max(200, Math.min(Math.round(mapEl.clientWidth) || 800, 1280));
-  const height = Math.max(200, Math.min(Math.round(mapEl.clientHeight) || 500, 1280));
-  const padding = 40;
-  const { center, zoom } = fitBounds(features, width, height, padding);
-  staticMapState = { features, center, zoom, width, height };
+  mapEl.classList.add("leaflet-fallback");
+  mapEl.innerHTML = "";
 
-  mapEl.innerHTML = `
-    <div class="static-map-wrap" style="width: ${width}px; height: ${height}px;">
-      <img alt="Map of this week's events" width="${width}" height="${height}" class="static-map-image" />
-      <div id="static-map-ring"></div>
-    </div>
-    <div class="static-map-zoom-controls">
-      <button type="button" id="static-zoom-in" aria-label="Zoom in">+</button>
-      <button type="button" id="static-zoom-out" aria-label="Zoom out">&minus;</button>
-    </div>
-  `;
+  const lmap = L.map(mapEl, { scrollWheelZoom: true }).setView([33.448, -112.074], 9);
+  L.tileLayer(RASTER_TILE_URL, {
+    tileSize: 512,
+    zoomOffset: -1,
+    maxZoom: 19,
+    attribution: TILE_ATTRIBUTION,
+  }).addTo(lmap);
 
-  document.getElementById("static-zoom-in").addEventListener("click", () => adjustStaticZoom(1));
-  document.getElementById("static-zoom-out").addEventListener("click", () => adjustStaticZoom(-1));
+  const markers = new Map();
+  const latLngs = [];
+  features.forEach((f) => {
+    const [lon, lat] = f.geometry.coordinates;
+    latLngs.push([lat, lon]);
+    const marker = L.circleMarker([lat, lon], {
+      radius: 8,
+      weight: 2,
+      color: "#ffffff",
+      fillColor: f.properties.color,
+      fillOpacity: 1,
+    })
+      .bindPopup(popupHtml(f.properties))
+      .bindTooltip(labelHtml(f.properties), {
+        permanent: true,
+        direction: "right",
+        offset: [10, 0],
+        className: "map-label",
+        interactive: true,
+      })
+      .addTo(lmap);
+    marker.on("click", () => selectEvent(f.properties.id));
+    markers.set(f.properties.id, marker);
+  });
 
-  redrawStaticMap();
+  if (latLngs.length) {
+    lmap.fitBounds(L.latLngBounds(latLngs), { padding: [40, 40], maxZoom: 14, animate: false });
+  }
+
+  lmap.on("zoomend moveend", () => {
+    updateDebugPanel();
+    updateLeafletLabels();
+  });
+  // Swap the compact label for the full popup (and back) on the selected pin.
+  lmap.on("popupopen", updateLeafletLabels);
+  lmap.on("popupclose", () => {
+    leaflet.popupId = null;
+    updateLeafletLabels();
+  });
+  leaflet = { map: lmap, markers, popupId: null };
+
+  // Leaflet mis-measures a container that was hidden or is still settling.
+  requestAnimationFrame(() => {
+    lmap.invalidateSize();
+    updateLeafletLabels();
+  });
+  updateDebugPanel();
 }
+
+// ---------------------------------------------------------------------------
+// View: map / split / table, with draggable resizers
+//   - #split-handle    (horizontal) sizes map pane vs. table pane, split view
+//   - #split-handle-v  (vertical)   sizes the map vs. the list, map/split views
+// ---------------------------------------------------------------------------
+
+const SPLIT_MIN = 0.15;
+const SPLIT_MAX = 0.85;
+
+function refreshMapSize() {
+  requestAnimationFrame(() => {
+    if (map) map.resize();
+    if (leaflet && leaflet.map) {
+      leaflet.map.invalidateSize();
+      updateLeafletLabels();
+    }
+  });
+}
+
+function setView(view) {
+  currentView = view;
+  document.getElementById("split").dataset.view = view;
+
+  document.querySelectorAll(".view-toggle button").forEach((btn) => {
+    const active = btn.dataset.view === view;
+    btn.classList.toggle("active", active);
+    btn.setAttribute("aria-selected", active ? "true" : "false");
+  });
+
+  try {
+    localStorage.setItem("events-view", view);
+  } catch (e) {
+    /* private mode / storage disabled - ignore */
+  }
+
+  refreshMapSize();
+  updateDebugPanel();
+}
+
+// Wire a splitter handle: dragging it (mouse/touch) or arrowing it (when
+// focused) writes a 0..1 fraction into `cssVar` on `target`, which the CSS
+// turns into flex ratios for the two panes.
+function initResizer({ handleId, target, axis, cssVar, storeKey }) {
+  const handle = document.getElementById(handleId);
+  if (!handle) return;
+  let ratio = parseFloat(getComputedStyle(target).getPropertyValue(cssVar)) || 0.6;
+  try {
+    const stored = parseFloat(localStorage.getItem(storeKey));
+    if (Number.isFinite(stored)) ratio = stored;
+  } catch (e) {
+    /* ignore */
+  }
+
+  const apply = (r, persist) => {
+    ratio = Math.max(SPLIT_MIN, Math.min(SPLIT_MAX, r));
+    target.style.setProperty(cssVar, ratio);
+    if (persist) {
+      try {
+        localStorage.setItem(storeKey, ratio.toFixed(3));
+      } catch (e) {
+        /* ignore */
+      }
+    }
+  };
+  apply(ratio, false);
+
+  let dragging = false;
+  let rafPending = false;
+  const pointerPos = (e) => {
+    const t = e.touches && e.touches[0];
+    return axis === "x" ? (t ? t.clientX : e.clientX) : t ? t.clientY : e.clientY;
+  };
+  const applyFromEvent = (e) => {
+    const rect = target.getBoundingClientRect();
+    const frac =
+      axis === "x"
+        ? (pointerPos(e) - rect.left) / rect.width
+        : (pointerPos(e) - rect.top) / rect.height;
+    apply(frac, false);
+    if (!rafPending) {
+      rafPending = true;
+      requestAnimationFrame(() => {
+        rafPending = false;
+        if (map) map.resize();
+        if (leaflet && leaflet.map) leaflet.map.invalidateSize();
+      });
+    }
+  };
+
+  const onMove = (e) => {
+    if (!dragging) return;
+    applyFromEvent(e);
+    if (e.cancelable) e.preventDefault();
+  };
+  const onUp = () => {
+    if (!dragging) return;
+    dragging = false;
+    document.body.style.cursor = "";
+    document.body.style.userSelect = "";
+    window.removeEventListener("mousemove", onMove);
+    window.removeEventListener("mouseup", onUp);
+    window.removeEventListener("touchmove", onMove);
+    window.removeEventListener("touchend", onUp);
+    apply(ratio, true);
+    if (leaflet && leaflet.map) updateLeafletLabels();
+  };
+  const onDown = (e) => {
+    dragging = true;
+    document.body.style.cursor = axis === "x" ? "col-resize" : "row-resize";
+    document.body.style.userSelect = "none";
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+    window.addEventListener("touchmove", onMove, { passive: false });
+    window.addEventListener("touchend", onUp);
+    e.preventDefault();
+  };
+
+  handle.addEventListener("mousedown", onDown);
+  handle.addEventListener("touchstart", onDown, { passive: false });
+  handle.addEventListener("keydown", (e) => {
+    const back = axis === "x" ? "ArrowLeft" : "ArrowUp";
+    const fwd = axis === "x" ? "ArrowRight" : "ArrowDown";
+    const step = e.key === back ? -0.03 : e.key === fwd ? 0.03 : 0;
+    if (!step) return;
+    e.preventDefault();
+    apply(ratio + step, true);
+    refreshMapSize();
+  });
+}
+
+function initSplitHandles() {
+  initResizer({
+    handleId: "split-handle",
+    target: document.getElementById("split"),
+    axis: "y",
+    cssVar: "--split",
+    storeKey: "events-split-ratio",
+  });
+  initResizer({
+    handleId: "split-handle-v",
+    target: document.querySelector(".layout"),
+    axis: "x",
+    cssVar: "--split-x",
+    storeKey: "events-split-x-ratio",
+  });
+}
+
+function initViewToggle() {
+  document.querySelectorAll(".view-toggle button").forEach((btn) => {
+    btn.addEventListener("click", () => setView(btn.dataset.view));
+  });
+  initSplitHandles();
+  let stored = null;
+  try {
+    stored = localStorage.getItem("events-view");
+  } catch (e) {
+    /* ignore */
+  }
+  if (stored === "table" || stored === "split") setView(stored);
+}
+
+// ---------------------------------------------------------------------------
+// Boot
+// ---------------------------------------------------------------------------
 
 function loadEvents() {
   return fetch("data/events.geojson").then((res) => res.json());
+}
+
+function onEventsLoaded(geojson) {
+  allFeatures = geojson.features;
+  document.getElementById("week-summary").textContent =
+    `${geojson.features.length} event(s) this week`;
+  renderEventList(geojson.features);
+  renderTable(geojson.features);
+  initViewToggle();
 }
 
 updateDebugPanel();
@@ -352,9 +815,17 @@ if (webglSupported) {
 
   map.on("load", () => {
     loadEvents().then((geojson) => {
-      allFeatures = geojson.features;
-
       map.addSource("events", { type: "geojson", data: geojson });
+
+      const weekdayColors = {};
+      for (const f of geojson.features) weekdayColors[f.properties.weekday] = f.properties.color;
+      for (const [weekday, color] of Object.entries(weekdayColors)) {
+        const imgId = `label-bg-${weekday}`;
+        if (!map.hasImage(imgId)) {
+          const bg = makeLabelBg(color);
+          map.addImage(imgId, bg.data, bg.options);
+        }
+      }
 
       map.addLayer({
         id: "event-points",
@@ -373,18 +844,22 @@ if (webglSupported) {
         type: "symbol",
         source: "events",
         layout: {
+          "icon-image": ["concat", "label-bg-", ["get", "weekday"]],
+          "icon-text-fit": "both",
+          "icon-text-fit-padding": [5, 10, 5, 10],
+          "icon-allow-overlap": false,
           "text-field": ["concat", ["get", "name"], "\n", ["get", "date_label"]],
           "text-size": ["interpolate", ["exponential", 1.4], ["zoom"], 8, 10, 12, 16, 15, 30, 18, 48],
-          "text-anchor": "left",
-          "text-offset": [0.9, 0],
-          "text-justify": "left",
+          // Let crowded labels flip to a free side instead of one being dropped.
+          "text-variable-anchor": ["left", "right", "top", "bottom"],
+          "text-radial-offset": 1.6,
+          "text-justify": "auto",
           "text-allow-overlap": false,
-          "text-optional": true,
         },
         paint: {
           "text-color": "#0f2a43",
-          "text-halo-color": "#ffffff",
-          "text-halo-width": 1.5,
+          "text-halo-color": "rgba(255, 255, 255, 0.95)",
+          "text-halo-width": 1.2,
         },
       });
 
@@ -417,19 +892,19 @@ if (webglSupported) {
         });
       }
 
-      document.getElementById("week-summary").textContent =
-        `${geojson.features.length} event(s) this week`;
-
-      renderEventList(geojson.features);
+      onEventsLoaded(geojson);
     });
   });
 } else {
-  showStaticMapNotice();
-  loadEvents().then((geojson) => {
-    allFeatures = geojson.features;
-    document.getElementById("week-summary").textContent =
-      `${geojson.features.length} event(s) this week`;
-    renderStaticMap(geojson.features);
-    renderEventList(geojson.features);
-  });
+  showFallbackNotice();
+  Promise.all([loadEvents(), loadLeaflet()])
+    .then(([geojson]) => {
+      renderLeafletMap(geojson.features);
+      onEventsLoaded(geojson);
+    })
+    .catch((err) => {
+      console.error(err);
+      document.getElementById("map").textContent =
+        "The map could not be loaded. Switch to the Table view to see this week's events.";
+    });
 }

@@ -5,16 +5,42 @@
   <title>Phoenix Metro Weekly Assisted Living Events</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet" />
+  <link href="vendor/leaflet/leaflet.css" rel="stylesheet" />
   <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
   <header>
     <h1>Phoenix Metro Weekly Assisted Living Events</h1>
     <p id="week-summary">Loading events...</p>
+    <div class="view-toggle" role="tablist" aria-label="View">
+      <button type="button" data-view="map" class="active" role="tab" aria-selected="true">Map</button>
+      <button type="button" data-view="split" role="tab" aria-selected="false">Split</button>
+      <button type="button" data-view="table" role="tab" aria-selected="false">Table</button>
+    </div>
   </header>
-  <div class="layout">
-    <div id="map"></div>
-    <aside id="event-list"></aside>
+
+  <div class="split" id="split" data-view="map">
+    <div class="layout">
+      <div id="map"></div>
+      <div
+        class="split-handle-v"
+        id="split-handle-v"
+        role="separator"
+        aria-orientation="vertical"
+        aria-label="Resize map and list"
+        tabindex="0"
+      ></div>
+      <aside id="event-list"></aside>
+    </div>
+    <div
+      class="split-handle"
+      id="split-handle"
+      role="separator"
+      aria-orientation="horizontal"
+      aria-label="Resize map and table"
+      tabindex="0"
+    ></div>
+    <section id="event-table-view"></section>
   </div>
 
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
