@@ -836,7 +836,9 @@ function initViewToggle() {
 // ---------------------------------------------------------------------------
 
 function loadEvents() {
-  return fetch("data/events.geojson").then((res) => res.json());
+  // Cache-bust: GitHub Pages serves this with a 10-min max-age, and the data
+  // changes weekly, so without this a browser can show last week's events.
+  return fetch(`data/events.geojson?t=${Date.now()}`).then((res) => res.json());
 }
 
 function onEventsLoaded(geojson) {
