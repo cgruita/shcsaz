@@ -72,10 +72,10 @@ function roundRectPath(ctx, x, y, w, h, r) {
 // so the border matches the pin.
 function makeLabelBg(borderColor) {
   const pr = 2;
-  const size = 52 * pr;
-  const margin = 2 * pr; // transparent breathing room around the box
-  const border = 2.5 * pr;
-  const outerR = 13 * pr;
+  const size = 40 * pr;
+  const margin = 1.5 * pr; // transparent breathing room around the box
+  const border = 2 * pr;
+  const outerR = 9 * pr;
   const innerR = Math.max(1, outerR - border);
   const boxOrigin = margin;
   const boxSize = size - 2 * margin;
@@ -102,16 +102,18 @@ function makeLabelBg(borderColor) {
   ctx.fillStyle = "rgba(255, 255, 255, 0.72)";
   ctx.fill();
 
-  // Fixed (non-stretched) zone must contain the entire rounded corner, or the
-  // corner arc distorts when the box is fitted to the text.
-  const fixed = margin + outerR;
+  // Stretch zone must clear the whole rounded corner or the arc distorts when
+  // the box is fitted to the text. The content box, though, hugs the border so
+  // the text sits close to it instead of floating in a padded field.
+  const stretchStart = margin + outerR;
+  const contentPad = margin + border + 1;
   return {
     data: ctx.getImageData(0, 0, size, size),
     options: {
       pixelRatio: pr,
-      stretchX: [[fixed, size - fixed]],
-      stretchY: [[fixed, size - fixed]],
-      content: [fixed, fixed, size - fixed, size - fixed],
+      stretchX: [[stretchStart, size - stretchStart]],
+      stretchY: [[stretchStart, size - stretchStart]],
+      content: [contentPad, contentPad, size - contentPad, size - contentPad],
     },
   };
 }
@@ -154,12 +156,26 @@ function renderEventRow(p) {
 
   return `
     <div class="event-row" data-id="${escapeAttr(p.id)}" style="--row-color: ${escapeAttr(p.color)}">
-      <div class="event-name">${escapeHtml(p.name)}</div>
+      <div class="event-name">${escapeHtml(p.name)}${eventBadges(p)}</div>
       <div class="event-when">${escapeHtml(when)}</div>
       <div class="event-where">${escapeHtml(p.venue)}${p.city ? `, ${escapeHtml(p.city)}` : ""}</div>
       ${details.length ? `<div class="event-details">${details.join("")}</div>` : ""}
     </div>
   `;
+}
+
+function rsvpBadge(p) {
+  return p.rsvp ? ' <span class="rsvp-badge">RSVP</span>' : "";
+}
+
+function recurringBadge(p) {
+  return p.recurring
+    ? ' <span class="recurring-badge" title="Recurring event">↻</span>'
+    : "";
+}
+
+function eventBadges(p) {
+  return recurringBadge(p) + rsvpBadge(p);
 }
 
 function renderEventList(features) {
@@ -214,12 +230,14 @@ const TABLE_COLUMNS = [
     sort: (a, b) => timeToMinutes(a.properties.start_time) - timeToMinutes(b.properties.start_time),
   },
   { key: "name", label: "Event", get: (p) => p.name },
-  { key: "event_type", label: "Type", get: (p) => p.event_type },
+  { key: "category", label: "Category", get: (p) => p.category },
   { key: "venue", label: "Venue", get: (p) => p.venue },
   { key: "city", label: "City", get: (p) => p.city },
+  { key: "recurring", label: "Recurring", get: (p) => (p.recurring ? "Yes" : "") },
+  { key: "rsvp", label: "RSVP", get: (p) => (p.rsvp ? "Yes" : "") },
 ];
 
-const tableState = { sortKey: "date", sortDir: 1, type: "all", city: "all", q: "" };
+const tableState = { sortKey: "date", sortDir: 1, category: "all", city: "all", q: "" };
 
 function uniqueSorted(features, field) {
   return [...new Set(features.map((f) => f.properties[field]).filter(Boolean))].sort((a, b) =>
@@ -231,10 +249,10 @@ function filteredSortedFeatures() {
   const q = tableState.q.trim().toLowerCase();
   let rows = allFeatures.filter((f) => {
     const p = f.properties;
-    if (tableState.type !== "all" && p.event_type !== tableState.type) return false;
+    if (tableState.category !== "all" && p.category !== tableState.category) return false;
     if (tableState.city !== "all" && p.city !== tableState.city) return false;
     if (q) {
-      const haystack = `${p.name} ${p.venue} ${p.city} ${p.event_type}`.toLowerCase();
+      const haystack = `${p.name} ${p.venue} ${p.city} ${p.category}`.toLowerCase();
       if (!haystack.includes(q)) return false;
     }
     return true;
@@ -286,7 +304,7 @@ function renderTableBody() {
 
 function renderTable(features) {
   const container = document.getElementById("event-table-view");
-  const types = uniqueSorted(features, "event_type");
+  const categories = uniqueSorted(features, "category");
   const cities = uniqueSorted(features, "city");
 
   const headerCells = TABLE_COLUMNS.map((c) => {
@@ -299,10 +317,12 @@ function renderTable(features) {
 
   container.innerHTML = `
     <div class="table-toolbar">
-      <label>Type
-        <select id="filter-type">
+      <label>Category
+        <select id="filter-category">
           <option value="all">All</option>
-          ${types.map((t) => `<option value="${escapeAttr(t)}">${escapeHtml(t)}</option>`).join("")}
+          ${categories
+            .map((c) => `<option value="${escapeAttr(c)}">${escapeHtml(c)}</option>`)
+            .join("")}
         </select>
       </label>
       <label>City
@@ -324,15 +344,15 @@ function renderTable(features) {
     </div>
   `;
 
-  const typeSel = container.querySelector("#filter-type");
+  const categorySel = container.querySelector("#filter-category");
   const citySel = container.querySelector("#filter-city");
   const search = container.querySelector("#filter-search");
-  typeSel.value = tableState.type;
+  categorySel.value = tableState.category;
   citySel.value = tableState.city;
   search.value = tableState.q;
 
-  typeSel.addEventListener("change", () => {
-    tableState.type = typeSel.value;
+  categorySel.addEventListener("change", () => {
+    tableState.category = categorySel.value;
     renderTableBody();
   });
   citySel.addEventListener("change", () => {
@@ -408,9 +428,20 @@ function selectEvent(id) {
   syncActiveRows();
 
   for (const sel of [".event-row", ".table-row"]) {
-    const row = document.querySelector(`${sel}[data-id="${CSS.escape(id)}"]`);
-    if (row) row.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    scrollRowIntoView(document.querySelector(`${sel}[data-id="${CSS.escape(id)}"]`));
   }
+}
+
+// Center a selected row in its own scroll container. Sets scrollTop directly
+// rather than scrollIntoView({behavior:"smooth"}), which is silently a no-op in
+// some engines / with reduced-motion.
+function scrollRowIntoView(row) {
+  const scroller = row && row.closest("#event-list, .table-scroll");
+  if (!scroller) return;
+  const r = row.getBoundingClientRect();
+  const s = scroller.getBoundingClientRect();
+  if (r.top >= s.top && r.bottom <= s.bottom) return; // already fully visible
+  scroller.scrollTop += r.top - s.top - (s.height - r.height) / 2;
 }
 
 // ---------------------------------------------------------------------------
@@ -455,7 +486,7 @@ function highlightLeafletMarker(id) {
 
 function labelHtml(p) {
   return (
-    `<span class="map-label-name">${escapeHtml(p.name)}</span>` +
+    `<span class="map-label-name">${escapeHtml(p.name)}${eventBadges(p)}</span>` +
     `<span class="map-label-date">${escapeHtml(p.date_label)}</span>`
   );
 }
@@ -478,6 +509,11 @@ function updateLeafletLabels() {
   const lmap = leaflet.map;
   const size = lmap.getSize();
   const placed = [];
+
+  // Scale the label text with zoom (the CSS only acts on this on small screens).
+  const z = lmap.getZoom();
+  const labelScale = Math.max(0.72, Math.min(1.15, 0.72 + (z - 9) * 0.07));
+  document.getElementById("map").style.setProperty("--label-scale", labelScale.toFixed(3));
 
   const entries = [...leaflet.markers.entries()].sort((a, b) => {
     if (a[0] === selectedId) return -1;
@@ -549,7 +585,7 @@ function updateLeafletLabels() {
 
 function popupHtml(p) {
   const parts = [
-    `<strong>${escapeHtml(p.name)}</strong>`,
+    `<strong>${escapeHtml(p.name)}</strong>${eventBadges(p)}`,
     `${escapeHtml(p.date_label)} &middot; ${escapeHtml(eventWhen(p))}`,
     `${escapeHtml(p.venue)}${p.city ? `, ${escapeHtml(p.city)}` : ""}`,
   ];
@@ -770,18 +806,29 @@ function initSplitHandles() {
   });
 }
 
+// The events table (and therefore split/table views) is desktop-only.
+const mobileMedia = window.matchMedia("(max-width: 768px)");
+
 function initViewToggle() {
   document.querySelectorAll(".view-toggle button").forEach((btn) => {
     btn.addEventListener("click", () => setView(btn.dataset.view));
   });
   initSplitHandles();
-  let stored = null;
-  try {
-    stored = localStorage.getItem("events-view");
-  } catch (e) {
-    /* ignore */
+
+  if (!mobileMedia.matches) {
+    let stored = null;
+    try {
+      stored = localStorage.getItem("events-view");
+    } catch (e) {
+      /* ignore */
+    }
+    if (stored === "table" || stored === "split") setView(stored);
   }
-  if (stored === "table" || stored === "split") setView(stored);
+
+  // Collapse to the map + days table if the viewport crosses into mobile.
+  mobileMedia.addEventListener("change", (e) => {
+    if (e.matches && currentView !== "map") setView("map");
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -846,20 +893,27 @@ if (webglSupported) {
         layout: {
           "icon-image": ["concat", "label-bg-", ["get", "weekday"]],
           "icon-text-fit": "both",
-          "icon-text-fit-padding": [5, 10, 5, 10],
+          "icon-text-fit-padding": [2, 5, 2, 5],
           "icon-allow-overlap": false,
-          "text-field": ["concat", ["get", "name"], "\n", ["get", "date_label"]],
-          "text-size": ["interpolate", ["exponential", 1.4], ["zoom"], 8, 10, 12, 16, 15, 30, 18, 48],
+          "text-field": [
+            "concat",
+            ["get", "name"],
+            "\n",
+            ["get", "date_label"],
+            ["case", ["get", "rsvp"], "  ·  RSVP", ""],
+          ],
+          // Small when zoomed out, only modestly larger up close.
+          "text-size": ["interpolate", ["linear"], ["zoom"], 8, 7.5, 11, 10, 14, 13, 17, 17],
           // Let crowded labels flip to a free side instead of one being dropped.
           "text-variable-anchor": ["left", "right", "top", "bottom"],
-          "text-radial-offset": 1.6,
+          "text-radial-offset": 1.4,
           "text-justify": "auto",
           "text-allow-overlap": false,
         },
         paint: {
           "text-color": "#0f2a43",
           "text-halo-color": "rgba(255, 255, 255, 0.95)",
-          "text-halo-width": 1.2,
+          "text-halo-width": 1,
         },
       });
 

@@ -1,14 +1,23 @@
 """Local configuration - fill in your own values below.
 """
 
+import datetime
 import os
 import re
 
-# Google Sheets: File > Share > Publish to web > select the events sheet/tab > CSV
-# Temporary stand-in until the real Sheet exists: local CSV with this week's events.
-# Once you've moved this data into Google Sheets and published it, swap this for
-# the https:// CSV URL - fetch_events.py accepts either.
-SHEET_CSV_URL = os.path.join(os.path.dirname(__file__), "..", "data", "events_source.csv")
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
+
+
+def week_csv_path(today: datetime.date | None = None) -> str:
+    """Path to the CSV for the week containing `today` (defaults to today).
+
+    Files live in data/weeks/ and are named after that week's Monday, e.g.
+    data/weeks/2026-08-24.csv. fetch_events.fetch() also accepts an https:// URL,
+    so this can later be swapped for a published Google Sheet if needed.
+    """
+    today = today or datetime.date.today()
+    monday = today - datetime.timedelta(days=today.weekday())
+    return os.path.join(_DATA_DIR, "weeks", f"{monday.isoformat()}.csv")
 
 # Mapbox: js/config.js is the one place the token needs to be hardcoded (it has
 # to ship to the browser regardless), so read it from there instead of keeping

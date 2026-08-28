@@ -1,0 +1,4 @@
+# Local flyer images for scripts/extract_flyer.py - not shipped to the site.
+# Drop images here and run:  python3 scripts/extract_flyer.py data/flyers/<file>
+*
+!.gitignore

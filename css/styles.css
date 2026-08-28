@@ -205,6 +205,33 @@ header p {
   color: #0f2a43;
 }
 
+.rsvp-badge,
+.recurring-badge {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0 0.3rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.rsvp-badge {
+  color: #b45309;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+}
+
+.recurring-badge {
+  font-size: 0.75rem;
+  padding: 0 0.25rem;
+  color: #475569;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+}
+
 .event-row .event-when {
   font-size: 0.8rem;
   color: #475569;
@@ -452,27 +479,34 @@ header p {
 }
 
 @media (max-width: 768px) {
-  /* No drag handle on touch - "split" just stacks the two panes and scrolls. */
-  .split {
-    overflow-y: auto;
-  }
-
+  /* Mobile is map + days table only - no events table, no view toggle,
+     no drag handles, no debug panel. */
+  .view-toggle,
   .split-handle,
-  .split-handle-v {
+  .split-handle-v,
+  #debug-panel {
     display: none;
   }
 
-  .split[data-view="split"] .layout,
-  .split[data-view="split"] #event-table-view {
-    flex: none;
+  /* Belt and braces: even if a desktop "split"/"table" state is stored, mobile
+     shows the map + days table and never the events table. */
+  #event-table-view {
+    display: none !important;
+  }
+  .split .layout {
+    display: flex !important;
   }
 
-  .split[data-view="split"] .layout {
-    height: 70vh;
+  header {
+    padding: 0.6rem 1rem;
   }
 
-  .split[data-view="split"] #event-table-view {
-    min-height: 70vh;
+  header h1 {
+    font-size: 1.05rem;
+  }
+
+  header p {
+    font-size: 0.8rem;
   }
 
   .layout {
@@ -480,15 +514,24 @@ header p {
   }
 
   #map {
-    height: 55vh;
+    height: 48vh;
     flex: none;
   }
 
   #event-list {
+    /* fill the space under the map - the desktop map/list ratio doesn't apply
+       once the panes are stacked */
+    flex: 1 1 0;
     border-top: 1px solid #e2e8f0;
   }
 
-  .table-toolbar .table-search input {
-    min-width: 120px;
+  /* Labels scale with zoom so they don't swamp a small screen when zoomed out.
+     --label-scale is set from the map zoom in updateLeafletLabels(). */
+  .map-label-name {
+    font-size: calc(11px * var(--label-scale, 1));
+  }
+
+  .map-label-date {
+    font-size: calc(10px * var(--label-scale, 1));
   }
 }

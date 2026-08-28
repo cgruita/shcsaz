@@ -1,0 +1,28 @@
+id,name,category,start_date,start_time,end_time,venue,address,city,description,event_url,image_url,contact,recurring,rsvp,include
+e001,AZ MediQuip Open House,Open House,2026-08-25,10:00 AM,12:00 PM,AZ MediQuip,AZ MediQuip,Scottsdale,Needs a real street address - venue name geocodes ~65km off,,,,no,no,no
+e002,Scottsdale 101 Referral Network Lunch,Networking,2026-08-25,11:30 AM,1:00 PM,Chompie's,Chompie's,Phoenix,Held every 4th Tuesday - needs which Chompie's location,https://www.facebook.com/share/18sJaUSa5v,,,yes,no,no
+e003,Network Kickback Lunch,Networking,2026-08-25,12:00 PM,,309 Sports Lounge,309 Sports Lounge,,City not specified in source post - needs confirmation,,,,no,no,no
+e004,Ama Vida Care Home Open House,Open House,2026-08-25,2:00 PM,4:00 PM,Ama Vida Care Home,1962 W Cool Water Way,San Tan Valley,Open house with refreshments and a tour; hosted by Amber Briongos,,,,no,no,yes
+e005,Rockin Rob Karaoke,Misc,2026-08-25,5:00 PM,,Arizona Golf Resort,Arizona Golf Resort,,City not specified in source post - needs confirmation,,,,no,no,no
+e006,Echale Networking Event,Networking,2026-08-25,5:30 PM,,,,,Venue and city not specified in source post - needs confirmation,https://www.facebook.com/share/1DLUu3qUgm,,,no,no,no
+e007,Mesa Chamber Leads Open House,Open House,2026-08-26,8:00 AM,9:00 AM,Norris Air,3841 E Main St,Mesa,,,,480-832-3330,no,no,no
+e008,Delivering Care,Networking,2026-08-26,8:30 AM,10:00 AM,Bosa Donuts,10427 E McDowell Mountain Ranch Rd,Scottsdale,,,,,no,no,no
+e009,Empower Business Opportunity Networking Coffee Mixer,Networking,2026-08-26,9:00 AM,10:00 AM,Rudy's BBQ,Rudy's BBQ,Gilbert,Eventbrite link was truncated in source post - needs full URL,,,,no,no,no
+e010,Local Lunch,Networking,2026-08-26,11:30 AM,1:00 PM,Bonfire,Bonfire,Tempe,Meetup event ID 315203393 - link truncated in source post,,,,no,no,no
+e011,PASRS Happy Hour - August Educational Meeting,Misc,2026-08-26,3:00 PM,5:00 PM,The Park at Copper Creek,The Park at Copper Creek,Chandler,,,,,yes,no,no
+e012,Business over Bubbly,Networking,2026-08-26,3:30 PM,5:00 PM,Silver Birch,Silver Birch,Avondale,,https://fb.me/e/53EgFeQS,,,no,no,no
+e013,Ribbon Cutting - Handel's Ice Cream,Ribbon Cutting,2026-08-26,4:00 PM,,Handel's Ice Cream,2015 N Power Rd,Mesa,Mesa Chamber ribbon cutting - all welcome,,,,no,no,no
+e014,Go Local,Networking,2026-08-26,5:00 PM,,The Hub Ahwatukee,The Hub Ahwatukee,Phoenix,,https://www.facebook.com/share/1JUcJHkp8S,,,no,no,no
+e015,Chandler Business Alliance,Networking,2026-08-27,7:30 AM,8:45 AM,American Legion,American Legion,Chandler,Weekly Thursday meeting,,,,yes,no,no
+e016,Coffee & Donuts,Networking,2026-08-27,9:30 AM,10:30 AM,MorningStar at Arcadia,MorningStar at Arcadia,Phoenix,Meetup event ID 316171966 - link truncated in source post,,,,no,no,no
+e017,Everything East Mesa Lunch,Networking,2026-08-27,11:30 AM,1:00 PM,The Hub East Mesa,The Hub East Mesa,Mesa,Guest invite - confirm your business category is open before attending,,,,no,yes,no
+e018,Women's Networking League,Networking,2026-08-27,11:30 AM,1:00 PM,Native Grill,Ray Rd,Phoenix,Meetup event ID 316022290 - needs a cross-street; "Ray Rd" alone is too vague,,,,no,no,no
+e019,Steady Steps,Misc,2026-08-27,1:00 PM,3:00 PM,EverKind AL,19535 N 55th Dr,Glendale,Falls-prevention talk in Everkind's Community Education Series; guest speaker Frank Brown; reserve a seat in advance,,,623-282-2093,no,yes,yes
+e020,Speakeasy,Open House,2026-08-27,3:30 PM,5:00 PM,Canyon Winds,2851 N Boulder Canyon,Mesa,,,,kelly@canyonwindsaz.com,no,no,no
+e021,Epic,Networking,2026-08-27,5:00 PM,,Uptown Alley,13525 N Litchfield Rd,Surprise,,https://www.facebook.com/share/1D4Fyg8MkQ,,,no,no,no
+e022,Monthly Sandbox,Networking,2026-08-28,8:00 AM,10:00 AM,Sunflower Cremation,5650 E Main St,Mesa,,,,,yes,no,no
+e023,Impact for Enterprising Women,Networking,2026-08-28,11:30 AM,1:00 PM,Chompie's,32nd Street and Cactus,Phoenix,Bring a guest - both get $5 off lunch,,,impactforenterprisingwomen1@gmail.com,no,no,no
+e024,Ribbon Cutting - Crust Simply Italian,Ribbon Cutting,2026-08-28,3:00 PM,4:00 PM,Crust Simply Italian,233 E Main St STE 105,Mesa,Mesa Chamber ribbon cutting - non-members welcome,,,,no,no,no
+e025,4th Friday Cocktails & Connections,Networking,2026-08-28,3:30 PM,5:00 PM,Sunrise of Scottsdale - Gold Dust,7370 E Gold Dust Ave,Scottsdale,Assisted-living networking mixer,,,480-609-5115 / Amy.Bloomfield@sunriseseniorliving.com,yes,yes,yes
+e026,Elite Assisted Living Open House,Open House,2026-08-27,11:00 AM,3:00 PM,Elite Assisted Living,4302 E Janice Way,Phoenix,Tour the home and meet the caring team; food and refreshments,,,602-582-8859,no,no,yes
+e027,Paradisi Manor Open House,Open House,2026-08-27,12:00 PM,5:00 PM,Paradisi Manor,11687 N 169th Ave,Surprise,Tour and network with local professionals; 10 private suites with 24/7 certified care,https://www.paradisimanor.com,,623-295-6984 / peter@paradisimanor.com,no,no,yes
