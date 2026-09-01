@@ -1,0 +1,6 @@
+id,name,category,start_date,start_time,end_time,venue,address,city,description,event_url,image_url,contact,recurring,rsvp,include
+e001,Wine Down Wednesday,Networking,2026-09-02,2:00 PM,4:00 PM,The Ranch Estates,9160 E Desert Cove Ave,Scottsdale,,,,(480) 767-7646,yes,yes,yes
+e002,AZCOA / Business Over Bubbly,Networking,2026-09-02,3:30 PM,5:00 PM,Solterra Assisted Living at Chandler,350 S Alma School Rd,Chandler,East Valley mixer - 1st Wednesday,,,,yes,no,yes
+e003,Let's Cool Off & Conversate,Networking,2026-09-03,1:30 PM,3:00 PM,MorningStar Arcadia,3200 E Glenrosa Ave,Phoenix,,,,,no,no,yes
+e004,HSP West September Social,Networking,2026-09-03,4:00 PM,,The Montecito,17271 N 87th Ave,Peoria,,,,,yes,yes,yes
+e005,1st Friday Breakfast,Networking,2026-09-04,8:30 AM,10:00 AM,Canyon Winds Retirement,2851 N Boulder Canyon,Mesa,Held at the independent-living building; AL is at 7311 E Oasis St,,,,yes,no,yes

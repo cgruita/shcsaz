@@ -232,6 +232,21 @@ header p {
   border: 1px solid #cbd5e1;
 }
 
+.flyer-badge {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0 0.3rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  vertical-align: middle;
+  white-space: nowrap;
+  color: #1d4ed8;
+  background: #dbeafe;
+  border: 1px solid #93c5fd;
+}
+
 .event-row .event-when {
   font-size: 0.8rem;
   color: #475569;
@@ -299,6 +314,84 @@ header p {
 
 .map-popup a {
   color: #2563eb;
+}
+
+.map-popup-thumb {
+  margin: 0 0 0.4rem;
+}
+
+.map-popup-thumb-link {
+  display: block;
+}
+
+.map-popup-thumb-link img {
+  display: block;
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: zoom-in;
+}
+
+.map-popup-desc {
+  display: block;
+  margin-top: 0.3rem;
+  color: #475569;
+}
+
+.map-popup-contact {
+  display: block;
+  margin-top: 0.3rem;
+  color: #475569;
+}
+
+.map-popup-links {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.9rem;
+}
+
+/* Full-size flyer overlay */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(15, 42, 67, 0.88);
+}
+
+#lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 6px;
+  box-shadow: 0 10px 44px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0f2a43;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  background: #ffffff;
 }
 
 /* Always-on labels on the Leaflet fallback map - mirrors the GL map's boxed

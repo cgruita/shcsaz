@@ -6,149 +6,164 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -111.587093,
-          33.197833
+          -111.884012,
+          33.585778
+        ]
+      },
+      "properties": {
+        "id": "e001",
+        "lat": 33.585778,
+        "lon": -111.884012,
+        "name": "Wine Down Wednesday",
+        "category": "Networking",
+        "recurring": true,
+        "rsvp": true,
+        "date": "2026-09-02",
+        "date_label": "Wed, Sep 02",
+        "start_time": "2:00 PM",
+        "end_time": "4:00 PM",
+        "venue": "The Ranch Estates",
+        "address": "9160 E Desert Cove Ave",
+        "city": "Scottsdale",
+        "description": "",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "(480) 767-7646",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.85984,
+          33.29814
+        ]
+      },
+      "properties": {
+        "id": "e002",
+        "lat": 33.29814,
+        "lon": -111.85984,
+        "name": "AZCOA / Business Over Bubbly",
+        "category": "Networking",
+        "recurring": true,
+        "rsvp": false,
+        "date": "2026-09-02",
+        "date_label": "Wed, Sep 02",
+        "start_time": "3:30 PM",
+        "end_time": "5:00 PM",
+        "venue": "Solterra Assisted Living at Chandler",
+        "address": "350 S Alma School Rd",
+        "city": "Chandler",
+        "description": "East Valley mixer - 1st Wednesday",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.012625,
+          33.499395
+        ]
+      },
+      "properties": {
+        "id": "e003",
+        "lat": 33.499395,
+        "lon": -112.012625,
+        "name": "Let's Cool Off & Conversate",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-09-03",
+        "date_label": "Thu, Sep 03",
+        "start_time": "1:30 PM",
+        "end_time": "3:00 PM",
+        "venue": "MorningStar Arcadia",
+        "address": "3200 E Glenrosa Ave",
+        "city": "Phoenix",
+        "description": "",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.245051,
+          33.640975
         ]
       },
       "properties": {
         "id": "e004",
-        "name": "Ama Vida Care Home Open House",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-08-25",
-        "date_label": "Tue, Aug 25",
-        "start_time": "2:00 PM",
-        "end_time": "4:00 PM",
-        "venue": "Ama Vida Care Home",
-        "address": "1962 W Cool Water Way",
-        "city": "San Tan Valley",
-        "description": "Open house with refreshments and a tour; hosted by Amber Briongos",
-        "event_url": "",
-        "image_url": "",
-        "contact": "",
-        "weekday": "Tuesday",
-        "color": "#22C55E"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.177325,
-          33.663266
-        ]
-      },
-      "properties": {
-        "id": "e019",
-        "name": "Steady Steps",
-        "category": "Misc",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-08-27",
-        "date_label": "Thu, Aug 27",
-        "start_time": "1:00 PM",
-        "end_time": "3:00 PM",
-        "venue": "EverKind AL",
-        "address": "19535 N 55th Dr",
-        "city": "Glendale",
-        "description": "Falls-prevention talk in Everkind's Community Education Series; guest speaker Frank Brown; reserve a seat in advance",
-        "event_url": "",
-        "image_url": "",
-        "contact": "623-282-2093",
-        "weekday": "Thursday",
-        "color": "#DB2777"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.922493,
-          33.579119
-        ]
-      },
-      "properties": {
-        "id": "e025",
-        "name": "4th Friday Cocktails & Connections",
+        "lat": 33.640975,
+        "lon": -112.245051,
+        "name": "HSP West September Social",
         "category": "Networking",
         "recurring": true,
         "rsvp": true,
-        "date": "2026-08-28",
-        "date_label": "Fri, Aug 28",
-        "start_time": "3:30 PM",
-        "end_time": "5:00 PM",
-        "venue": "Sunrise of Scottsdale - Gold Dust",
-        "address": "7370 E Gold Dust Ave",
-        "city": "Scottsdale",
-        "description": "Assisted-living networking mixer",
+        "date": "2026-09-03",
+        "date_label": "Thu, Sep 03",
+        "start_time": "4:00 PM",
+        "end_time": "",
+        "venue": "The Montecito",
+        "address": "17271 N 87th Ave",
+        "city": "Peoria",
+        "description": "",
         "event_url": "",
         "image_url": "",
-        "contact": "480-609-5115 / Amy.Bloomfield@sunriseseniorliving.com",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.674594,
+          33.467965
+        ]
+      },
+      "properties": {
+        "id": "e005",
+        "lat": 33.467965,
+        "lon": -111.674594,
+        "name": "1st Friday Breakfast",
+        "category": "Networking",
+        "recurring": true,
+        "rsvp": false,
+        "date": "2026-09-04",
+        "date_label": "Fri, Sep 04",
+        "start_time": "8:30 AM",
+        "end_time": "10:00 AM",
+        "venue": "Canyon Winds Retirement",
+        "address": "2851 N Boulder Canyon",
+        "city": "Mesa",
+        "description": "Held at the independent-living building; AL is at 7311 E Oasis St",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
         "weekday": "Friday",
         "color": "#EF4444"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.988768,
-          33.624472
-        ]
-      },
-      "properties": {
-        "id": "e026",
-        "name": "Elite Assisted Living Open House",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-08-27",
-        "date_label": "Thu, Aug 27",
-        "start_time": "11:00 AM",
-        "end_time": "3:00 PM",
-        "venue": "Elite Assisted Living",
-        "address": "4302 E Janice Way",
-        "city": "Phoenix",
-        "description": "Tour the home and meet the caring team; food and refreshments",
-        "event_url": "",
-        "image_url": "",
-        "contact": "602-582-8859",
-        "weekday": "Thursday",
-        "color": "#DB2777"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.422327,
-          33.590622
-        ]
-      },
-      "properties": {
-        "id": "e027",
-        "name": "Paradisi Manor Open House",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-08-27",
-        "date_label": "Thu, Aug 27",
-        "start_time": "12:00 PM",
-        "end_time": "5:00 PM",
-        "venue": "Paradisi Manor",
-        "address": "11687 N 169th Ave",
-        "city": "Surprise",
-        "description": "Tour and network with local professionals; 10 private suites with 24/7 certified care",
-        "event_url": "https://www.paradisimanor.com",
-        "image_url": "",
-        "contact": "623-295-6984 / peter@paradisimanor.com",
-        "weekday": "Thursday",
-        "color": "#DB2777"
       }
     }
   ]

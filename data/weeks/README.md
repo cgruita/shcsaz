@@ -21,12 +21,12 @@ the map reads.
 | `start_time`  | yes      | e.g. `9:00 AM` |
 | `end_time`    | no       | e.g. `10:30 AM` |
 | `venue`       | yes      | shown on the map/list |
-| `address`     | yes      | street address (or venue name) used for geocoding |
+| `address`     | yes      | street address (or venue name) used for geocoding; also powers the "Directions ↗" link (Apple Maps on iPhone/iPad, Google Maps everywhere else) |
 | `city`        | yes      | used for geocoding |
 | `description` | no       | free text |
-| `event_url`   | no       | "View details" link |
-| `image_url`   | no       | flyer thumbnail |
-| `contact`     | no       | phone / email, internal reference |
+| `event_url`   | no       | "View details" link shown in the list, table and map popup |
+| `image_url`   | no       | flyer image — thumbnail in the list / map popup, a "FLYER" badge on the map label, opens full-size in a lightbox when clicked |
+| `contact`     | no       | phone / email, internal reference — **not shown on the public map** |
 | `recurring`   | no       | `yes` shows a "↻" badge (event repeats weekly/monthly); anything else = none |
 | `rsvp`        | no       | `yes` shows an "RSVP" badge on the event; anything else (`no`, blank) = none |
 | `include`     | yes      | `yes` puts the event on the map; anything else (`no`, blank) keeps it out |

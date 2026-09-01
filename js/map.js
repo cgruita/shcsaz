@@ -14,6 +14,7 @@ function supportsWebGL() {
 
 let allFeatures = [];
 let map = null; // Mapbox GL map (WebGL path)
+let glPopup = null; // the single open Mapbox GL detail popup, if any
 let leaflet = null; // { map, markers: Map<id, marker> } - set when rendering the no-WebGL fallback
 let currentView = "map"; // "map" | "split" | "table"
 // mapboxgl.supported() is the authoritative check (it also rejects broken /
@@ -146,10 +147,9 @@ function renderEventRow(p) {
 
   const details = [];
   if (p.image_url) {
-    details.push(`<a href="${escapeAttr(p.image_url)}" target="_blank" rel="noopener" class="event-details-link" onclick="event.stopPropagation()">
-      <img class="event-thumb" src="${escapeAttr(p.image_url)}" alt="${escapeAttr(p.name)} flyer" loading="lazy" />
-    </a>`);
+    details.push(lightboxThumb(p, "event-details-link", "event-thumb"));
   }
+  details.push(directionsLink(p, "event-details-link"));
   if (p.event_url) {
     details.push(`<a href="${escapeAttr(p.event_url)}" target="_blank" rel="noopener" class="event-details-link" onclick="event.stopPropagation()">View details &#8599;</a>`);
   }
@@ -174,8 +174,170 @@ function recurringBadge(p) {
     : "";
 }
 
+// A "get directions" link searching for the event's street address (so the maps
+// app shows the address, not a lat/long). Falls back to the venue name if the
+// CSV row has no address.
+//
+// Apple Maps links only open the native app on iOS/iPadOS (and, on macOS, only
+// in Safari) - every other desktop browser gets an "unsupported browser" page.
+// So Apple Maps is used only on real iPhones/iPads; everything else, including
+// all Macs, gets Google Maps, which works in every browser.
+function directionsUrl(p) {
+  const addr = [p.address, p.city].filter(Boolean).join(", ");
+  const query = encodeURIComponent(addr ? `${addr}, AZ` : p.venue || p.name || "");
+  const ios =
+    /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPadOS
+  return ios
+    ? `https://maps.apple.com/?q=${query}`
+    : `https://www.google.com/maps/search/?api=1&query=${query}`;
+}
+
+function directionsLink(p, cls) {
+  return (
+    `<a href="${escapeAttr(directionsUrl(p))}" target="_blank" rel="noopener"` +
+    `${cls ? ` class="${cls}"` : ""} onclick="event.stopPropagation()">Directions &#8599;</a>`
+  );
+}
+
+function flyerBadge(p) {
+  return p.image_url || p.has_image
+    ? ' <span class="flyer-badge" title="Has a flyer">FLYER</span>'
+    : "";
+}
+
 function eventBadges(p) {
   return recurringBadge(p) + rsvpBadge(p);
+}
+
+// ---------------------------------------------------------------------------
+// Flyer lightbox + shared map detail card
+// ---------------------------------------------------------------------------
+
+// An <a> that, when clicked, opens the flyer in the in-page lightbox instead of
+// navigating. The href stays real so it still works if JS is disabled / for
+// "open in new tab".
+function lightboxThumb(p, linkClass, imgClass) {
+  return (
+    `<a href="${escapeAttr(p.image_url)}" class="${linkClass}" ` +
+    `data-lightbox="${escapeAttr(p.image_url)}" data-lightbox-alt="${escapeAttr(p.name)} flyer">` +
+    `<img class="${imgClass}" src="${escapeAttr(p.image_url)}" alt="${escapeAttr(p.name)} flyer" loading="lazy" />` +
+    `</a>`
+  );
+}
+
+function ensureLightbox() {
+  let el = document.getElementById("lightbox");
+  if (el) return el;
+  el = document.createElement("div");
+  el.id = "lightbox";
+  el.hidden = true;
+  el.innerHTML =
+    '<button type="button" class="lightbox-close" aria-label="Close flyer">&times;</button>' +
+    '<img class="lightbox-img" alt="" />';
+  el.addEventListener("click", (e) => {
+    if (e.target === el || e.target.closest(".lightbox-close")) closeLightbox();
+  });
+  document.body.appendChild(el);
+  return el;
+}
+
+function onLightboxKey(e) {
+  if (e.key === "Escape") closeLightbox();
+}
+
+function openLightbox(src, alt) {
+  if (!src) return;
+  const el = ensureLightbox();
+  const img = el.querySelector(".lightbox-img");
+  img.src = src;
+  img.alt = alt || "";
+  el.hidden = false;
+  document.addEventListener("keydown", onLightboxKey);
+}
+
+function closeLightbox() {
+  const el = document.getElementById("lightbox");
+  if (!el || el.hidden) return;
+  el.hidden = true;
+  el.querySelector(".lightbox-img").src = "";
+  document.removeEventListener("keydown", onLightboxKey);
+}
+
+// Capture phase so we intercept the click before it reaches an event row or a
+// map marker - opening a flyer shouldn't also fire event selection / a popup.
+document.addEventListener(
+  "click",
+  (e) => {
+    const trigger = e.target.closest("[data-lightbox]");
+    if (!trigger) return;
+    e.preventDefault();
+    e.stopPropagation();
+    openLightbox(trigger.getAttribute("data-lightbox"), trigger.getAttribute("data-lightbox-alt"));
+  },
+  true
+);
+
+// contact is free text like "480-555-1212 / name@example.com" - split on "/"
+// and linkify the phone / email pieces.
+function contactLinks(raw) {
+  return raw
+    .split("/")
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map((token) => {
+      if (token.includes("@") && !/\s/.test(token)) {
+        return `<a href="mailto:${escapeAttr(token)}">${escapeHtml(token)}</a>`;
+      }
+      const dialable = token.replace(/[^\d+]/g, "");
+      if (dialable.replace(/\D/g, "").length >= 7) {
+        return `<a href="tel:${escapeAttr(dialable)}">${escapeHtml(token)}</a>`;
+      }
+      return escapeHtml(token);
+    })
+    .join(" &middot; ");
+}
+
+// The card shown in a map popup (GL and Leaflet share this markup).
+function detailCardHtml(p, { showContact = false } = {}) {
+  const lines = [
+    `<strong>${escapeHtml(p.name)}</strong>${eventBadges(p)}`,
+    `${escapeHtml(p.date_label)} &middot; ${escapeHtml(eventWhen(p))}`,
+    `${escapeHtml(p.venue)}${p.city ? `, ${escapeHtml(p.city)}` : ""}`,
+  ];
+  if (p.description) lines.push(`<span class="map-popup-desc">${escapeHtml(p.description)}</span>`);
+  if (showContact && p.contact) {
+    lines.push(`<span class="map-popup-contact">${contactLinks(p.contact)}</span>`);
+  }
+
+  const thumb = p.image_url
+    ? `<div class="map-popup-thumb">${lightboxThumb(p, "map-popup-thumb-link", "")}</div>`
+    : "";
+
+  const links = [directionsLink(p)];
+  if (p.event_url) {
+    links.push(
+      `<a href="${escapeAttr(p.event_url)}" target="_blank" rel="noopener">View details &#8599;</a>`
+    );
+  }
+  const linkBar = `<div class="map-popup-links">${links.join("")}</div>`;
+
+  return `<div class="map-popup">${thumb}${lines.join("<br>")}${linkBar}</div>`;
+}
+
+function showGlPopup(feature) {
+  if (!map) return;
+  if (glPopup) glPopup.remove();
+  // closeOnClick would auto-dismiss a popup created inside a map click handler;
+  // the × button and selecting another event handle closing instead.
+  const popup = new mapboxgl.Popup({ offset: 14, maxWidth: "300px", closeOnClick: false })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML(detailCardHtml(feature.properties))
+    .addTo(map);
+  popup.on("close", () => {
+    if (glPopup === popup) glPopup = null;
+  });
+  glPopup = popup;
 }
 
 function renderEventList(features) {
@@ -287,7 +449,7 @@ function renderTableBody() {
       const link = p.event_url
         ? `<a href="${escapeAttr(p.event_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Details &#8599;</a>`
         : p.image_url
-        ? `<a href="${escapeAttr(p.image_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Flyer &#8599;</a>`
+        ? `<a href="${escapeAttr(p.image_url)}" data-lightbox="${escapeAttr(p.image_url)}" data-lightbox-alt="${escapeAttr(p.name)} flyer">Flyer &#8599;</a>`
         : "";
       const cells = TABLE_COLUMNS.map(
         (c) => `<td data-col="${c.key}">${escapeHtml(String(c.get(p) ?? ""))}</td>`
@@ -411,6 +573,7 @@ function selectEvent(id) {
       zoom: Math.max(map.getZoom(), 12),
       essential: true,
     });
+    if (currentView !== "table") showGlPopup(feature);
   } else if (leaflet && leaflet.map) {
     const [lon, lat] = feature.geometry.coordinates;
     // animate:false - an animated setView can silently no-op if the container
@@ -486,7 +649,7 @@ function highlightLeafletMarker(id) {
 
 function labelHtml(p) {
   return (
-    `<span class="map-label-name">${escapeHtml(p.name)}${eventBadges(p)}</span>` +
+    `<span class="map-label-name">${escapeHtml(p.name)}${eventBadges(p)}${flyerBadge(p)}</span>` +
     `<span class="map-label-date">${escapeHtml(p.date_label)}</span>`
   );
 }
@@ -583,20 +746,6 @@ function updateLeafletLabels() {
   }
 }
 
-function popupHtml(p) {
-  const parts = [
-    `<strong>${escapeHtml(p.name)}</strong>${eventBadges(p)}`,
-    `${escapeHtml(p.date_label)} &middot; ${escapeHtml(eventWhen(p))}`,
-    `${escapeHtml(p.venue)}${p.city ? `, ${escapeHtml(p.city)}` : ""}`,
-  ];
-  if (p.event_url) {
-    parts.push(
-      `<a href="${escapeAttr(p.event_url)}" target="_blank" rel="noopener">View details &#8599;</a>`
-    );
-  }
-  return `<div class="map-popup">${parts.join("<br>")}</div>`;
-}
-
 function renderLeafletMap(features) {
   const mapEl = document.getElementById("map");
   mapEl.classList.add("leaflet-fallback");
@@ -622,7 +771,7 @@ function renderLeafletMap(features) {
       fillColor: f.properties.color,
       fillOpacity: 1,
     })
-      .bindPopup(popupHtml(f.properties))
+      .bindPopup(detailCardHtml(f.properties))
       .bindTooltip(labelHtml(f.properties), {
         permanent: true,
         direction: "right",
@@ -693,6 +842,8 @@ function setView(view) {
   } catch (e) {
     /* private mode / storage disabled - ignore */
   }
+
+  if (view === "table" && glPopup) glPopup.remove();
 
   refreshMapSize();
   updateDebugPanel();
@@ -903,6 +1054,7 @@ if (webglSupported) {
             "\n",
             ["get", "date_label"],
             ["case", ["get", "rsvp"], "  ·  RSVP", ""],
+            ["case", ["get", "has_image"], "  ·  FLYER", ""],
           ],
           // Small when zoomed out, only modestly larger up close.
           "text-size": ["interpolate", ["linear"], ["zoom"], 8, 7.5, 11, 10, 14, 13, 17, 17],
