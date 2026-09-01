@@ -25,6 +25,15 @@ const webglSupported =
   !/[?&]nowebgl=1\b/.test(location.search) &&
   (window.mapboxgl && mapboxgl.supported ? mapboxgl.supported() : supportsWebGL());
 
+// Facebook / Instagram / etc. in-app browsers mishandle target="_blank" - they
+// spawn a detached view with no way back to the feed. Navigate external links in
+// place there (EXT_TARGET); real browsers keep the new-tab behaviour.
+const IN_APP_BROWSER =
+  /(FBAN|FBAV|FB_IAB|Instagram|Line\/|Snapchat|Twitter|Pinterest|LinkedInApp|MicroMessenger)/i.test(
+    navigator.userAgent
+  );
+const EXT_TARGET = IN_APP_BROWSER ? "_self" : "_blank";
+
 // Mapbox raster tiles - rendered server-side, so they work without WebGL.
 const RASTER_TILE_URL =
   `https://api.mapbox.com/styles/v1/mapbox/streets-v12/tiles/512/{z}/{x}/{y}@2x?access_token=${MAPBOX_TOKEN}`;
@@ -152,7 +161,7 @@ function renderEventRow(p) {
   }
   details.push(directionsLink(p, "event-details-link"));
   if (p.event_url) {
-    details.push(`<a href="${escapeAttr(p.event_url)}" target="_blank" rel="noopener" class="event-details-link" onclick="event.stopPropagation()">View details &#8599;</a>`);
+    details.push(`<a href="${escapeAttr(p.event_url)}" target="${EXT_TARGET}" rel="noopener" class="event-details-link" onclick="event.stopPropagation()">View details &#8599;</a>`);
   }
 
   return `
@@ -196,7 +205,7 @@ function directionsUrl(p) {
 
 function directionsLink(p, cls) {
   return (
-    `<a href="${escapeAttr(directionsUrl(p))}" target="_blank" rel="noopener"` +
+    `<a href="${escapeAttr(directionsUrl(p))}" target="${EXT_TARGET}" rel="noopener"` +
     `${cls ? ` class="${cls}"` : ""} onclick="event.stopPropagation()">Directions &#8599;</a>`
   );
 }
@@ -318,7 +327,7 @@ function detailCardHtml(p, { showContact = false } = {}) {
   const links = [directionsLink(p)];
   if (p.event_url) {
     links.push(
-      `<a href="${escapeAttr(p.event_url)}" target="_blank" rel="noopener">View details &#8599;</a>`
+      `<a href="${escapeAttr(p.event_url)}" target="${EXT_TARGET}" rel="noopener">View details &#8599;</a>`
     );
   }
   const linkBar = `<div class="map-popup-links">${links.join("")}</div>`;
@@ -460,7 +469,7 @@ function renderTableBody() {
     .map((f) => {
       const p = f.properties;
       const link = p.event_url
-        ? `<a href="${escapeAttr(p.event_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Details &#8599;</a>`
+        ? `<a href="${escapeAttr(p.event_url)}" target="${EXT_TARGET}" rel="noopener" onclick="event.stopPropagation()">Details &#8599;</a>`
         : p.image_url
         ? `<a href="${escapeAttr(p.image_url)}" data-lightbox="${escapeAttr(p.image_url)}" data-lightbox-alt="${escapeAttr(p.name)} flyer">Flyer &#8599;</a>`
         : "";
