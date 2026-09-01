@@ -1037,9 +1037,16 @@ if (webglSupported) {
     style: "mapbox://styles/mapbox/streets-v12",
     center: [-112.074, 33.448], // Phoenix
     zoom: 9,
+    // Flat event map - no bearing, no 3D tilt, and a tighter (less "slippery")
+    // pan so it's easy to control with a thumb on a phone.
+    dragRotate: false,
+    pitchWithRotate: false,
+    touchPitch: false,
+    dragPan: { maxSpeed: 1100, deceleration: 3800 },
   });
+  map.touchZoomRotate.disableRotation(); // pinch still zooms, just no spin
 
-  map.addControl(new mapboxgl.NavigationControl(), "top-right");
+  map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
 
   map.on("load", () => {
     loadEvents().then((geojson) => {
