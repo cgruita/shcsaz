@@ -15,6 +15,7 @@ function supportsWebGL() {
 let allFeatures = [];
 let map = null; // Mapbox GL map (WebGL path)
 let glPopup = null; // the single open Mapbox GL detail popup, if any
+let glPopupId = null; // id of the event whose GL popup is open (its box label is hidden)
 let leaflet = null; // { map, markers: Map<id, marker> } - set when rendering the no-WebGL fallback
 let currentView = "map"; // "map" | "split" | "table"
 // mapboxgl.supported() is the authoritative check (it also rejects broken /
@@ -335,9 +336,21 @@ function showGlPopup(feature) {
     .setHTML(detailCardHtml(feature.properties))
     .addTo(map);
   popup.on("close", () => {
-    if (glPopup === popup) glPopup = null;
+    if (glPopup === popup) {
+      glPopup = null;
+      glPopupId = null;
+      updateGlLabelFilter();
+    }
   });
   glPopup = popup;
+  glPopupId = feature.properties.id;
+  updateGlLabelFilter();
+}
+
+// The open popup already shows this event in full, so hide its box label.
+function updateGlLabelFilter() {
+  if (!map || !map.getLayer("event-labels")) return;
+  map.setFilter("event-labels", glPopupId ? ["!=", ["get", "id"], glPopupId] : null);
 }
 
 function renderEventList(features) {
