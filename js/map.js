@@ -188,19 +188,25 @@ function recurringBadge(p) {
 // app shows the address, not a lat/long). Falls back to the venue name if the
 // CSV row has no address.
 //
-// Apple Maps links only open the native app on iOS/iPadOS (and, on macOS, only
-// in Safari) - every other desktop browser gets an "unsupported browser" page.
-// So Apple Maps is used only on real iPhones/iPads; everything else, including
-// all Macs, gets Google Maps, which works in every browser.
+//  - In-app browser (Facebook, etc.): a native geo:/maps: URI, which opens the
+//    maps app as its own task - the phone's back button then returns straight to
+//    the app the user came from (a web maps URL shows an "Open the app?"
+//    interstitial and strands them).
+//  - iPhone / iPad: maps.apple.com (opens the Apple Maps app).
+//  - Everything else, incl. all Macs: Google Maps web - maps.apple.com shows an
+//    "unsupported browser" page outside Safari.
 function directionsUrl(p) {
   const addr = [p.address, p.city].filter(Boolean).join(", ");
-  const query = encodeURIComponent(addr ? `${addr}, AZ` : p.venue || p.name || "");
+  const q = encodeURIComponent(addr ? `${addr}, AZ` : p.venue || p.name || "");
   const ios =
     /iPhone|iPad|iPod/.test(navigator.userAgent) ||
     (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPadOS
+  if (IN_APP_BROWSER) {
+    return ios ? `maps://?q=${q}` : `geo:0,0?q=${q}`;
+  }
   return ios
-    ? `https://maps.apple.com/?q=${query}`
-    : `https://www.google.com/maps/search/?api=1&query=${query}`;
+    ? `https://maps.apple.com/?q=${q}`
+    : `https://www.google.com/maps/search/?api=1&query=${q}`;
 }
 
 function directionsLink(p, cls) {
