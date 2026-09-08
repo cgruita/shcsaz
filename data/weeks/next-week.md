@@ -1,17 +1,13 @@
-# Events — Week of Mon Aug 31 – Sat Sep 5, 2026
+# Next week AL events
 
-Working draft for next week. Fill in the rows below, then save the same columns
-as `data/weeks/2026-08-31.csv` (comma-separated) and run
-`python3 scripts/build_events.py`.
+Week of Mon Sep 7 – Sun Sep 13, 2026.
+Nancy dump not out yet. Source CSV: `data/weeks/2026-09-07.csv`.
 
-- `start_date` must fall between **2026-08-31** and **2026-09-06** or the event is skipped.
-- `include` = `yes` puts the event on the map; blank / `no` keeps it out.
-- `recurring` / `rsvp` = `yes` to show the badge.
-- `contact` is an internal reference — it is **not** shown on the public map.
-- See [README.md](README.md) for what every column does.
+| Date | Time | Event | Host | Address | include |
+|---|---|---|---|---|---|
+| Tue Sep 8 | 9:30–11am | AZCOA Networking | The Park at Surprise | 14634 W Parkwood Dr, Surprise | yes |
+| Wed Sep 9 | 3:30–5pm | HSP East Valley Social | Legacy House / Village Mesa | 5625 E McKellips Rd, Mesa | yes |
+| Thu Sep 10 | 11am–4pm | Open house | Golden Years Senior Care | 6128 W Gambit Trail, Phoenix | yes |
+| Thu Sep 10 | 12–5pm | Open house | Three Palms Assisted Living | 4102 W Fallen Leaf Lane, Glendale | yes |
 
-| id | name | category | start_date | start_time | end_time | venue | address | city | description | event_url | image_url | contact | recurring | rsvp | include |
-|------|------|----------|------------|------------|----------|-------|---------|------|-------------|-----------|-----------|---------|-----------|------|---------|
-| e001 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| e002 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| e003 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+Skipped: SHCSAZ Happy Hour Thu Sep 17 at Cold Beer & Cheeseburgers (restaurant).

@@ -6,32 +6,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -111.884012,
-          33.585778
+          -112.376233,
+          33.65066
         ]
       },
       "properties": {
         "id": "e001",
-        "lat": 33.585778,
-        "lon": -111.884012,
-        "name": "Wine Down Wednesday",
+        "lat": 33.65066,
+        "lon": -112.376233,
+        "name": "AZCOA Networking Meeting",
         "category": "Networking",
-        "recurring": true,
-        "rsvp": true,
-        "date": "2026-09-02",
-        "date_label": "Wed, Sep 02",
-        "start_time": "2:00 PM",
-        "end_time": "4:00 PM",
-        "venue": "The Ranch Estates",
-        "address": "9160 E Desert Cove Ave",
-        "city": "Scottsdale",
-        "description": "",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-09-08",
+        "date_label": "Tue, Sep 08",
+        "start_time": "9:30 AM",
+        "end_time": "11:00 AM",
+        "venue": "The Park at Surprise",
+        "address": "14634 W Parkwood Dr",
+        "city": "Surprise",
+        "description": "Arizona Coalition on Aging networking at the community",
         "event_url": "",
         "image_url": "",
         "has_image": false,
-        "contact": "(480) 767-7646",
-        "weekday": "Wednesday",
-        "color": "#EAB308"
+        "contact": "",
+        "weekday": "Tuesday",
+        "color": "#22C55E"
       }
     },
     {
@@ -39,27 +39,27 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -111.85984,
-          33.29814
+          -111.708856,
+          33.450405
         ]
       },
       "properties": {
         "id": "e002",
-        "lat": 33.29814,
-        "lon": -111.85984,
-        "name": "AZCOA / Business Over Bubbly",
+        "lat": 33.450405,
+        "lon": -111.708856,
+        "name": "HSP East Valley Social",
         "category": "Networking",
         "recurring": true,
         "rsvp": false,
-        "date": "2026-09-02",
-        "date_label": "Wed, Sep 02",
+        "date": "2026-09-09",
+        "date_label": "Wed, Sep 09",
         "start_time": "3:30 PM",
         "end_time": "5:00 PM",
-        "venue": "Solterra Assisted Living at Chandler",
-        "address": "350 S Alma School Rd",
-        "city": "Chandler",
-        "description": "East Valley mixer - 1st Wednesday",
-        "event_url": "",
+        "venue": "Legacy House / Village Mesa",
+        "address": "5625 E McKellips Rd",
+        "city": "Mesa",
+        "description": "HSP East Valley mixer at the community",
+        "event_url": "https://www.facebook.com/events/3279725452214526/",
         "image_url": "",
         "has_image": false,
         "contact": "",
@@ -72,26 +72,26 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.012625,
-          33.499395
+          -112.192091,
+          33.735913
         ]
       },
       "properties": {
         "id": "e003",
-        "lat": 33.499395,
-        "lon": -112.012625,
-        "name": "Let's Cool Off & Conversate",
-        "category": "Networking",
+        "lat": 33.735913,
+        "lon": -112.192091,
+        "name": "Golden Years Senior Care Open House",
+        "category": "Open House",
         "recurring": false,
         "rsvp": false,
-        "date": "2026-09-03",
-        "date_label": "Thu, Sep 03",
-        "start_time": "1:30 PM",
-        "end_time": "3:00 PM",
-        "venue": "MorningStar Arcadia",
-        "address": "3200 E Glenrosa Ave",
+        "date": "2026-09-10",
+        "date_label": "Thu, Sep 10",
+        "start_time": "11:00 AM",
+        "end_time": "4:00 PM",
+        "venue": "Golden Years Senior Care",
+        "address": "6128 W Gambit Trail",
         "city": "Phoenix",
-        "description": "",
+        "description": "West Valley open house",
         "event_url": "",
         "image_url": "",
         "has_image": false,
@@ -105,65 +105,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.245051,
-          33.640975
+          -112.148668,
+          33.711665
         ]
       },
       "properties": {
         "id": "e004",
-        "lat": 33.640975,
-        "lon": -112.245051,
-        "name": "HSP West September Social",
-        "category": "Networking",
-        "recurring": true,
-        "rsvp": true,
-        "date": "2026-09-03",
-        "date_label": "Thu, Sep 03",
-        "start_time": "4:00 PM",
-        "end_time": "",
-        "venue": "The Montecito",
-        "address": "17271 N 87th Ave",
-        "city": "Peoria",
-        "description": "",
+        "lat": 33.711665,
+        "lon": -112.148668,
+        "name": "Three Palms Assisted Living Open House",
+        "category": "Open House",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-09-10",
+        "date_label": "Thu, Sep 10",
+        "start_time": "12:00 PM",
+        "end_time": "5:00 PM",
+        "venue": "Three Palms Assisted Living",
+        "address": "4102 W Fallen Leaf Lane",
+        "city": "Glendale",
+        "description": "New 10-bed home open house",
         "event_url": "",
         "image_url": "",
         "has_image": false,
         "contact": "",
         "weekday": "Thursday",
         "color": "#DB2777"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.674594,
-          33.467965
-        ]
-      },
-      "properties": {
-        "id": "e005",
-        "lat": 33.467965,
-        "lon": -111.674594,
-        "name": "1st Friday Breakfast",
-        "category": "Networking",
-        "recurring": true,
-        "rsvp": false,
-        "date": "2026-09-04",
-        "date_label": "Fri, Sep 04",
-        "start_time": "8:30 AM",
-        "end_time": "10:00 AM",
-        "venue": "Canyon Winds Retirement",
-        "address": "2851 N Boulder Canyon",
-        "city": "Mesa",
-        "description": "Held at the independent-living building; AL is at 7311 E Oasis St",
-        "event_url": "",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Friday",
-        "color": "#EF4444"
       }
     }
   ]
