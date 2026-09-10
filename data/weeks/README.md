@@ -25,7 +25,7 @@ the map reads.
 | `city`        | yes      | used for geocoding |
 | `description` | no       | free text |
 | `event_url`   | no       | "View details" link shown in the list, table and map popup |
-| `image_url`   | no       | flyer image — thumbnail in the list / map popup, a "FLYER" badge on the map label, opens full-size in a lightbox when clicked |
+| `image_url`   | no       | flyer image — thumbnail in the list / map popup, a "FLYER" badge on the map label, opens full-size in a lightbox when clicked. Put the file in `images/` and use a repo-relative path, e.g. `images/three-palms-2026-09-10.jpg` (an external `https://…` URL also works) |
 | `contact`     | no       | phone / email, internal reference — **not shown on the public map** |
 | `recurring`   | no       | `yes` shows a "↻" badge (event repeats weekly/monthly); anything else = none |
 | `rsvp`        | no       | `yes` shows an "RSVP" badge on the event; anything else (`no`, blank) = none |
@@ -35,6 +35,11 @@ the map reads.
 
 Copy the latest file to `data/weeks/<next-monday>.csv`, replace the rows, then
 run `python3 scripts/build_events.py`.
+
+Flyer images go in `images/` (committed and served with the site) — optimise
+them first, e.g. `sips -s format jpeg -s formatOptions 82 --resampleWidth 1000
+<src> --out images/<event>-<date>.jpg`. The raw drop in `data/flyers/` stays
+git-ignored and is only for the OCR / extract scripts below.
 
 ## Reading flyer text
 
