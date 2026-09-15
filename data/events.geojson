@@ -6,39 +6,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -111.715479,
-          33.380047
-        ]
-      },
-      "properties": {
-        "id": "e001",
-        "lat": 33.380047,
-        "lon": -111.715479,
-        "name": "East Valley B.O.B. Business Over Breakfast",
-        "category": "Networking",
-        "recurring": true,
-        "rsvp": false,
-        "date": "2026-09-16",
-        "date_label": "Wed, Sep 16",
-        "start_time": "8:30 AM",
-        "end_time": "10:00 AM",
-        "venue": "Sant\u00e9 of Mesa",
-        "address": "5358 E Baseline Rd",
-        "city": "Mesa",
-        "description": "East Valley B.O.B. at the community",
-        "event_url": "",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Wednesday",
-        "color": "#EAB308"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -112.392403,
           33.478688
         ]
@@ -58,7 +25,7 @@
         "venue": "Park Senior Villas Goodyear",
         "address": "4211 W Pebble Creek Pkwy",
         "city": "Goodyear",
-        "description": "West Valley hosts breakfast at the community",
+        "description": "AL / memory care community",
         "event_url": "",
         "image_url": "",
         "has_image": false,
@@ -91,7 +58,7 @@
         "venue": "Ridges at Peoria",
         "address": "18170 N 91st Ave",
         "city": "Peoria",
-        "description": "Hawaiian BBQ mixer at The Goodman Group community",
+        "description": "Campus with IL / AL / memory care (Garden Ridge + Arbor Ridge)",
         "event_url": "",
         "image_url": "",
         "has_image": false,
@@ -124,7 +91,7 @@
         "venue": "Acoya Shea",
         "address": "7373 E Shea Blvd",
         "city": "Scottsdale",
-        "description": "HSP mixer at COGIR / Acoya Shea",
+        "description": "Campus with IL / AL / memory care; HSP at the community",
         "event_url": "",
         "image_url": "",
         "has_image": false,
@@ -157,7 +124,7 @@
         "venue": "COGIR Morrison Ranch",
         "address": "3333 E Morrison Ranch Pkwy",
         "city": "Gilbert",
-        "description": "Wine tasting open house at the community",
+        "description": "AL / memory care community open house",
         "event_url": "",
         "image_url": "",
         "has_image": false,
@@ -190,7 +157,7 @@
         "venue": "Acoya Mesa",
         "address": "6502 E Brown Rd",
         "city": "Mesa",
-        "description": "3rd Friday networking breakfast at the community",
+        "description": "Campus with IL / AL / memory care",
         "event_url": "",
         "image_url": "",
         "has_image": false,
@@ -223,7 +190,7 @@
         "venue": "Sunrise Haven Senior Homes",
         "address": "17809 W Getty Dr",
         "city": "Goodyear",
-        "description": "Grand opening / open house",
+        "description": "House open house / grand opening; 24/7 care home",
         "event_url": "https://www.facebook.com/share/p/1GYBETrTnq/",
         "image_url": "",
         "has_image": false,
@@ -256,13 +223,46 @@
         "venue": "Maravilla Scottsdale",
         "address": "7325 E Princess Blvd",
         "city": "Scottsdale",
-        "description": "Fall open house; Abbey Kent Director of Sales",
+        "description": "Campus with IL / AL / memory care",
         "event_url": "",
         "image_url": "",
         "has_image": false,
         "contact": "",
         "weekday": "Friday",
         "color": "#EF4444"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.203644,
+          33.68292
+        ]
+      },
+      "properties": {
+        "id": "e009",
+        "lat": 33.68292,
+        "lon": -112.203644,
+        "name": "SHCSAZ Happy Hour",
+        "category": "Networking",
+        "recurring": true,
+        "rsvp": false,
+        "date": "2026-09-17",
+        "date_label": "Thu, Sep 17",
+        "start_time": "3:00 PM",
+        "end_time": "5:00 PM",
+        "venue": "Cold Beers & Cheeseburgers",
+        "address": "6718 W Deer Valley Rd",
+        "city": "Glendale",
+        "description": "SHCSAZ group happy hour (restaurant venue; added per Cristian)",
+        "event_url": "https://www.facebook.com/events/1433225022239713/",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#DB2777"
       }
     }
   ]

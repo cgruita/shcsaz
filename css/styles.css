@@ -273,8 +273,9 @@ header p {
 .event-details {
   margin-top: 0.4rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem 0.9rem;
 }
 
 .event-details-link {
@@ -286,16 +287,6 @@ header p {
 
 .event-details-link:hover {
   text-decoration: underline;
-}
-
-.event-thumb {
-  width: 100%;
-  max-width: 160px;
-  height: 60px;
-  object-fit: cover;
-  object-position: top; /* flyers are tall - show the header, not a middle slice */
-  border-radius: 4px;
-  display: block;
 }
 
 #map-static-notice {
@@ -315,24 +306,6 @@ header p {
 
 .map-popup a {
   color: #2563eb;
-}
-
-.map-popup-thumb {
-  margin: 0 0 0.4rem;
-}
-
-.map-popup-thumb-link {
-  display: block;
-}
-
-.map-popup-thumb-link img {
-  display: block;
-  width: 100%;
-  max-height: 150px;
-  object-fit: cover;
-  object-position: top; /* flyers are tall - show the header, not a middle slice */
-  border-radius: 4px;
-  cursor: zoom-in;
 }
 
 .map-popup-desc {

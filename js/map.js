@@ -157,7 +157,7 @@ function renderEventRow(p) {
 
   const details = [];
   if (p.image_url) {
-    details.push(lightboxThumb(p, "event-details-link", "event-thumb"));
+    details.push(flyerLink(p, "event-details-link"));
   }
   details.push(directionsLink(p, "event-details-link"));
   if (p.event_url) {
@@ -230,15 +230,13 @@ function eventBadges(p) {
 // Flyer lightbox + shared map detail card
 // ---------------------------------------------------------------------------
 
-// An <a> that, when clicked, opens the flyer in the in-page lightbox instead of
-// navigating. The href stays real so it still works if JS is disabled / for
-// "open in new tab".
-function lightboxThumb(p, linkClass, imgClass) {
+// A text link that opens the flyer full-size in the in-page lightbox. The href
+// stays real so "open in new tab" and no-JS both still work.
+function flyerLink(p, cls) {
   return (
-    `<a href="${escapeAttr(p.image_url)}" class="${linkClass}" ` +
-    `data-lightbox="${escapeAttr(p.image_url)}" data-lightbox-alt="${escapeAttr(p.name)} flyer">` +
-    `<img class="${imgClass}" src="${escapeAttr(p.image_url)}" alt="${escapeAttr(p.name)} flyer" loading="lazy" />` +
-    `</a>`
+    `<a href="${escapeAttr(p.image_url)}"${cls ? ` class="${cls}"` : ""} ` +
+    `data-lightbox="${escapeAttr(p.image_url)}" data-lightbox-alt="${escapeAttr(p.name)} flyer" ` +
+    `onclick="event.stopPropagation()">Flyer &#8599;</a>`
   );
 }
 
@@ -326,11 +324,9 @@ function detailCardHtml(p, { showContact = false } = {}) {
     lines.push(`<span class="map-popup-contact">${contactLinks(p.contact)}</span>`);
   }
 
-  const thumb = p.image_url
-    ? `<div class="map-popup-thumb">${lightboxThumb(p, "map-popup-thumb-link", "")}</div>`
-    : "";
-
-  const links = [directionsLink(p)];
+  const links = [];
+  if (p.image_url) links.push(flyerLink(p));
+  links.push(directionsLink(p));
   if (p.event_url) {
     links.push(
       `<a href="${escapeAttr(p.event_url)}" target="${EXT_TARGET}" rel="noopener">View details &#8599;</a>`
@@ -338,7 +334,7 @@ function detailCardHtml(p, { showContact = false } = {}) {
   }
   const linkBar = `<div class="map-popup-links">${links.join("")}</div>`;
 
-  return `<div class="map-popup">${thumb}${lines.join("<br>")}${linkBar}</div>`;
+  return `<div class="map-popup">${lines.join("<br>")}${linkBar}</div>`;
 }
 
 function showGlPopup(feature) {
@@ -1020,10 +1016,40 @@ function loadEvents() {
   return fetch(`data/events.geojson?t=${Date.now()}`).then((res) => res.json());
 }
 
+// Header label: calendar week Mon–Sat as "Week September 14-19".
+function weekRangeLabel(features) {
+  if (!features.length) return "No events this week";
+  const dates = features
+    .map((f) => f.properties && f.properties.date)
+    .filter(Boolean)
+    .sort();
+  if (!dates.length) return "No events this week";
+  const start = new Date(dates[0] + "T12:00:00");
+  const day = start.getDay(); // 0 = Sun
+  const mondayOffset = day === 0 ? -6 : 1 - day;
+  const monday = new Date(start);
+  monday.setDate(start.getDate() + mondayOffset);
+  const saturday = new Date(monday);
+  saturday.setDate(monday.getDate() + 5);
+  const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
+  ];
+  const m1 = months[monday.getMonth()];
+  const d1 = monday.getDate();
+  const d2 = saturday.getDate();
+  if (monday.getMonth() === saturday.getMonth()) {
+    return `Week ${m1} ${d1}-${d2}`;
+  }
+  const m2 = months[saturday.getMonth()];
+  return `Week ${m1} ${d1}-${m2} ${d2}`;
+}
+
 function onEventsLoaded(geojson) {
   allFeatures = geojson.features;
-  document.getElementById("week-summary").textContent =
-    `${geojson.features.length} event(s) this week`;
+  document.getElementById("week-summary").textContent = weekRangeLabel(
+    geojson.features
+  );
   renderEventList(geojson.features);
   renderTable(geojson.features);
   initViewToggle();
