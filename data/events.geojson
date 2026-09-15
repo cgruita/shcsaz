@@ -6,60 +6,27 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.376233,
-          33.65066
+          -111.715479,
+          33.380047
         ]
       },
       "properties": {
         "id": "e001",
-        "lat": 33.65066,
-        "lon": -112.376233,
-        "name": "AZCOA Networking Meeting",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-09-08",
-        "date_label": "Tue, Sep 08",
-        "start_time": "9:30 AM",
-        "end_time": "11:00 AM",
-        "venue": "The Park at Surprise",
-        "address": "14634 W Parkwood Dr",
-        "city": "Surprise",
-        "description": "Arizona Coalition on Aging networking at the community",
-        "event_url": "",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Tuesday",
-        "color": "#22C55E"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.708856,
-          33.450405
-        ]
-      },
-      "properties": {
-        "id": "e002",
-        "lat": 33.450405,
-        "lon": -111.708856,
-        "name": "HSP East Valley Social",
+        "lat": 33.380047,
+        "lon": -111.715479,
+        "name": "East Valley B.O.B. Business Over Breakfast",
         "category": "Networking",
         "recurring": true,
         "rsvp": false,
-        "date": "2026-09-09",
-        "date_label": "Wed, Sep 09",
-        "start_time": "3:30 PM",
-        "end_time": "5:00 PM",
-        "venue": "Legacy House / Village Mesa",
-        "address": "5625 E McKellips Rd",
+        "date": "2026-09-16",
+        "date_label": "Wed, Sep 16",
+        "start_time": "8:30 AM",
+        "end_time": "10:00 AM",
+        "venue": "Sant\u00e9 of Mesa",
+        "address": "5358 E Baseline Rd",
         "city": "Mesa",
-        "description": "HSP East Valley mixer at the community",
-        "event_url": "https://www.facebook.com/events/3279725452214526/",
+        "description": "East Valley B.O.B. at the community",
+        "event_url": "",
         "image_url": "",
         "has_image": false,
         "contact": "",
@@ -72,26 +39,125 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.192091,
-          33.735913
+          -112.392403,
+          33.478688
+        ]
+      },
+      "properties": {
+        "id": "e002",
+        "lat": 33.478688,
+        "lon": -112.392403,
+        "name": "Park Senior Villas Inside Dining Breakfast",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-09-16",
+        "date_label": "Wed, Sep 16",
+        "start_time": "9:00 AM",
+        "end_time": "10:30 AM",
+        "venue": "Park Senior Villas Goodyear",
+        "address": "4211 W Pebble Creek Pkwy",
+        "city": "Goodyear",
+        "description": "West Valley hosts breakfast at the community",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.256587,
+          33.6494
         ]
       },
       "properties": {
         "id": "e003",
-        "lat": 33.735913,
-        "lon": -112.192091,
-        "name": "Golden Years Senior Care Open House",
+        "lat": 33.6494,
+        "lon": -112.256587,
+        "name": "Aloha to Summer Hawaiian BBQ",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-09-16",
+        "date_label": "Wed, Sep 16",
+        "start_time": "11:00 AM",
+        "end_time": "1:00 PM",
+        "venue": "Ridges at Peoria",
+        "address": "18170 N 91st Ave",
+        "city": "Peoria",
+        "description": "Hawaiian BBQ mixer at The Goodman Group community",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.922271,
+          33.581608
+        ]
+      },
+      "properties": {
+        "id": "e004",
+        "lat": 33.581608,
+        "lon": -111.922271,
+        "name": "HSP Phoenix Scottsdale Networking Social",
+        "category": "Networking",
+        "recurring": true,
+        "rsvp": false,
+        "date": "2026-09-16",
+        "date_label": "Wed, Sep 16",
+        "start_time": "3:30 PM",
+        "end_time": "5:00 PM",
+        "venue": "Acoya Shea",
+        "address": "7373 E Shea Blvd",
+        "city": "Scottsdale",
+        "description": "HSP mixer at COGIR / Acoya Shea",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.718445,
+          33.34597
+        ]
+      },
+      "properties": {
+        "id": "e005",
+        "lat": 33.34597,
+        "lon": -111.718445,
+        "name": "Wine Tasting Open House",
         "category": "Open House",
         "recurring": false,
         "rsvp": false,
-        "date": "2026-09-10",
-        "date_label": "Thu, Sep 10",
-        "start_time": "11:00 AM",
-        "end_time": "4:00 PM",
-        "venue": "Golden Years Senior Care",
-        "address": "6128 W Gambit Trail",
-        "city": "Phoenix",
-        "description": "West Valley open house",
+        "date": "2026-09-17",
+        "date_label": "Thu, Sep 17",
+        "start_time": "1:00 PM",
+        "end_time": "3:00 PM",
+        "venue": "COGIR Morrison Ranch",
+        "address": "3333 E Morrison Ranch Pkwy",
+        "city": "Gilbert",
+        "description": "Wine tasting open house at the community",
         "event_url": "",
         "image_url": "",
         "has_image": false,
@@ -105,32 +171,98 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.148668,
-          33.711665
+          -111.69023,
+          33.43832
         ]
       },
       "properties": {
-        "id": "e004",
-        "lat": 33.711665,
-        "lon": -112.148668,
-        "name": "Three Palms Assisted Living Open House",
+        "id": "e006",
+        "lat": 33.43832,
+        "lon": -111.69023,
+        "name": "3rd Friday Welcome to the Jungle",
+        "category": "Networking",
+        "recurring": true,
+        "rsvp": false,
+        "date": "2026-09-18",
+        "date_label": "Fri, Sep 18",
+        "start_time": "9:00 AM",
+        "end_time": "10:30 AM",
+        "venue": "Acoya Mesa",
+        "address": "6502 E Brown Rd",
+        "city": "Mesa",
+        "description": "3rd Friday networking breakfast at the community",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Friday",
+        "color": "#EF4444"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.441465,
+          33.407909
+        ]
+      },
+      "properties": {
+        "id": "e007",
+        "lat": 33.407909,
+        "lon": -112.441465,
+        "name": "Sunrise Haven Senior Homes Grand Opening",
         "category": "Open House",
         "recurring": false,
-        "rsvp": true,
-        "date": "2026-09-10",
-        "date_label": "Thu, Sep 10",
+        "rsvp": false,
+        "date": "2026-09-18",
+        "date_label": "Fri, Sep 18",
         "start_time": "12:00 PM",
-        "end_time": "5:00 PM",
-        "venue": "Three Palms Assisted Living",
-        "address": "4102 W Fallen Leaf Lane",
-        "city": "Glendale",
-        "description": "Brand-new assisted living home licensed for 10 beds; tour the home, meet the team, refreshments served",
+        "end_time": "4:00 PM",
+        "venue": "Sunrise Haven Senior Homes",
+        "address": "17809 W Getty Dr",
+        "city": "Goodyear",
+        "description": "Grand opening / open house",
+        "event_url": "https://www.facebook.com/share/p/1GYBETrTnq/",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Friday",
+        "color": "#EF4444"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.922968,
+          33.644281
+        ]
+      },
+      "properties": {
+        "id": "e008",
+        "lat": 33.644281,
+        "lon": -111.922968,
+        "name": "Maravilla Scottsdale Fall Open House",
+        "category": "Open House",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-09-18",
+        "date_label": "Fri, Sep 18",
+        "start_time": "1:00 PM",
+        "end_time": "3:00 PM",
+        "venue": "Maravilla Scottsdale",
+        "address": "7325 E Princess Blvd",
+        "city": "Scottsdale",
+        "description": "Fall open house; Abbey Kent Director of Sales",
         "event_url": "",
-        "image_url": "images/three-palms-2026-09-10.jpg",
-        "has_image": true,
-        "contact": "602-421-9994 / Nidhi",
-        "weekday": "Thursday",
-        "color": "#DB2777"
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Friday",
+        "color": "#EF4444"
       }
     }
   ]

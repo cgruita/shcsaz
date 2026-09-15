@@ -1,0 +1,9 @@
+id,name,category,start_date,start_time,end_time,venue,address,city,description,event_url,image_url,contact,recurring,rsvp,include
+e001,East Valley B.O.B. Business Over Breakfast,Networking,2026-09-16,8:30 AM,10:00 AM,Santé of Mesa,5358 E Baseline Rd,Mesa,East Valley B.O.B. at the community,,,,yes,no,yes
+e002,Park Senior Villas Inside Dining Breakfast,Networking,2026-09-16,9:00 AM,10:30 AM,Park Senior Villas Goodyear,4211 W Pebble Creek Pkwy,Goodyear,West Valley hosts breakfast at the community,,,,no,no,yes
+e003,Aloha to Summer Hawaiian BBQ,Networking,2026-09-16,11:00 AM,1:00 PM,Ridges at Peoria,18170 N 91st Ave,Peoria,Hawaiian BBQ mixer at The Goodman Group community,,,,no,no,yes
+e004,HSP Phoenix Scottsdale Networking Social,Networking,2026-09-16,3:30 PM,5:00 PM,Acoya Shea,7373 E Shea Blvd,Scottsdale,HSP mixer at COGIR / Acoya Shea,,,,yes,no,yes
+e005,Wine Tasting Open House,Open House,2026-09-17,1:00 PM,3:00 PM,COGIR Morrison Ranch,3333 E Morrison Ranch Pkwy,Gilbert,Wine tasting open house at the community,,,,no,no,yes
+e006,3rd Friday Welcome to the Jungle,Networking,2026-09-18,9:00 AM,10:30 AM,Acoya Mesa,6502 E Brown Rd,Mesa,3rd Friday networking breakfast at the community,,,,yes,no,yes
+e007,Sunrise Haven Senior Homes Grand Opening,Open House,2026-09-18,12:00 PM,4:00 PM,Sunrise Haven Senior Homes,17809 W Getty Dr,Goodyear,Grand opening / open house,https://www.facebook.com/share/p/1GYBETrTnq/,,,no,no,yes
+e008,Maravilla Scottsdale Fall Open House,Open House,2026-09-18,1:00 PM,3:00 PM,Maravilla Scottsdale,7325 E Princess Blvd,Scottsdale,Fall open house; Abbey Kent Director of Sales,,,,no,no,yes

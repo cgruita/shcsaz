@@ -130,5 +130,37 @@
   "4102 W Fallen Leaf Lane, Glendale": [
     33.711665,
     -112.148668
+  ],
+  "5358 E Baseline Rd, Mesa": [
+    33.380047,
+    -111.715479
+  ],
+  "4211 W Pebble Creek Pkwy, Goodyear": [
+    33.478688,
+    -112.392403
+  ],
+  "18170 N 91st Ave, Peoria": [
+    33.6494,
+    -112.256587
+  ],
+  "7373 E Shea Blvd, Scottsdale": [
+    33.581608,
+    -111.922271
+  ],
+  "3333 E Morrison Ranch Pkwy, Gilbert": [
+    33.34597,
+    -111.718445
+  ],
+  "6502 E Brown Rd, Mesa": [
+    33.43832,
+    -111.69023
+  ],
+  "17809 W Getty Dr, Goodyear": [
+    33.407909,
+    -112.441465
+  ],
+  "7325 E Princess Blvd, Scottsdale": [
+    33.644281,
+    -111.922968
   ]
 }
