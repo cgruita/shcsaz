@@ -84,7 +84,7 @@ function roundRectPath(ctx, x, y, w, h, r) {
 function makeLabelBg(borderColor) {
   const pr = 2;
   const size = 40 * pr;
-  const margin = 3 * pr; // transparent breathing room around the box (keeps box off the pin)
+  const margin = 2 * pr; // transparent breathing room around the box
   const border = 2 * pr;
   const outerR = 9 * pr;
   const innerR = Math.max(1, outerR - border);
@@ -735,7 +735,8 @@ function updateLeafletLabels() {
 
     // Try the label to the right, then left, then nudged up/down on each side -
     // so a nearby label pushes this one aside instead of hiding it.
-    const gapX = 16;  // clear of circleMarker radius (8) + stroke + breathing room
+    const r = marker.options.radius || 8;
+    const gapX = r + 14;  // circle edge + clear air — never overlap the label box
     const dv = h + 6;
     const candidates = [
       ["right", 0], ["left", 0],
@@ -799,7 +800,7 @@ function renderLeafletMap(features) {
       .bindTooltip(labelHtml(f.properties), {
         permanent: true,
         direction: "right",
-        offset: [16, 0],
+        offset: [22, 0],
         className: "map-label",
         interactive: true,
       })
@@ -1093,7 +1094,7 @@ if (webglSupported) {
         type: "circle",
         source: "events",
         paint: {
-          "circle-radius": ["interpolate", ["exponential", 1.4], ["zoom"], 8, 9, 12, 13, 15, 20, 18, 30],
+          "circle-radius": ["interpolate", ["exponential", 1.4], ["zoom"], 8, 8, 12, 10, 15, 12, 18, 14],
           "circle-color": ["get", "color"],
           "circle-stroke-width": 2,
           "circle-stroke-color": "#ffffff",
@@ -1107,7 +1108,7 @@ if (webglSupported) {
         layout: {
           "icon-image": ["concat", "label-bg-", ["get", "weekday"]],
           "icon-text-fit": "both",
-          "icon-text-fit-padding": [2, 5, 2, 5],
+          "icon-text-fit-padding": [3, 7, 3, 7],
           "icon-allow-overlap": false,
           "text-field": [
             "concat",
@@ -1120,12 +1121,13 @@ if (webglSupported) {
           // Small when zoomed out, only modestly larger up close.
           "text-size": ["interpolate", ["linear"], ["zoom"], 8, 7.5, 11, 10, 14, 13, 17, 17],
           // Let crowded labels flip to a free side instead of one being dropped.
-          "text-variable-anchor": ["left", "right", "top", "bottom"],
-          // Keep a clear gap past the circle (radius grows with zoom faster than
-          // text-size, so a fixed ems offset lets the box sit on the pin).
+          "text-variable-anchor": ["left", "right"],
+          // Offset in ems from the pin to the text anchor. Sized so the fitted
+          // rounded label box (padding + border outside the glyphs) clears the
+          // circle at every zoom — no overlap.
           "text-radial-offset": [
             "interpolate", ["linear"], ["zoom"],
-            8, 2.1, 12, 2.3, 15, 2.5, 18, 2.7
+            8, 3.8, 11, 4.6, 14, 5.8, 17, 7.2
           ],
           "text-justify": "auto",
           "text-allow-overlap": false,
@@ -1147,7 +1149,7 @@ if (webglSupported) {
         type: "circle",
         source: "selected-event",
         paint: {
-          "circle-radius": ["interpolate", ["exponential", 1.4], ["zoom"], 8, 14, 12, 18, 15, 25, 18, 36],
+          "circle-radius": ["interpolate", ["exponential", 1.4], ["zoom"], 8, 12, 12, 14, 15, 16, 18, 18],
           "circle-color": "rgba(0,0,0,0)",
           "circle-stroke-width": 3,
           "circle-stroke-color": "#0f2a43",
