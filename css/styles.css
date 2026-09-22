@@ -7,7 +7,12 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100vh; /* definite height so the split panes can divide it */
+  /* 100dvh = visible viewport (excludes mobile URL/tool bars). 100vh alone
+     is often taller than the screen, so the last list/table rows were clipped. */
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
   overflow: hidden;
 }
 
@@ -146,6 +151,9 @@ header p {
   min-width: 0;
   min-height: 0; /* allow the list to shrink and scroll inside the pane */
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  /* Extra room so the last event clears sticky headers / home indicator */
+  padding-bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));
 }
 
 /* Vertical resizer between the map and the list. */
@@ -459,6 +467,8 @@ header p {
   flex: 1;
   min-height: 0;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));
 }
 
 #events-table {
@@ -583,6 +593,7 @@ header p {
 
   #map {
     height: 48vh;
+    height: 48dvh;
     flex: none;
   }
 
