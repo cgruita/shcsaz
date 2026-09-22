@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-map-version="2026-09-21-2">
+<html lang="en" data-map-version="2026-09-21-3">
 <head>
   <meta charset="UTF-8" />
   <title>Phoenix Metro Weekly Assisted Living Events</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet" />
   <link href="vendor/leaflet/leaflet.css" rel="stylesheet" />
-  <link href="css/styles.css?v=2026-09-21-2" rel="stylesheet" />
+  <link href="css/styles.css?v=2026-09-21-3" rel="stylesheet" />
 </head>
 <body>
   <header>
     <h1>Phoenix Metro Weekly Assisted Living Events</h1>
     <p id="week-summary">Loading events...</p>
-    <p id="map-version" hidden>Version 2026-09-21-2</p>
+    <p id="map-version" hidden>Version …</p>
     <div class="view-toggle" role="tablist" aria-label="View">
       <button type="button" data-view="map" class="active" role="tab" aria-selected="true">Map</button>
       <button type="button" data-view="split" role="tab" aria-selected="false">Split</button>
@@ -45,29 +45,37 @@
   </div>
 
   <script>
-    // Shows Version chip for ?version=… or bare ?version.
-    // Also accepts #version (no query). Yellow chip on the dark header.
-    // Include &v=2026-09-21-2 in the URL so GitHub Pages does not reuse a stale HTML cache.
+    // ?version alone is enough. Fetches version.txt with a timestamp so GitHub
+    // Pages cannot serve a stale build id from an old HTML cache entry.
     (function () {
-      var params = new URLSearchParams(location.search);
-      var want = params.has("version") || location.hash === "#version";
-      if (!want) return;
-      var ver = "2026-09-21-2";
-      var el = document.getElementById("map-version");
-      if (!el) {
-        el = document.createElement("p");
-        el.id = "map-version";
-        var header = document.querySelector("header");
-        (header || document.body).appendChild(el);
+      if (!new URLSearchParams(location.search).has("version") && location.hash !== "#version") return;
+      function paint(ver) {
+        var el = document.getElementById("map-version");
+        if (!el) {
+          el = document.createElement("p");
+          el.id = "map-version";
+          var header = document.querySelector("header");
+          (header || document.body).appendChild(el);
+        }
+        el.hidden = false;
+        el.removeAttribute("hidden");
+        el.textContent = "Version " + ver;
+        document.title = "AL map " + ver;
       }
-      el.hidden = false;
-      el.removeAttribute("hidden");
-      el.textContent = "Version " + ver;
-      document.title = "AL map " + ver;
+      paint("loading…");
+      fetch("version.txt?t=" + Date.now(), { cache: "no-store" })
+        .then(function (r) { return r.text(); })
+        .then(function (t) {
+          var ver = (t || "").trim() || (typeof MAP_VERSION !== "undefined" ? MAP_VERSION : "unknown");
+          paint(ver);
+        })
+        .catch(function () {
+          paint(typeof MAP_VERSION !== "undefined" ? MAP_VERSION : "unknown");
+        });
     })();
   </script>
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
-  <script src="js/config.js?v=2026-09-21-2"></script>
-  <script src="js/map.js?v=2026-09-21-2"></script>
+  <script src="js/config.js?v=2026-09-21-3"></script>
+  <script src="js/map.js?v=2026-09-21-3"></script>
 </body>
 </html>
