@@ -468,7 +468,7 @@ header p {
   min-height: 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
 }
 
 #events-table {
@@ -587,21 +587,49 @@ header p {
     font-size: 0.8rem;
   }
 
+  /* Let the PAGE scroll on mobile. Nested #event-list scrolling inside a
+     100dvh flex shell still clipped the last day/event on iPhone. */
+  body {
+    height: auto;
+    max-height: none;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .split,
+  .layout {
+    flex: none;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
   .layout {
     flex-direction: column;
   }
 
   #map {
-    height: 48vh;
-    height: 48dvh;
+    height: 42vh;
+    height: 42dvh;
+    min-height: 220px;
     flex: none;
   }
 
   #event-list {
-    /* fill the space under the map - the desktop map/list ratio doesn't apply
-       once the panes are stacked */
-    flex: 1 1 0;
+    flex: none;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
     border-top: 1px solid #e2e8f0;
+    /* Plenty of room past the last event (home indicator + thumb reach) */
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .event-row:last-child {
+    margin-bottom: 1rem;
   }
 
   /* Labels scale with zoom so they don't swamp a small screen when zoomed out.
