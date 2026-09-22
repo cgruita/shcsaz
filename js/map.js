@@ -1,5 +1,21 @@
 mapboxgl.accessToken = MAPBOX_TOKEN;
 
+
+// ?version (or ?version=1) shows MAP_VERSION from config.js so you can confirm
+// the browser loaded a fresh build after a GitHub Pages deploy.
+function showVersionIfRequested() {
+  const params = new URLSearchParams(location.search);
+  if (!params.has("version")) return;
+  const el = document.getElementById("map-version");
+  if (!el) return;
+  const ver = typeof MAP_VERSION !== "undefined" ? MAP_VERSION : "unknown";
+  el.textContent = `Version ${ver}`;
+  el.hidden = false;
+  document.title = `AL map ${ver}`;
+}
+showVersionIfRequested();
+
+
 function supportsWebGL() {
   try {
     const canvas = document.createElement("canvas");
