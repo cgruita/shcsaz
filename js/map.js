@@ -84,7 +84,7 @@ function roundRectPath(ctx, x, y, w, h, r) {
 function makeLabelBg(borderColor) {
   const pr = 2;
   const size = 40 * pr;
-  const margin = 1.5 * pr; // transparent breathing room around the box
+  const margin = 3 * pr; // transparent breathing room around the box (keeps box off the pin)
   const border = 2 * pr;
   const outerR = 9 * pr;
   const innerR = Math.max(1, outerR - border);
@@ -735,7 +735,7 @@ function updateLeafletLabels() {
 
     // Try the label to the right, then left, then nudged up/down on each side -
     // so a nearby label pushes this one aside instead of hiding it.
-    const gapX = 8;
+    const gapX = 16;  // clear of circleMarker radius (8) + stroke + breathing room
     const dv = h + 6;
     const candidates = [
       ["right", 0], ["left", 0],
@@ -799,7 +799,7 @@ function renderLeafletMap(features) {
       .bindTooltip(labelHtml(f.properties), {
         permanent: true,
         direction: "right",
-        offset: [10, 0],
+        offset: [16, 0],
         className: "map-label",
         interactive: true,
       })
@@ -1121,7 +1121,12 @@ if (webglSupported) {
           "text-size": ["interpolate", ["linear"], ["zoom"], 8, 7.5, 11, 10, 14, 13, 17, 17],
           // Let crowded labels flip to a free side instead of one being dropped.
           "text-variable-anchor": ["left", "right", "top", "bottom"],
-          "text-radial-offset": 1.4,
+          // Keep a clear gap past the circle (radius grows with zoom faster than
+          // text-size, so a fixed ems offset lets the box sit on the pin).
+          "text-radial-offset": [
+            "interpolate", ["linear"], ["zoom"],
+            8, 2.1, 12, 2.3, 15, 2.5, 18, 2.7
+          ],
           "text-justify": "auto",
           "text-allow-overlap": false,
         },
