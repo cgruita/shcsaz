@@ -1,19 +1,29 @@
-mapboxgl.accessToken = MAPBOX_TOKEN;
-
-
-// ?version (or ?version=1) shows MAP_VERSION from config.js so you can confirm
-// the browser loaded a fresh build after a GitHub Pages deploy.
-function showVersionIfRequested() {
+// ?version shows MAP_VERSION so you can confirm a fresh non-cached build.
+// Runs before Mapbox setup so a GL failure cannot hide it.
+(function showVersionIfRequested() {
   const params = new URLSearchParams(location.search);
   if (!params.has("version")) return;
-  const el = document.getElementById("map-version");
-  if (!el) return;
   const ver = typeof MAP_VERSION !== "undefined" ? MAP_VERSION : "unknown";
-  el.textContent = `Version ${ver}`;
+  let el = document.getElementById("map-version");
+  if (!el) {
+    el = document.createElement("p");
+    el.id = "map-version";
+    const header = document.querySelector("header");
+    if (header) header.appendChild(el);
+    else document.body.insertBefore(el, document.body.firstChild);
+  }
   el.hidden = false;
-  document.title = `AL map ${ver}`;
-}
-showVersionIfRequested();
+  el.removeAttribute("hidden");
+  el.textContent = "Version " + ver;
+  el.style.cssText =
+    "display:block!important;margin:8px 0 0;padding:6px 10px;" +
+    "background:#0f2a43;color:#fff;font:600 14px/1.3 system-ui,sans-serif;" +
+    "border-radius:6px;width:fit-content;";
+  document.title = "AL map " + ver;
+  console.info("[shcsaz] MAP_VERSION", ver);
+})();
+
+mapboxgl.accessToken = MAPBOX_TOKEN;
 
 
 function supportsWebGL() {
