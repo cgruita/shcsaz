@@ -6,32 +6,65 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.392403,
-          33.478688
+          -112.109391,
+          33.395593
+        ]
+      },
+      "properties": {
+        "id": "e001",
+        "lat": 33.395593,
+        "lon": -112.109391,
+        "name": "Sunland Liberty Open House",
+        "category": "Open House",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-09-23",
+        "date_label": "Wed, Sep 23",
+        "start_time": "1:00 PM",
+        "end_time": "5:00 PM",
+        "venue": "Sunland Liberty Senior Living",
+        "address": "2339 W Sunland Ave",
+        "city": "Phoenix",
+        "description": "Senior living home open house (also Wed Sep 24 1\u20135pm); RSVP 602-688-2165 / text 602-688-2535",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.709497,
+          33.436321
         ]
       },
       "properties": {
         "id": "e002",
-        "lat": 33.478688,
-        "lon": -112.392403,
-        "name": "Park Senior Villas Inside Dining Breakfast",
-        "category": "Networking",
+        "lat": 33.436321,
+        "lon": -111.709497,
+        "name": "Citrus Grove Grand Opening / Open House",
+        "category": "Open House",
         "recurring": false,
         "rsvp": false,
-        "date": "2026-09-16",
-        "date_label": "Wed, Sep 16",
-        "start_time": "9:00 AM",
-        "end_time": "10:30 AM",
-        "venue": "Park Senior Villas Goodyear",
-        "address": "4211 W Pebble Creek Pkwy",
-        "city": "Goodyear",
-        "description": "AL / memory care community",
-        "event_url": "",
+        "date": "2026-09-24",
+        "date_label": "Thu, Sep 24",
+        "start_time": "11:00 AM",
+        "end_time": "3:00 PM",
+        "venue": "Citrus Grove Assisted Living",
+        "address": "5628 E Fox St",
+        "city": "Mesa",
+        "description": "AL home grand opening; Carrie Bentz founder",
+        "event_url": "https://www.facebook.com/events/1052449964288701/",
         "image_url": "",
         "has_image": false,
         "contact": "",
-        "weekday": "Wednesday",
-        "color": "#EAB308"
+        "weekday": "Thursday",
+        "color": "#DB2777"
       }
     },
     {
@@ -39,230 +72,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.256587,
-          33.6494
+          -111.922493,
+          33.579119
         ]
       },
       "properties": {
         "id": "e003",
-        "lat": 33.6494,
-        "lon": -112.256587,
-        "name": "Aloha to Summer Hawaiian BBQ",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-09-16",
-        "date_label": "Wed, Sep 16",
-        "start_time": "11:00 AM",
-        "end_time": "1:00 PM",
-        "venue": "Ridges at Peoria",
-        "address": "18170 N 91st Ave",
-        "city": "Peoria",
-        "description": "Campus with IL / AL / memory care (Garden Ridge + Arbor Ridge)",
-        "event_url": "",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Wednesday",
-        "color": "#EAB308"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.922271,
-          33.581608
-        ]
-      },
-      "properties": {
-        "id": "e004",
-        "lat": 33.581608,
-        "lon": -111.922271,
-        "name": "HSP Phoenix Scottsdale Networking Social",
+        "lat": 33.579119,
+        "lon": -111.922493,
+        "name": "4th Friday at Sunrise Gold Dust",
         "category": "Networking",
         "recurring": true,
         "rsvp": false,
-        "date": "2026-09-16",
-        "date_label": "Wed, Sep 16",
+        "date": "2026-09-25",
+        "date_label": "Fri, Sep 25",
         "start_time": "3:30 PM",
         "end_time": "5:00 PM",
-        "venue": "Acoya Shea",
-        "address": "7373 E Shea Blvd",
+        "venue": "Sunrise of Scottsdale",
+        "address": "7370 E Gold Dust Ave",
         "city": "Scottsdale",
-        "description": "Campus with IL / AL / memory care; HSP at the community",
-        "event_url": "",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Wednesday",
-        "color": "#EAB308"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.718445,
-          33.34597
-        ]
-      },
-      "properties": {
-        "id": "e005",
-        "lat": 33.34597,
-        "lon": -111.718445,
-        "name": "Wine Tasting Open House",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-09-17",
-        "date_label": "Thu, Sep 17",
-        "start_time": "1:00 PM",
-        "end_time": "3:00 PM",
-        "venue": "COGIR Morrison Ranch",
-        "address": "3333 E Morrison Ranch Pkwy",
-        "city": "Gilbert",
-        "description": "AL / memory care community open house",
-        "event_url": "",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Thursday",
-        "color": "#DB2777"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.69023,
-          33.43832
-        ]
-      },
-      "properties": {
-        "id": "e006",
-        "lat": 33.43832,
-        "lon": -111.69023,
-        "name": "3rd Friday Welcome to the Jungle",
-        "category": "Networking",
-        "recurring": true,
-        "rsvp": false,
-        "date": "2026-09-18",
-        "date_label": "Fri, Sep 18",
-        "start_time": "9:00 AM",
-        "end_time": "10:30 AM",
-        "venue": "Acoya Mesa",
-        "address": "6502 E Brown Rd",
-        "city": "Mesa",
-        "description": "Campus with IL / AL / memory care",
+        "description": "Campus with IL / AL / memory care; recurring 4th Friday",
         "event_url": "",
         "image_url": "",
         "has_image": false,
         "contact": "",
         "weekday": "Friday",
         "color": "#EF4444"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.441465,
-          33.407909
-        ]
-      },
-      "properties": {
-        "id": "e007",
-        "lat": 33.407909,
-        "lon": -112.441465,
-        "name": "Sunrise Haven Senior Homes Grand Opening",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-09-18",
-        "date_label": "Fri, Sep 18",
-        "start_time": "12:00 PM",
-        "end_time": "4:00 PM",
-        "venue": "Sunrise Haven Senior Homes",
-        "address": "17809 W Getty Dr",
-        "city": "Goodyear",
-        "description": "House open house / grand opening; 24/7 care home",
-        "event_url": "https://www.facebook.com/share/p/1GYBETrTnq/",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Friday",
-        "color": "#EF4444"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.922968,
-          33.644281
-        ]
-      },
-      "properties": {
-        "id": "e008",
-        "lat": 33.644281,
-        "lon": -111.922968,
-        "name": "Maravilla Scottsdale Fall Open House",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-09-18",
-        "date_label": "Fri, Sep 18",
-        "start_time": "1:00 PM",
-        "end_time": "3:00 PM",
-        "venue": "Maravilla Scottsdale",
-        "address": "7325 E Princess Blvd",
-        "city": "Scottsdale",
-        "description": "Campus with IL / AL / memory care",
-        "event_url": "",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Friday",
-        "color": "#EF4444"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.203644,
-          33.68292
-        ]
-      },
-      "properties": {
-        "id": "e009",
-        "lat": 33.68292,
-        "lon": -112.203644,
-        "name": "SHCSAZ Happy Hour",
-        "category": "Networking",
-        "recurring": true,
-        "rsvp": false,
-        "date": "2026-09-17",
-        "date_label": "Thu, Sep 17",
-        "start_time": "3:00 PM",
-        "end_time": "5:00 PM",
-        "venue": "Cold Beers & Cheeseburgers",
-        "address": "6718 W Deer Valley Rd",
-        "city": "Glendale",
-        "description": "SHCSAZ group happy hour",
-        "event_url": "https://www.facebook.com/events/1433225022239713/",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Thursday",
-        "color": "#DB2777"
       }
     }
   ]
