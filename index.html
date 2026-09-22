@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-map-version="2026-09-21-1">
+<html lang="en" data-map-version="2026-09-21-2">
 <head>
   <meta charset="UTF-8" />
   <title>Phoenix Metro Weekly Assisted Living Events</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet" />
   <link href="vendor/leaflet/leaflet.css" rel="stylesheet" />
-  <link href="css/styles.css?v=2026-09-21-1" rel="stylesheet" />
+  <link href="css/styles.css?v=2026-09-21-2" rel="stylesheet" />
 </head>
 <body>
   <header>
     <h1>Phoenix Metro Weekly Assisted Living Events</h1>
     <p id="week-summary">Loading events...</p>
-    <p id="map-version" hidden></p>
+    <p id="map-version" hidden>Version 2026-09-21-2</p>
     <div class="view-toggle" role="tablist" aria-label="View">
       <button type="button" data-view="map" class="active" role="tab" aria-selected="true">Map</button>
       <button type="button" data-view="split" role="tab" aria-selected="false">Split</button>
@@ -45,10 +45,14 @@
   </div>
 
   <script>
-    // Inline so ?version works even when map.js is stuck in an old cache.
+    // Shows Version chip for ?version=… or bare ?version.
+    // Also accepts #version (no query). Yellow chip on the dark header.
+    // Include &v=2026-09-21-2 in the URL so GitHub Pages does not reuse a stale HTML cache.
     (function () {
-      if (!new URLSearchParams(location.search).has("version")) return;
-      var ver = "2026-09-21-1";
+      var params = new URLSearchParams(location.search);
+      var want = params.has("version") || location.hash === "#version";
+      if (!want) return;
+      var ver = "2026-09-21-2";
       var el = document.getElementById("map-version");
       if (!el) {
         el = document.createElement("p");
@@ -59,12 +63,11 @@
       el.hidden = false;
       el.removeAttribute("hidden");
       el.textContent = "Version " + ver;
-      el.style.cssText = "display:block!important;margin:8px 0 0;padding:6px 10px;background:#0f2a43;color:#fff;font:600 14px/1.3 system-ui,sans-serif;border-radius:6px;width:fit-content;";
       document.title = "AL map " + ver;
     })();
   </script>
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
-  <script src="js/config.js?v=2026-09-21-1"></script>
-  <script src="js/map.js?v=2026-09-21-1"></script>
+  <script src="js/config.js?v=2026-09-21-2"></script>
+  <script src="js/map.js?v=2026-09-21-2"></script>
 </body>
 </html>

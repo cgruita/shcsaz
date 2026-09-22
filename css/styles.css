@@ -604,14 +604,22 @@ header p {
   }
 }
 
-/* Shown when the page is opened with ?version in the URL */
+/* Shown when the page is opened with ?version (yellow on dark header) */
 #map-version {
-  margin: 4px 0 0;
-  font-size: 13px;
+  margin: 8px 0 0;
+  padding: 6px 10px;
+  font-size: 14px;
   font-weight: 600;
-  color: #0f2a43;
   font-variant-numeric: tabular-nums;
+  color: #0f2a43;
+  background: #fde68a;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  width: fit-content;
+}
+#map-version[hidden] {
+  display: none !important;
 }
 #map-version:not([hidden]) {
-  display: block;
+  display: block !important;
 }

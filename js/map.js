@@ -762,7 +762,7 @@ function updateLeafletLabels() {
     // Try the label to the right, then left, then nudged up/down on each side -
     // so a nearby label pushes this one aside instead of hiding it.
     const r = marker.options.radius || 8;
-    const gapX = r + 14;  // circle edge + clear air — never overlap the label box
+    const gapX = r + 8;  // circle edge + small clear gap
     const dv = h + 6;
     const candidates = [
       ["right", 0], ["left", 0],
@@ -826,7 +826,7 @@ function renderLeafletMap(features) {
       .bindTooltip(labelHtml(f.properties), {
         permanent: true,
         direction: "right",
-        offset: [22, 0],
+        offset: [16, 0],
         className: "map-label",
         interactive: true,
       })
@@ -1120,7 +1120,7 @@ if (webglSupported) {
         type: "circle",
         source: "events",
         paint: {
-          "circle-radius": ["interpolate", ["exponential", 1.4], ["zoom"], 8, 8, 12, 10, 15, 12, 18, 14],
+          "circle-radius": ["interpolate", ["exponential", 1.4], ["zoom"], 8, 8, 12, 11, 15, 13, 18, 16],
           "circle-color": ["get", "color"],
           "circle-stroke-width": 2,
           "circle-stroke-color": "#ffffff",
@@ -1153,7 +1153,7 @@ if (webglSupported) {
           // circle at every zoom — no overlap.
           "text-radial-offset": [
             "interpolate", ["linear"], ["zoom"],
-            8, 3.8, 11, 4.6, 14, 5.8, 17, 7.2
+            8, 2.4, 11, 2.7, 14, 3.0, 17, 3.3
           ],
           "text-justify": "auto",
           "text-allow-overlap": false,
