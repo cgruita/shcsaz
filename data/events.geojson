@@ -99,6 +99,105 @@
         "weekday": "Friday",
         "color": "#EF4444"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.115546,
+          33.623719
+        ]
+      },
+      "properties": {
+        "id": "e004",
+        "lat": 33.623719,
+        "lon": -112.115546,
+        "name": "AZCOA Networking Meeting",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-09-24",
+        "date_label": "Thu, Sep 24",
+        "start_time": "9:30 AM",
+        "end_time": "11:00 AM",
+        "venue": "Park Terrace Senior Living by Cogir",
+        "address": "2577 W Greenway Rd",
+        "city": "Phoenix",
+        "description": "AZCOA association networking at a Cogir IL/AL/MC community (Amy McCauley / WVSLE)",
+        "event_url": "https://www.facebook.com/groups/wvsle/posts/2023515645034844/",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.203952,
+          33.564765
+        ]
+      },
+      "properties": {
+        "id": "e005",
+        "lat": 33.564765,
+        "lon": -112.203952,
+        "name": "MorningStar Golden Ridge Sip & See",
+        "category": "Open House",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-09-24",
+        "date_label": "Thu, Sep 24",
+        "start_time": "4:00 PM",
+        "end_time": "6:00 PM",
+        "venue": "MorningStar at Golden Ridge",
+        "address": "6735 W Golden Lane",
+        "city": "Peoria",
+        "description": "Sip & See / open house tours at MorningStar community",
+        "event_url": "https://www.facebook.com/groups/wvsle/posts/2024748181578257/",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.261607,
+          33.605598
+        ]
+      },
+      "properties": {
+        "id": "e006",
+        "lat": 33.605598,
+        "lon": -112.261607,
+        "name": "Managing Behaviors without Medications",
+        "category": "Misc",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-09-24",
+        "date_label": "Thu, Sep 24",
+        "start_time": "2:30 PM",
+        "end_time": "3:30 PM",
+        "venue": "Cogir Peoria (Hospice of the West)",
+        "address": "13391 N 94th Dr",
+        "city": "Peoria",
+        "description": "Education session at Cogir Peoria hosted with Hospice of the West",
+        "event_url": "https://www.facebook.com/groups/wvsle/posts/2024747754911633/",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
     }
   ]
 }
