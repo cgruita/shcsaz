@@ -231,6 +231,39 @@
         "weekday": "Thursday",
         "color": "#DB2777"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.258735,
+          33.709857
+        ]
+      },
+      "properties": {
+        "id": "e007",
+        "lat": 33.709857,
+        "lon": -112.258735,
+        "name": "Ma Maison Open House",
+        "category": "Open House",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-09-25",
+        "date_label": "Fri, Sep 25",
+        "start_time": "5:00 PM",
+        "end_time": "8:00 PM",
+        "venue": "Ma Maison Assisted Living",
+        "address": "24885 N 93rd Ave",
+        "city": "Peoria",
+        "description": "Boutique 10-bed memory care open house (wine/appetizers/tours); Jana Milligan / Sunset View",
+        "event_url": "https://www.facebook.com/groups/arizonaseniorplacement/posts/2047577559200481",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Friday",
+        "color": "#EF4444"
+      }
     }
   ]
 }
