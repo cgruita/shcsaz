@@ -25,13 +25,46 @@
         "venue": "Sunland Liberty Senior Living",
         "address": "2339 W Sunland Ave",
         "city": "Phoenix",
-        "description": "Senior living home open house (also Wed Sep 24 1\u20135pm); RSVP 602-688-2165 / text 602-688-2535",
+        "description": "Day 1 of 2 (also Thu Sep 24 1\u20135pm); RSVP 602-688-2165 / text 602-688-2535; call for gate code",
         "event_url": "",
         "image_url": "",
         "has_image": false,
         "contact": "",
         "weekday": "Wednesday",
         "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.109391,
+          33.395593
+        ]
+      },
+      "properties": {
+        "id": "e001b",
+        "lat": 33.395593,
+        "lon": -112.109391,
+        "name": "Sunland Liberty Open House (Day 2)",
+        "category": "Open House",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-09-24",
+        "date_label": "Thu, Sep 24",
+        "start_time": "1:00 PM",
+        "end_time": "5:00 PM",
+        "venue": "Sunland Liberty Senior Living",
+        "address": "2339 W Sunland Ave",
+        "city": "Phoenix",
+        "description": "Day 2 of 2 (Wed\u2013Thu Sep 23\u201324); RSVP 602-688-2165 / text 602-688-2535; call for gate code",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#DB2777"
       }
     },
     {

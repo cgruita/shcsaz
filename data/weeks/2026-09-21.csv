@@ -1,5 +1,6 @@
 id,name,category,start_date,start_time,end_time,venue,address,city,description,event_url,image_url,contact,recurring,rsvp,include
-e001,Sunland Liberty Open House,Open House,2026-09-23,1:00 PM,5:00 PM,Sunland Liberty Senior Living,2339 W Sunland Ave,Phoenix,Senior living home open house (also Wed Sep 24 1–5pm); RSVP 602-688-2165 / text 602-688-2535,,,,no,yes,yes
+e001,Sunland Liberty Open House,Open House,2026-09-23,1:00 PM,5:00 PM,Sunland Liberty Senior Living,2339 W Sunland Ave,Phoenix,Day 1 of 2 (also Thu Sep 24 1–5pm); RSVP 602-688-2165 / text 602-688-2535; call for gate code,,,,no,yes,yes
+e001b,Sunland Liberty Open House (Day 2),Open House,2026-09-24,1:00 PM,5:00 PM,Sunland Liberty Senior Living,2339 W Sunland Ave,Phoenix,Day 2 of 2 (Wed–Thu Sep 23–24); RSVP 602-688-2165 / text 602-688-2535; call for gate code,,,,no,yes,yes
 e002,Citrus Grove Grand Opening / Open House,Open House,2026-09-24,11:00 AM,3:00 PM,Citrus Grove Assisted Living,5628 E Fox St,Mesa,AL home grand opening; Carrie Bentz founder,https://www.facebook.com/events/1052449964288701/,,,no,no,yes
 e003,4th Friday at Sunrise Gold Dust,Networking,2026-09-25,3:30 PM,5:00 PM,Sunrise of Scottsdale,7370 E Gold Dust Ave,Scottsdale,Campus with IL / AL / memory care; recurring 4th Friday,,,,yes,no,yes
 e004,AZCOA Networking Meeting,Networking,2026-09-24,9:30 AM,11:00 AM,Park Terrace Senior Living by Cogir,2577 W Greenway Rd,Phoenix,AZCOA association networking at a Cogir IL/AL/MC community (Amy McCauley / WVSLE),https://www.facebook.com/groups/wvsle/posts/2023515645034844/,,,no,no,yes
