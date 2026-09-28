@@ -6,30 +6,96 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.109391,
-          33.395593
+          -111.945598,
+          33.607018
         ]
       },
       "properties": {
         "id": "e001",
-        "lat": 33.395593,
-        "lon": -112.109391,
-        "name": "Sunland Liberty Open House",
+        "lat": 33.607018,
+        "lon": -111.945598,
+        "name": "Pershing Manor Open House",
         "category": "Open House",
         "recurring": false,
         "rsvp": true,
-        "date": "2026-09-23",
-        "date_label": "Wed, Sep 23",
-        "start_time": "1:00 PM",
-        "end_time": "5:00 PM",
-        "venue": "Sunland Liberty Senior Living",
-        "address": "2339 W Sunland Ave",
-        "city": "Phoenix",
-        "description": "Day 1 of 2 (also Thu Sep 24 1\u20135pm); RSVP 602-688-2165 / text 602-688-2535; call for gate code",
-        "event_url": "",
+        "date": "2026-09-29",
+        "date_label": "Tue, Sep 29",
+        "start_time": "10:00 AM",
+        "end_time": "4:00 PM",
+        "venue": "Pershing Manor",
+        "address": "6228 E Pershing Ave",
+        "city": "Scottsdale",
+        "description": "Open house under new management (Senior Care Management & Consulting); drop in anytime",
+        "event_url": "https://www.facebook.com/groups/alconnect/posts/28866101306409895",
+        "image_url": "",
+        "has_image": false,
+        "contact": "RSVP Jessica 480-395-8154",
+        "weekday": "Tuesday",
+        "color": "#22C55E"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.883473,
+          33.584755
+        ]
+      },
+      "properties": {
+        "id": "e002",
+        "lat": 33.584755,
+        "lon": -111.883473,
+        "name": "Secret Garden Speakeasy \u2013 Grand Reopening",
+        "category": "Open House",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-09-29",
+        "date_label": "Tue, Sep 29",
+        "start_time": "4:00 PM",
+        "end_time": "7:00 PM",
+        "venue": "Gardens Care Senior Living",
+        "address": "9185 E Desert Cove Ave",
+        "city": "Scottsdale",
+        "description": "Courtyard grand reopening after remodel; meet the team",
+        "event_url": "https://www.facebook.com/groups/SHCSAZ/posts/4571218049779219/",
         "image_url": "",
         "has_image": false,
         "contact": "",
+        "weekday": "Tuesday",
+        "color": "#22C55E"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.467306,
+          33.512379
+        ]
+      },
+      "properties": {
+        "id": "e003",
+        "lat": 33.512379,
+        "lon": -112.467306,
+        "name": "Shiloh Cottage Open House",
+        "category": "Open House",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-09-30",
+        "date_label": "Wed, Sep 30",
+        "start_time": "11:00 AM",
+        "end_time": "3:00 PM",
+        "venue": "Shiloh Cottage Assisted Living",
+        "address": "18941 W Oregon Ave",
+        "city": "Litchfield Park",
+        "description": "New west-valley AL home; open house (grand opening Thu Oct 1)",
+        "event_url": "https://www.facebook.com/groups/wvsle/posts/2028910194495389/",
+        "image_url": "",
+        "has_image": false,
+        "contact": "623-624-9111 / family@shilohcottage.com",
         "weekday": "Wednesday",
         "color": "#EAB308"
       }
@@ -39,129 +105,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.109391,
-          33.395593
-        ]
-      },
-      "properties": {
-        "id": "e001b",
-        "lat": 33.395593,
-        "lon": -112.109391,
-        "name": "Sunland Liberty Open House (Day 2)",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-09-24",
-        "date_label": "Thu, Sep 24",
-        "start_time": "1:00 PM",
-        "end_time": "5:00 PM",
-        "venue": "Sunland Liberty Senior Living",
-        "address": "2339 W Sunland Ave",
-        "city": "Phoenix",
-        "description": "Day 2 of 2 (Wed\u2013Thu Sep 23\u201324); RSVP 602-688-2165 / text 602-688-2535; call for gate code",
-        "event_url": "",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Thursday",
-        "color": "#DB2777"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.709497,
-          33.436321
-        ]
-      },
-      "properties": {
-        "id": "e002",
-        "lat": 33.436321,
-        "lon": -111.709497,
-        "name": "Citrus Grove Grand Opening / Open House",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-09-24",
-        "date_label": "Thu, Sep 24",
-        "start_time": "11:00 AM",
-        "end_time": "3:00 PM",
-        "venue": "Citrus Grove Assisted Living",
-        "address": "5628 E Fox St",
-        "city": "Mesa",
-        "description": "AL home grand opening; Carrie Bentz founder",
-        "event_url": "https://www.facebook.com/events/1052449964288701/",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Thursday",
-        "color": "#DB2777"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.922493,
-          33.579119
-        ]
-      },
-      "properties": {
-        "id": "e003",
-        "lat": 33.579119,
-        "lon": -111.922493,
-        "name": "4th Friday at Sunrise Gold Dust",
-        "category": "Networking",
-        "recurring": true,
-        "rsvp": false,
-        "date": "2026-09-25",
-        "date_label": "Fri, Sep 25",
-        "start_time": "3:30 PM",
-        "end_time": "5:00 PM",
-        "venue": "Sunrise of Scottsdale",
-        "address": "7370 E Gold Dust Ave",
-        "city": "Scottsdale",
-        "description": "Campus with IL / AL / memory care; recurring 4th Friday",
-        "event_url": "",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Friday",
-        "color": "#EF4444"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.115546,
-          33.623719
+          -112.467306,
+          33.512379
         ]
       },
       "properties": {
         "id": "e004",
-        "lat": 33.623719,
-        "lon": -112.115546,
-        "name": "AZCOA Networking Meeting",
-        "category": "Networking",
+        "lat": 33.512379,
+        "lon": -112.467306,
+        "name": "Shiloh Cottage Grand Opening",
+        "category": "Open House",
         "recurring": false,
         "rsvp": false,
-        "date": "2026-09-24",
-        "date_label": "Thu, Sep 24",
-        "start_time": "9:30 AM",
-        "end_time": "11:00 AM",
-        "venue": "Park Terrace Senior Living by Cogir",
-        "address": "2577 W Greenway Rd",
-        "city": "Phoenix",
-        "description": "AZCOA association networking at a Cogir IL/AL/MC community (Amy McCauley / WVSLE)",
-        "event_url": "https://www.facebook.com/groups/wvsle/posts/2023515645034844/",
+        "date": "2026-10-01",
+        "date_label": "Thu, Oct 01",
+        "start_time": "11:00 AM",
+        "end_time": "3:00 PM",
+        "venue": "Shiloh Cottage Assisted Living",
+        "address": "18941 W Oregon Ave",
+        "city": "Litchfield Park",
+        "description": "New west-valley AL home; grand opening (open house Wed Sep 30)",
+        "event_url": "https://www.facebook.com/groups/wvsle/posts/2028910194495389/",
         "image_url": "",
         "has_image": false,
-        "contact": "",
+        "contact": "623-624-9111 / family@shilohcottage.com",
         "weekday": "Thursday",
         "color": "#DB2777"
       }
@@ -171,30 +138,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.203952,
-          33.564765
+          -112.379576,
+          33.635193
         ]
       },
       "properties": {
         "id": "e005",
-        "lat": 33.564765,
-        "lon": -112.203952,
-        "name": "MorningStar Golden Ridge Sip & See",
-        "category": "Open House",
+        "lat": 33.635193,
+        "lon": -112.379576,
+        "name": "HSP West October Social",
+        "category": "Networking",
         "recurring": false,
-        "rsvp": false,
-        "date": "2026-09-24",
-        "date_label": "Thu, Sep 24",
+        "rsvp": true,
+        "date": "2026-10-01",
+        "date_label": "Thu, Oct 01",
         "start_time": "4:00 PM",
-        "end_time": "6:00 PM",
-        "venue": "MorningStar at Golden Ridge",
-        "address": "6735 W Golden Lane",
-        "city": "Peoria",
-        "description": "Sip & See / open house tours at MorningStar community",
-        "event_url": "https://www.facebook.com/groups/wvsle/posts/2024748181578257/",
+        "end_time": "",
+        "venue": "Vineyard Park of Surprise",
+        "address": "16650 N Stadium Way",
+        "city": "Surprise",
+        "description": "HSP West social at a senior living community; RSVP HSPWest@gmail.com by Sep 28",
+        "event_url": "",
         "image_url": "",
         "has_image": false,
-        "contact": "",
+        "contact": "HSPWest@gmail.com",
         "weekday": "Thursday",
         "color": "#DB2777"
       }
@@ -204,63 +171,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.261607,
-          33.605598
+          -111.917913,
+          33.349894
         ]
       },
       "properties": {
         "id": "e006",
-        "lat": 33.605598,
-        "lon": -112.261607,
-        "name": "Managing Behaviors without Medications",
-        "category": "Misc",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-09-24",
-        "date_label": "Thu, Sep 24",
-        "start_time": "2:30 PM",
-        "end_time": "3:30 PM",
-        "venue": "Cogir Peoria (Hospice of the West)",
-        "address": "13391 N 94th Dr",
-        "city": "Peoria",
-        "description": "Education session at Cogir Peoria hosted with Hospice of the West",
-        "event_url": "https://www.facebook.com/groups/wvsle/posts/2024747754911633/",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Thursday",
-        "color": "#DB2777"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.258735,
-          33.709857
-        ]
-      },
-      "properties": {
-        "id": "e007",
-        "lat": 33.709857,
-        "lon": -112.258735,
-        "name": "Ma Maison Open House",
+        "lat": 33.349894,
+        "lon": -111.917913,
+        "name": "Grace Garden Grand Opening",
         "category": "Open House",
         "recurring": false,
         "rsvp": false,
-        "date": "2026-09-25",
-        "date_label": "Fri, Sep 25",
-        "start_time": "5:00 PM",
-        "end_time": "8:00 PM",
-        "venue": "Ma Maison Assisted Living",
-        "address": "24885 N 93rd Ave",
-        "city": "Peoria",
-        "description": "Boutique 10-bed memory care open house (wine/appetizers/tours); Jana Milligan / Sunset View",
-        "event_url": "https://www.facebook.com/groups/arizonaseniorplacement/posts/2047577559200481",
+        "date": "2026-10-02",
+        "date_label": "Fri, Oct 02",
+        "start_time": "11:00 AM",
+        "end_time": "3:00 PM",
+        "venue": "Grace Garden Assisted Living",
+        "address": "1354 E Brentnup Dr",
+        "city": "Tempe",
+        "description": "AL home grand opening",
+        "event_url": "https://www.facebook.com/groups/SHCSAZ/posts/4576207659280258/",
         "image_url": "",
         "has_image": false,
-        "contact": "",
+        "contact": "480-269-3398",
         "weekday": "Friday",
         "color": "#EF4444"
       }
