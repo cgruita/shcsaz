@@ -227,7 +227,40 @@
         "event_url": "https://www.facebook.com/photo/?fbid=28613689868320142&set=a.376787259103781",
         "image_url": "",
         "has_image": false,
-        "contact": "",
+        "contact": "602-405-5858",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.261607,
+          33.605598
+        ]
+      },
+      "properties": {
+        "id": "e008",
+        "lat": 33.605598,
+        "lon": -112.261607,
+        "name": "Wine Down Wednesday",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-09-30",
+        "date_label": "Wed, Sep 30",
+        "start_time": "3:00 PM",
+        "end_time": "5:00 PM",
+        "venue": "Cogir Peoria Senior Living",
+        "address": "13391 N 94th Dr",
+        "city": "Peoria",
+        "description": "Wine and appetizers at Cogir Peoria; RSVP was requested by Sep 28",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "623-977-1431",
         "weekday": "Wednesday",
         "color": "#EAB308"
       }
