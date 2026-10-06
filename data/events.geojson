@@ -6,30 +6,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -111.945598,
-          33.607018
+          -112.292856,
+          33.51799
         ]
       },
       "properties": {
         "id": "e001",
-        "lat": 33.607018,
-        "lon": -111.945598,
-        "name": "Pershing Manor Open House",
+        "lat": 33.51799,
+        "lon": -112.292856,
+        "name": "Vista Diamante Assisted Living Open House",
         "category": "Open House",
         "recurring": false,
-        "rsvp": true,
-        "date": "2026-09-29",
-        "date_label": "Tue, Sep 29",
+        "rsvp": false,
+        "date": "2026-10-06",
+        "date_label": "Tue, Oct 06",
         "start_time": "10:00 AM",
-        "end_time": "4:00 PM",
-        "venue": "Pershing Manor",
-        "address": "6228 E Pershing Ave",
-        "city": "Scottsdale",
-        "description": "Open house under new management (Senior Care Management & Consulting); drop in anytime",
-        "event_url": "https://www.facebook.com/groups/alconnect/posts/28866101306409895",
+        "end_time": "6:00 PM",
+        "venue": "Vista Diamante Assisted Living",
+        "address": "10838 W San Juan Ave",
+        "city": "Phoenix",
+        "description": "Open house at a 10-resident AL / memory care home (by Couple's Care); drop in 10am\u20136pm",
+        "event_url": "https://www.facebook.com/share/1DdHsEBwn2/",
         "image_url": "",
         "has_image": false,
-        "contact": "RSVP Jessica 480-395-8154",
+        "contact": "480-395-8154",
         "weekday": "Tuesday",
         "color": "#22C55E"
       }
@@ -39,30 +39,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -111.883473,
-          33.584755
+          -112.228432,
+          33.66835
         ]
       },
       "properties": {
         "id": "e002",
-        "lat": 33.584755,
-        "lon": -111.883473,
-        "name": "Secret Garden Speakeasy \u2013 Grand Reopening",
-        "category": "Open House",
+        "lat": 33.66835,
+        "lon": -112.228432,
+        "name": "Limoncello & Line Dancing",
+        "category": "Networking",
         "recurring": false,
         "rsvp": true,
-        "date": "2026-09-29",
-        "date_label": "Tue, Sep 29",
-        "start_time": "4:00 PM",
-        "end_time": "7:00 PM",
-        "venue": "Gardens Care Senior Living",
-        "address": "9185 E Desert Cove Ave",
-        "city": "Scottsdale",
-        "description": "Courtyard grand reopening after remodel; meet the team",
-        "event_url": "https://www.facebook.com/groups/SHCSAZ/posts/4571218049779219/",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
+        "date": "2026-10-06",
+        "date_label": "Tue, Oct 06",
+        "start_time": "3:00 PM",
+        "end_time": "4:30 PM",
+        "venue": "Inspira Arrowhead by Cogir",
+        "address": "20240 N 78th Ave",
+        "city": "Glendale",
+        "description": "Limoncello and light bites; line dancing and music in the Lifestyle Center; beginner-friendly",
+        "event_url": "",
+        "image_url": "images/inspira-arrowhead-2026-10-06.jpg",
+        "has_image": true,
+        "contact": "mnetzel@CogirUSA.com",
         "weekday": "Tuesday",
         "color": "#22C55E"
       }
@@ -72,30 +72,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.467306,
-          33.512379
+          -111.884012,
+          33.585778
         ]
       },
       "properties": {
         "id": "e003",
-        "lat": 33.512379,
-        "lon": -112.467306,
-        "name": "Shiloh Cottage Open House",
-        "category": "Open House",
-        "recurring": false,
+        "lat": 33.585778,
+        "lon": -111.884012,
+        "name": "Oktoberfest Wine Down Wednesday",
+        "category": "Networking",
+        "recurring": true,
         "rsvp": false,
-        "date": "2026-09-30",
-        "date_label": "Wed, Sep 30",
-        "start_time": "11:00 AM",
-        "end_time": "3:00 PM",
-        "venue": "Shiloh Cottage Assisted Living",
-        "address": "18941 W Oregon Ave",
-        "city": "Litchfield Park",
-        "description": "New west-valley AL home; open house (grand opening Thu Oct 1)",
-        "event_url": "https://www.facebook.com/groups/wvsle/posts/2028910194495389/",
-        "image_url": "",
-        "has_image": false,
-        "contact": "623-624-9111 / family@shilohcottage.com",
+        "date": "2026-10-07",
+        "date_label": "Wed, Oct 07",
+        "start_time": "2:00 PM",
+        "end_time": "4:00 PM",
+        "venue": "The Ranch Estates at Scottsdale",
+        "address": "9160 E Desert Cove Ave",
+        "city": "Scottsdale",
+        "description": "Oktoberfest-themed Wine Down with festive bites; drinks and networking; bring business cards; IL / AL / respite community",
+        "event_url": "",
+        "image_url": "images/ranch-estates-2026-10-07.jpg",
+        "has_image": true,
+        "contact": "(480) 767-7646",
         "weekday": "Wednesday",
         "color": "#EAB308"
       }
@@ -105,129 +105,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.467306,
-          33.512379
+          -111.85984,
+          33.29814
         ]
       },
       "properties": {
         "id": "e004",
-        "lat": 33.512379,
-        "lon": -112.467306,
-        "name": "Shiloh Cottage Grand Opening",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-10-01",
-        "date_label": "Thu, Oct 01",
-        "start_time": "11:00 AM",
-        "end_time": "3:00 PM",
-        "venue": "Shiloh Cottage Assisted Living",
-        "address": "18941 W Oregon Ave",
-        "city": "Litchfield Park",
-        "description": "New west-valley AL home; grand opening (open house Wed Sep 30)",
-        "event_url": "https://www.facebook.com/groups/wvsle/posts/2028910194495389/",
-        "image_url": "",
-        "has_image": false,
-        "contact": "623-624-9111 / family@shilohcottage.com",
-        "weekday": "Thursday",
-        "color": "#DB2777"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.379576,
-          33.635193
-        ]
-      },
-      "properties": {
-        "id": "e005",
-        "lat": 33.635193,
-        "lon": -112.379576,
-        "name": "HSP West October Social",
+        "lat": 33.29814,
+        "lon": -111.85984,
+        "name": "AZCOA East Valley Networking Mixer",
         "category": "Networking",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-10-01",
-        "date_label": "Thu, Oct 01",
-        "start_time": "4:00 PM",
-        "end_time": "",
-        "venue": "Vineyard Park of Surprise",
-        "address": "16650 N Stadium Way",
-        "city": "Surprise",
-        "description": "HSP West social at a senior living community; RSVP HSPWest@gmail.com by Sep 28",
-        "event_url": "",
-        "image_url": "",
-        "has_image": false,
-        "contact": "HSPWest@gmail.com",
-        "weekday": "Thursday",
-        "color": "#DB2777"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.917913,
-          33.349894
-        ]
-      },
-      "properties": {
-        "id": "e006",
-        "lat": 33.349894,
-        "lon": -111.917913,
-        "name": "Grace Garden Grand Opening",
-        "category": "Open House",
-        "recurring": false,
+        "recurring": true,
         "rsvp": false,
-        "date": "2026-10-02",
-        "date_label": "Fri, Oct 02",
-        "start_time": "11:00 AM",
-        "end_time": "3:00 PM",
-        "venue": "Grace Garden Assisted Living",
-        "address": "1354 E Brentnup Dr",
-        "city": "Tempe",
-        "description": "AL home grand opening",
-        "event_url": "https://www.facebook.com/groups/SHCSAZ/posts/4576207659280258/",
-        "image_url": "",
-        "has_image": false,
-        "contact": "480-269-3398",
-        "weekday": "Friday",
-        "color": "#EF4444"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.975682,
-          33.649095
-        ]
-      },
-      "properties": {
-        "id": "e007",
-        "lat": 33.649095,
-        "lon": -111.975682,
-        "name": "Shambhala Living Open House",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-09-30",
-        "date_label": "Wed, Sep 30",
-        "start_time": "10:00 AM",
+        "date": "2026-10-07",
+        "date_label": "Wed, Oct 07",
+        "start_time": "3:30 PM",
         "end_time": "5:00 PM",
-        "venue": "Shambhala Living",
-        "address": "4839 E Charleston Ave",
-        "city": "Scottsdale",
-        "description": "Open house at a memory care home; tour the home and meet the team; drop in 10am\u20135pm",
-        "event_url": "https://www.facebook.com/photo/?fbid=28613689868320142&set=a.376787259103781",
-        "image_url": "",
-        "has_image": false,
-        "contact": "602-405-5858",
+        "venue": "Solterra Assisted Living at Chandler",
+        "address": "350 S Alma School Rd",
+        "city": "Chandler",
+        "description": "Arizona Coalition on Aging mixer every 1st Wednesday; complimentary appetizers and drinks; everyone welcome",
+        "event_url": "",
+        "image_url": "images/solterra-chandler-2026-10-07.jpg",
+        "has_image": true,
+        "contact": "",
         "weekday": "Wednesday",
         "color": "#EAB308"
       }
@@ -242,27 +143,192 @@
         ]
       },
       "properties": {
-        "id": "e008",
+        "id": "e005",
         "lat": 33.605598,
         "lon": -112.261607,
-        "name": "Wine Down Wednesday",
+        "name": "Drive-By Networking Breakfast Fundraiser",
         "category": "Networking",
         "recurring": false,
         "rsvp": true,
-        "date": "2026-09-30",
-        "date_label": "Wed, Sep 30",
-        "start_time": "3:00 PM",
-        "end_time": "5:00 PM",
+        "date": "2026-10-08",
+        "date_label": "Thu, Oct 08",
+        "start_time": "7:00 AM",
+        "end_time": "9:00 AM",
         "venue": "Cogir Peoria Senior Living",
         "address": "13391 N 94th Dr",
         "city": "Peoria",
-        "description": "Wine and appetizers at Cogir Peoria; RSVP was requested by Sep 28",
+        "description": "Grab a breakfast burrito and coffee / OJ and connect with community partners; supports Alzheimer's awareness (donations appreciated); RSVP by Oct 6 with your burrito choice",
+        "event_url": "",
+        "image_url": "images/cogir-peoria-2026-10-08.jpg",
+        "has_image": true,
+        "contact": "623-977-1431",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.902847,
+          33.466735
+        ]
+      },
+      "properties": {
+        "id": "e006",
+        "lat": 33.466735,
+        "lon": -111.902847,
+        "name": "Spotlight Scottsdale / Phoenix Breakfast",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-10-08",
+        "date_label": "Thu, Oct 08",
+        "start_time": "9:00 AM",
+        "end_time": "10:30 AM",
+        "venue": "McDowell Village (MBK Senior Living)",
+        "address": "8300 E McDowell Rd",
+        "city": "Scottsdale",
+        "description": "Breakfast on the outside patio with the Scottsdale / Phoenix hosts; IL / AL community; RSVP by Oct 6",
+        "event_url": "",
+        "image_url": "images/mcdowell-village-2026-10-08.jpg",
+        "has_image": true,
+        "contact": "480-970-6400",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.115546,
+          33.623719
+        ]
+      },
+      "properties": {
+        "id": "e007",
+        "lat": 33.623719,
+        "lon": -112.115546,
+        "name": "Lunch & Learn: Downsizing without Stress",
+        "category": "Misc",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-10-08",
+        "date_label": "Thu, Oct 08",
+        "start_time": "11:30 AM",
+        "end_time": "1:00 PM",
+        "venue": "Park Terrace Senior Living by Cogir",
+        "address": "2577 W Greenway Rd",
+        "city": "Phoenix",
+        "description": "Lunch provided; a senior moving specialist and Realtor on decluttering and downsizing; RSVP by Oct 5",
+        "event_url": "",
+        "image_url": "images/park-terrace-2026-10-08.jpg",
+        "has_image": true,
+        "contact": "(602) 883-2935 / ContactParkTerrace@CogirUSA.com",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.012625,
+          33.499395
+        ]
+      },
+      "properties": {
+        "id": "e008",
+        "lat": 33.499395,
+        "lon": -112.012625,
+        "name": "Thirsty Thursday",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-10-08",
+        "date_label": "Thu, Oct 08",
+        "start_time": "1:00 PM",
+        "end_time": "2:00 PM",
+        "venue": "MorningStar at Arcadia",
+        "address": "3200 E Glenrosa Ave",
+        "city": "Phoenix",
+        "description": "Happy hour networking event for professionals; drinks and light refreshments; RSVP by Oct 5",
+        "event_url": "",
+        "image_url": "images/morningstar-arcadia-2026-10-08.jpg",
+        "has_image": true,
+        "contact": "Sharmon 490-276-0023 / Arcadia.SPavey@MStarLiving.com",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.69023,
+          33.43832
+        ]
+      },
+      "properties": {
+        "id": "e009",
+        "lat": 33.43832,
+        "lon": -111.69023,
+        "name": "Networking Karaoke with Rockin' Rob",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-10-08",
+        "date_label": "Thu, Oct 08",
+        "start_time": "3:00 PM",
+        "end_time": "5:00 PM",
+        "venue": "Acoya Mesa",
+        "address": "6502 E Brown Rd",
+        "city": "Mesa",
+        "description": "Halloween-themed professional happy hour karaoke; IL / AL / memory care community; all are welcome",
+        "event_url": "",
+        "image_url": "images/acoya-mesa-2026-10-08.jpg",
+        "has_image": true,
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.203952,
+          33.564765
+        ]
+      },
+      "properties": {
+        "id": "e010",
+        "lat": 33.564765,
+        "lon": -112.203952,
+        "name": "MorningStar Golden Ridge Happy Hour",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-10-08",
+        "date_label": "Thu, Oct 08",
+        "start_time": "4:30 PM",
+        "end_time": "5:30 PM",
+        "venue": "MorningStar at Golden Ridge",
+        "address": "6735 W Golden Lane",
+        "city": "Peoria",
+        "description": "Happy hour at the MorningStar community; RSVP requested",
         "event_url": "",
         "image_url": "",
         "has_image": false,
-        "contact": "623-977-1431",
-        "weekday": "Wednesday",
-        "color": "#EAB308"
+        "contact": "goldenridge.clubking@mstarliving.com (Nancy wrote goldenridge;clubking)",
+        "weekday": "Thursday",
+        "color": "#DB2777"
       }
     }
   ]
