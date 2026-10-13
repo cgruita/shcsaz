@@ -330,6 +330,39 @@
         "weekday": "Friday",
         "color": "#EF4444"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.914524,
+          33.630543
+        ]
+      },
+      "properties": {
+        "id": "e011",
+        "lat": 33.630543,
+        "lon": -111.914524,
+        "name": "Coffee & Connections",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-10-14",
+        "date_label": "Wed, Oct 14",
+        "start_time": "9:00 AM",
+        "end_time": "10:30 AM",
+        "venue": "Studio Vargas / Trust Point",
+        "address": "15941 N 77th St STE 3",
+        "city": "Scottsdale",
+        "description": "Coffee networking at Studio Vargas / Trust Point",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
     }
   ]
 }
