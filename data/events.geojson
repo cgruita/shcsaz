@@ -363,6 +363,39 @@
         "weekday": "Wednesday",
         "color": "#EAB308"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.823313,
+          33.42368
+        ]
+      },
+      "properties": {
+        "id": "e012",
+        "lat": 33.42368,
+        "lon": -111.823313,
+        "name": "SHCSAZ Halloween Happy Hour",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-10-15",
+        "date_label": "Thu, Oct 15",
+        "start_time": "3:00 PM",
+        "end_time": "5:00 PM",
+        "venue": "Red Mountain Funeral Home",
+        "address": "456 N Mesa Dr",
+        "city": "Mesa",
+        "description": "SHCSAZ group Halloween happy hour",
+        "event_url": "https://www.facebook.com/events/1632664245315395/",
+        "image_url": "",
+        "has_image": false,
+        "contact": "480-653-8600",
+        "weekday": "Thursday",
+        "color": "#DB2777"
+      }
     }
   ]
 }
