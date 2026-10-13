@@ -226,5 +226,33 @@
   "8300 E McDowell Rd, Scottsdale": [
     33.466735,
     -111.902847
+  ],
+  "8035 E Brown Rd, Mesa": [
+    33.436532,
+    -111.658203
+  ],
+  "14630 W Parkwood Dr, Surprise": [
+    33.65114,
+    -112.375175
+  ],
+  "1920 W Alameda Rd, Phoenix": [
+    33.705931,
+    -112.101412
+  ],
+  "3233 E Camelback Rd, Phoenix": [
+    33.508703,
+    -112.012059
+  ],
+  "1445 E Willis Rd, Gilbert": [
+    33.283935,
+    -111.75898
+  ],
+  "17300 N 88th Ave, Peoria": [
+    33.641548,
+    -112.248697
+  ],
+  "8989 W Greenbriar Dr, Peoria": [
+    33.6429,
+    -112.253638
   ]
 }

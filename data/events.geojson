@@ -6,30 +6,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.292856,
-          33.51799
+          -111.658203,
+          33.436532
         ]
       },
       "properties": {
         "id": "e001",
-        "lat": 33.51799,
-        "lon": -112.292856,
-        "name": "Vista Diamante Assisted Living Open House",
-        "category": "Open House",
+        "lat": 33.436532,
+        "lon": -111.658203,
+        "name": "Spotlight East Valley Breakfast",
+        "category": "Networking",
         "recurring": false,
-        "rsvp": false,
-        "date": "2026-10-06",
-        "date_label": "Tue, Oct 06",
-        "start_time": "10:00 AM",
-        "end_time": "6:00 PM",
-        "venue": "Vista Diamante Assisted Living",
-        "address": "10838 W San Juan Ave",
-        "city": "Phoenix",
-        "description": "Open house at a 10-resident AL / memory care home (by Couple's Care); drop in 10am\u20136pm",
-        "event_url": "https://www.facebook.com/share/1DdHsEBwn2/",
+        "rsvp": true,
+        "date": "2026-10-13",
+        "date_label": "Tue, Oct 13",
+        "start_time": "9:00 AM",
+        "end_time": "10:00 AM",
+        "venue": "The Villages at Red Mountain",
+        "address": "8035 E Brown Rd",
+        "city": "Mesa",
+        "description": "Spotlight Senior Services East Valley meeting hosted at the community; AL / memory care community; RSVP to the community",
+        "event_url": "",
         "image_url": "",
         "has_image": false,
-        "contact": "480-395-8154",
+        "contact": "480-686-8540",
         "weekday": "Tuesday",
         "color": "#22C55E"
       }
@@ -39,164 +39,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.228432,
-          33.66835
+          -112.375175,
+          33.65114
         ]
       },
       "properties": {
         "id": "e002",
-        "lat": 33.66835,
-        "lon": -112.228432,
-        "name": "Limoncello & Line Dancing",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-10-06",
-        "date_label": "Tue, Oct 06",
-        "start_time": "3:00 PM",
-        "end_time": "4:30 PM",
-        "venue": "Inspira Arrowhead by Cogir",
-        "address": "20240 N 78th Ave",
-        "city": "Glendale",
-        "description": "Limoncello and light bites; line dancing and music in the Lifestyle Center; beginner-friendly",
-        "event_url": "",
-        "image_url": "images/inspira-arrowhead-2026-10-06.jpg",
-        "has_image": true,
-        "contact": "mnetzel@CogirUSA.com",
-        "weekday": "Tuesday",
-        "color": "#22C55E"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.884012,
-          33.585778
-        ]
-      },
-      "properties": {
-        "id": "e003",
-        "lat": 33.585778,
-        "lon": -111.884012,
-        "name": "Oktoberfest Wine Down Wednesday",
+        "lat": 33.65114,
+        "lon": -112.375175,
+        "name": "AZCOA West Valley Breakfast Meeting",
         "category": "Networking",
         "recurring": true,
         "rsvp": false,
-        "date": "2026-10-07",
-        "date_label": "Wed, Oct 07",
-        "start_time": "2:00 PM",
-        "end_time": "4:00 PM",
-        "venue": "The Ranch Estates at Scottsdale",
-        "address": "9160 E Desert Cove Ave",
-        "city": "Scottsdale",
-        "description": "Oktoberfest-themed Wine Down with festive bites; drinks and networking; bring business cards; IL / AL / respite community",
-        "event_url": "",
-        "image_url": "images/ranch-estates-2026-10-07.jpg",
-        "has_image": true,
-        "contact": "(480) 767-7646",
-        "weekday": "Wednesday",
-        "color": "#EAB308"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.85984,
-          33.29814
-        ]
-      },
-      "properties": {
-        "id": "e004",
-        "lat": 33.29814,
-        "lon": -111.85984,
-        "name": "AZCOA East Valley Networking Mixer",
-        "category": "Networking",
-        "recurring": true,
-        "rsvp": false,
-        "date": "2026-10-07",
-        "date_label": "Wed, Oct 07",
-        "start_time": "3:30 PM",
-        "end_time": "5:00 PM",
-        "venue": "Solterra Assisted Living at Chandler",
-        "address": "350 S Alma School Rd",
-        "city": "Chandler",
-        "description": "Arizona Coalition on Aging mixer every 1st Wednesday; complimentary appetizers and drinks; everyone welcome",
-        "event_url": "",
-        "image_url": "images/solterra-chandler-2026-10-07.jpg",
+        "date": "2026-10-13",
+        "date_label": "Tue, Oct 13",
+        "start_time": "9:30 AM",
+        "end_time": "11:00 AM",
+        "venue": "The Park at Surprise",
+        "address": "14630 W Parkwood Dr",
+        "city": "Surprise",
+        "description": "Arizona Coalition on Aging West Valley meeting every 2nd Tuesday; breakfast; network with senior-care professionals; IL community with AL / memory care access",
+        "event_url": "https://azcoa.org",
+        "image_url": "images/park-at-surprise-2026-10-13.jpg",
         "has_image": true,
         "contact": "",
-        "weekday": "Wednesday",
-        "color": "#EAB308"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.261607,
-          33.605598
-        ]
-      },
-      "properties": {
-        "id": "e005",
-        "lat": 33.605598,
-        "lon": -112.261607,
-        "name": "Drive-By Networking Breakfast Fundraiser",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-10-08",
-        "date_label": "Thu, Oct 08",
-        "start_time": "7:00 AM",
-        "end_time": "9:00 AM",
-        "venue": "Cogir Peoria Senior Living",
-        "address": "13391 N 94th Dr",
-        "city": "Peoria",
-        "description": "Grab a breakfast burrito and coffee / OJ and connect with community partners; supports Alzheimer's awareness (donations appreciated); RSVP by Oct 6 with your burrito choice",
-        "event_url": "",
-        "image_url": "images/cogir-peoria-2026-10-08.jpg",
-        "has_image": true,
-        "contact": "623-977-1431",
-        "weekday": "Thursday",
-        "color": "#DB2777"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.902847,
-          33.466735
-        ]
-      },
-      "properties": {
-        "id": "e006",
-        "lat": 33.466735,
-        "lon": -111.902847,
-        "name": "Spotlight Scottsdale / Phoenix Breakfast",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-10-08",
-        "date_label": "Thu, Oct 08",
-        "start_time": "9:00 AM",
-        "end_time": "10:30 AM",
-        "venue": "McDowell Village (MBK Senior Living)",
-        "address": "8300 E McDowell Rd",
-        "city": "Scottsdale",
-        "description": "Breakfast on the outside patio with the Scottsdale / Phoenix hosts; IL / AL community; RSVP by Oct 6",
-        "event_url": "",
-        "image_url": "images/mcdowell-village-2026-10-08.jpg",
-        "has_image": true,
-        "contact": "480-970-6400",
-        "weekday": "Thursday",
-        "color": "#DB2777"
+        "weekday": "Tuesday",
+        "color": "#22C55E"
       }
     },
     {
@@ -209,25 +77,157 @@
         ]
       },
       "properties": {
-        "id": "e007",
+        "id": "e003",
         "lat": 33.623719,
         "lon": -112.115546,
-        "name": "Lunch & Learn: Downsizing without Stress",
-        "category": "Misc",
+        "name": "Wine Down with Us: Create Your Own Charcuterie Board",
+        "category": "Networking",
         "recurring": false,
         "rsvp": true,
-        "date": "2026-10-08",
-        "date_label": "Thu, Oct 08",
-        "start_time": "11:30 AM",
-        "end_time": "1:00 PM",
+        "date": "2026-10-13",
+        "date_label": "Tue, Oct 13",
+        "start_time": "4:00 PM",
+        "end_time": "6:00 PM",
         "venue": "Park Terrace Senior Living by Cogir",
         "address": "2577 W Greenway Rd",
         "city": "Phoenix",
-        "description": "Lunch provided; a senior moving specialist and Realtor on decluttering and downsizing; RSVP by Oct 5",
+        "description": "Sample wine and build your own charcuterie board; conversation and connection; RSVP by Oct 9",
         "event_url": "",
-        "image_url": "images/park-terrace-2026-10-08.jpg",
+        "image_url": "images/park-terrace-2026-10-13.jpg",
         "has_image": true,
         "contact": "(602) 883-2935 / ContactParkTerrace@CogirUSA.com",
+        "weekday": "Tuesday",
+        "color": "#22C55E"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.101412,
+          33.705931
+        ]
+      },
+      "properties": {
+        "id": "e004",
+        "lat": 33.705931,
+        "lon": -112.101412,
+        "name": "Spooktacular Boo Basket Marketing Event",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-10-14",
+        "date_label": "Wed, Oct 14",
+        "start_time": "3:00 PM",
+        "end_time": "5:00 PM",
+        "venue": "The Retreat at Alameda (Stellar Living)",
+        "address": "1920 W Alameda Rd",
+        "city": "Phoenix",
+        "description": "Bring a Boo Basket ($25 minimum value); sponsored by Billet Health and Hospice; IL / AL / memory care community",
+        "event_url": "",
+        "image_url": "images/retreat-alameda-2026-10-14.jpg",
+        "has_image": true,
+        "contact": "Chloe Nelson 602-320-0437",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.012059,
+          33.508703
+        ]
+      },
+      "properties": {
+        "id": "e005",
+        "lat": 33.508703,
+        "lon": -112.012059,
+        "name": "Boos & Booze: A Spooky Happy Hour",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-10-14",
+        "date_label": "Wed, Oct 14",
+        "start_time": "3:30 PM",
+        "end_time": "5:00 PM",
+        "venue": "Clarendale Arcadia",
+        "address": "3233 E Camelback Rd",
+        "city": "Phoenix",
+        "description": "Halloween happy hour at the community; flyer lists 3:30 start only (end time from Nancy)",
+        "event_url": "",
+        "image_url": "images/clarendale-arcadia-2026-10-14.jpg",
+        "has_image": true,
+        "contact": "480-745-1688",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.75898,
+          33.283935
+        ]
+      },
+      "properties": {
+        "id": "e006",
+        "lat": 33.283935,
+        "lon": -111.75898,
+        "name": "HSP East Valley Networking",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-10-14",
+        "date_label": "Wed, Oct 14",
+        "start_time": "3:30 PM",
+        "end_time": "5:00 PM",
+        "venue": "Sky Ridge (MBK Senior Living)",
+        "address": "1445 E Willis Rd",
+        "city": "Gilbert",
+        "description": "Hosted by Cathy Peterson (Director of Sales); bring a door prize for a one-minute intro; limited to 45; park in uncovered visitor parking; apartments and memory care suites",
+        "event_url": "https://www.facebook.com/share/1Hp3sWks9m",
+        "image_url": "images/sky-ridge-2026-10-14.jpg",
+        "has_image": true,
+        "contact": "hspeastvalley@gmail.com",
+        "weekday": "Wednesday",
+        "color": "#EAB308"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.718445,
+          33.34597
+        ]
+      },
+      "properties": {
+        "id": "e007",
+        "lat": 33.34597,
+        "lon": -111.718445,
+        "name": "Glow Paint & Sip",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-10-15",
+        "date_label": "Thu, Oct 15",
+        "start_time": "3:30 PM",
+        "end_time": "4:30 PM",
+        "venue": "Cogir of Morrison Ranch Senior Living",
+        "address": "3333 E Morrison Ranch Pkwy",
+        "city": "Gilbert",
+        "description": "Halloween paint and sip; monster mash drinks and spooky appetizers; RSVP by Oct 12",
+        "event_url": "",
+        "image_url": "images/morrison-ranch-2026-10-15.jpg",
+        "has_image": true,
+        "contact": "(602) 905-3030 / ContactMorrisonRanch@CogirUSA.com",
         "weekday": "Thursday",
         "color": "#DB2777"
       }
@@ -237,30 +237,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.012625,
-          33.499395
+          -112.248697,
+          33.641548
         ]
       },
       "properties": {
         "id": "e008",
-        "lat": 33.499395,
-        "lon": -112.012625,
-        "name": "Thirsty Thursday",
-        "category": "Networking",
+        "lat": 33.641548,
+        "lon": -112.248697,
+        "name": "Sierra Winds Assisted Living Celebration",
+        "category": "Open House",
         "recurring": false,
         "rsvp": true,
-        "date": "2026-10-08",
-        "date_label": "Thu, Oct 08",
-        "start_time": "1:00 PM",
-        "end_time": "2:00 PM",
-        "venue": "MorningStar at Arcadia",
-        "address": "3200 E Glenrosa Ave",
-        "city": "Phoenix",
-        "description": "Happy hour networking event for professionals; drinks and light refreshments; RSVP by Oct 5",
+        "date": "2026-10-15",
+        "date_label": "Thu, Oct 15",
+        "start_time": "4:00 PM",
+        "end_time": "6:00 PM",
+        "venue": "Sierra Winds",
+        "address": "17300 N 88th Ave",
+        "city": "Peoria",
+        "description": "Evening event on how Sierra Winds has expanded to offer assisted living; light appetizers and refreshments; RSVP by phone",
         "event_url": "",
-        "image_url": "images/morningstar-arcadia-2026-10-08.jpg",
+        "image_url": "images/sierra-winds-2026-10-15.jpg",
         "has_image": true,
-        "contact": "Sharmon 490-276-0023 / Arcadia.SPavey@MStarLiving.com",
+        "contact": "(623) 267-9912",
         "weekday": "Thursday",
         "color": "#DB2777"
       }
@@ -278,24 +278,24 @@
         "id": "e009",
         "lat": 33.43832,
         "lon": -111.69023,
-        "name": "Networking Karaoke with Rockin' Rob",
+        "name": "3rd Friday Welcome to the Jungle Breakfast",
         "category": "Networking",
-        "recurring": false,
+        "recurring": true,
         "rsvp": false,
-        "date": "2026-10-08",
-        "date_label": "Thu, Oct 08",
-        "start_time": "3:00 PM",
-        "end_time": "5:00 PM",
-        "venue": "Acoya Mesa",
+        "date": "2026-10-16",
+        "date_label": "Fri, Oct 16",
+        "start_time": "9:00 AM",
+        "end_time": "10:30 AM",
+        "venue": "Acoya Mesa by Cogir",
         "address": "6502 E Brown Rd",
         "city": "Mesa",
-        "description": "Halloween-themed professional happy hour karaoke; IL / AL / memory care community; all are welcome",
+        "description": "Monthly 3rd Friday networking breakfast hosted at the community (Facebook event by Nancy Winters); IL / AL / memory care community",
         "event_url": "",
-        "image_url": "images/acoya-mesa-2026-10-08.jpg",
+        "image_url": "images/acoya-mesa-2026-10-16.jpg",
         "has_image": true,
         "contact": "",
-        "weekday": "Thursday",
-        "color": "#DB2777"
+        "weekday": "Friday",
+        "color": "#EF4444"
       }
     },
     {
@@ -303,32 +303,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.203952,
-          33.564765
+          -112.253638,
+          33.6429
         ]
       },
       "properties": {
         "id": "e010",
-        "lat": 33.564765,
-        "lon": -112.203952,
-        "name": "MorningStar Golden Ridge Happy Hour",
-        "category": "Networking",
+        "lat": 33.6429,
+        "lon": -112.253638,
+        "name": "Inspirations of Peoria Open House",
+        "category": "Open House",
         "recurring": false,
         "rsvp": true,
-        "date": "2026-10-08",
-        "date_label": "Thu, Oct 08",
-        "start_time": "4:30 PM",
-        "end_time": "5:30 PM",
-        "venue": "MorningStar at Golden Ridge",
-        "address": "6735 W Golden Lane",
+        "date": "2026-10-16",
+        "date_label": "Fri, Oct 16",
+        "start_time": "10:00 AM",
+        "end_time": "1:00 PM",
+        "venue": "Inspirations of Peoria (Grace Mgmt)",
+        "address": "8989 W Greenbriar Dr",
         "city": "Peoria",
-        "description": "Happy hour at the MorningStar community; RSVP requested",
+        "description": "Tour the community; meet the team and residents; stay for lunch; AL / respite stays; RSVP for lunch by Oct 12",
         "event_url": "",
-        "image_url": "",
-        "has_image": false,
-        "contact": "goldenridge.clubking@mstarliving.com (Nancy wrote goldenridge;clubking)",
-        "weekday": "Thursday",
-        "color": "#DB2777"
+        "image_url": "images/inspirations-peoria-2026-10-16.jpg",
+        "has_image": true,
+        "contact": "623-583-1704",
+        "weekday": "Friday",
+        "color": "#EF4444"
       }
     }
   ]
