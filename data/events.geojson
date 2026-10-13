@@ -157,7 +157,7 @@
         "venue": "Clarendale Arcadia",
         "address": "3233 E Camelback Rd",
         "city": "Phoenix",
-        "description": "Halloween happy hour at the community; flyer lists 3:30 start only (end time from Nancy)",
+        "description": "Halloween happy hour at the community; 3:30\u20135pm",
         "event_url": "",
         "image_url": "images/clarendale-arcadia-2026-10-14.jpg",
         "has_image": true,
@@ -227,7 +227,7 @@
         "event_url": "",
         "image_url": "images/morrison-ranch-2026-10-15.jpg",
         "has_image": true,
-        "contact": "(602) 905-3030 / ContactMorrisonRanch@CogirUSA.com",
+        "contact": "(602) 905-3030 / ContactMorrisonRanch@CogirUSA.com / desiree.james@cogirusa.com",
         "weekday": "Thursday",
         "color": "#DB2777"
       }
@@ -290,7 +290,7 @@
         "address": "6502 E Brown Rd",
         "city": "Mesa",
         "description": "Monthly 3rd Friday networking breakfast hosted at the community (Facebook event by Nancy Winters); IL / AL / memory care community",
-        "event_url": "",
+        "event_url": "https://www.facebook.com/share/1DqzvnhEYk",
         "image_url": "images/acoya-mesa-2026-10-16.jpg",
         "has_image": true,
         "contact": "",
