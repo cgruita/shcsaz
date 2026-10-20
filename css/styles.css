@@ -664,32 +664,28 @@ header p {
   display: block !important;
 }
 
-/* Quiet "Map by" credit, top-right of header */
-header .credit {
-  position: absolute;
-  top: 0.75rem;
-  right: 1rem;
+/* Light On credit strip, top of the list/table panel */
+.credit-strip {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.7rem;
-  color: #8fa3b8;
-  opacity: 0.85;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 12px;
+  margin: 0 0 8px;
+  background: #0f2a43;
+  border-radius: 8px;
+  color: #b9c7d6;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
   text-decoration: none;
 }
-header .credit:hover { opacity: 1; }
-header .credit-logo {
+.credit-strip:hover { background: #17395a; color: #fff; }
+.credit-strip img {
   display: block;
-  height: 32px;
+  height: 40px;
   width: auto;
-  padding: 3px 8px;
-  background: rgba(255, 255, 255, 0.9);
+  padding: 2px 8px;
+  background: #fff;
   border-radius: 999px;
 }
-@media (max-width: 640px) {
-  header .credit {
-    position: static;
-    margin-top: 0.5rem;
-  }
-  header .credit-logo { height: 28px; }
-}
+.split[data-view="split"] #event-table-view .credit-strip { display: none; }

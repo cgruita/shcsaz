@@ -27,6 +27,24 @@ def font(name, size):
     return ImageFont.load_default(size)
 
 
+def _t(t):
+    m = re.match(r"\s*(\d{1,2})(?::(\d{2}))?\s*([AaPp])", t or "")
+    if not m:
+        return None
+    h, mm, ap = m.group(1), m.group(2), m.group(3).lower()
+    return (h + (":" + mm if mm and mm != "00" else "")), ap
+
+
+def short_time(p, with_end=True):
+    s = _t(p.get("start_time"))
+    if not s:
+        return ""
+    e = _t(p.get("end_time")) if with_end else None
+    if not e:
+        return s[0] + s[1]
+    return (s[0] if s[1] == e[1] else s[0] + s[1]) + "–" + e[0] + e[1]
+
+
 def lonlat_px(lon, lat, z):
     n = 256 * 2 ** z
     x = (lon + 180) / 360 * n
@@ -144,6 +162,7 @@ def build_preview():
     lh = max(18, min(30, avail // max(rows, 1)))
     nf, df = font("Arial.ttf", lh - 9), font("Arial Bold.ttf", lh - 9)
     y = 168
+    tcol = d.textlength("10:30–11:30a", font=df) * 0 + d.textlength("12:30–4:30p", font=df)
     for ds, evs in days.items():
         dt = datetime.date.fromisoformat(ds)
         d.text((x0, y), f"{dt:%a} {dt:%b} {dt.day}".upper(), font=df, fill=MUTED)
@@ -152,7 +171,12 @@ def build_preview():
             cy = y + (lh - 9) // 2 + 1
             d.ellipse((x0, cy - 9, x0 + 18, cy + 9), fill=p["color"])
             d.text((x0 + 9, cy), str(i), font=font("Arial Bold.ttf", 11), fill="white", anchor="mm")
-            d.text((x0 + 28, y), fit(d, p["name"], nf, PANEL - x0 - 60), font=nf, fill="white")
+            tx = x0 + 28
+            t = short_time(p)
+            if d.textlength(t, font=df) > tcol:
+                t = short_time(p, with_end=False)
+            d.text((tx, y), t, font=df, fill="#fbbf24")
+            d.text((tx + tcol + 8, y), fit(d, p["name"], nf, PANEL - tx - tcol - 38), font=nf, fill="white")
             y += lh
 
     # credit

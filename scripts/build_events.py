@@ -19,13 +19,13 @@ import fetch_events
 import geocode as geocode_module
 
 WEEKDAY_COLORS = {
-    "Monday": "#6366F1",
-    "Tuesday": "#22C55E",
-    "Wednesday": "#EAB308",
-    "Thursday": "#DB2777",
-    "Friday": "#EF4444",
-    "Saturday": "#A855F7",
-    "Sunday": "#6B7280",
+    "Monday": "#0891B2",     # teal
+    "Tuesday": "#DC2626",    # red
+    "Wednesday": "#2563EB",  # blue
+    "Thursday": "#16A34A",   # green
+    "Friday": "#9333EA",     # purple
+    "Saturday": "#D97706",   # amber
+    "Sunday": "#6B7280",     # gray
 }
 
 CATEGORIES = ["Networking", "Open House", "Ribbon Cutting", "Misc"]
