@@ -385,7 +385,7 @@ function renderEventList(features) {
     daysByDate.get(date).features.push(feature);
   }
 
-  list.innerHTML = LIST_CREDIT + days
+  list.innerHTML = days
     .map((day) => {
       const dayLabel = new Date(`${day.date}T00:00:00`).toLocaleDateString("en-US", {
         weekday: "long",
@@ -401,7 +401,7 @@ function renderEventList(features) {
         </div>
       `;
     })
-    .join("");
+    .join("") + LIST_CREDIT;
 
   list.querySelectorAll(".event-row").forEach((row) => {
     row.addEventListener("click", () => selectEvent(row.dataset.id));
@@ -507,7 +507,6 @@ function renderTable(features) {
   }).join("");
 
   container.innerHTML = `
-    ${LIST_CREDIT}
     <div class="table-toolbar">
       <label>Category
         <select id="filter-category">
@@ -534,6 +533,7 @@ function renderTable(features) {
         <tbody></tbody>
       </table>
     </div>
+    ${LIST_CREDIT}
   `;
 
   const categorySel = container.querySelector("#filter-category");
