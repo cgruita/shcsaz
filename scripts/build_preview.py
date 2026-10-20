@@ -186,7 +186,7 @@ def build_preview():
         logo = logo.resize((int(logo.width * lh2 / logo.height), lh2), Image.LANCZOS)
         cf = font("Arial.ttf", 14)
         d.text((x0, H - 30 - lh2 // 2), "Map by", font=cf, fill=MUTED, anchor="lm")
-        lx, ly = x0 + 54, H - 30 - lh2
+        lx, ly = x0 + 72, H - 30 - lh2
         d.rounded_rectangle((lx - 8, ly - 4, lx + logo.width + 8, ly + lh2 + 4), radius=8, fill="white")
         img.paste(logo, (lx, ly), logo)
     d.text((PANEL - 30, H - 30 - 17), "cgruita.github.io/shcsaz", font=font("Arial.ttf", 14), fill=MUTED, anchor="rm")
