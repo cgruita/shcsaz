@@ -367,6 +367,8 @@ function updateGlLabelFilter() {
   map.setFilter("event-labels", glPopupId ? ["!=", ["get", "id"], glPopupId] : null);
 }
 
+const LIST_CREDIT = `<a class="list-credit" href="https://lightonhomes.com" target="_blank" rel="noopener" aria-label="Map by Light On (opens in new tab)"><span>Map by</span><img src="images/light-on-logo.png" height="26" alt="Light On – Assisted Living Photography" /></a>`;
+
 function renderEventList(features) {
   const list = document.getElementById("event-list");
   const sorted = [...features].sort(compareEvents);
@@ -383,7 +385,7 @@ function renderEventList(features) {
     daysByDate.get(date).features.push(feature);
   }
 
-  list.innerHTML = days
+  list.innerHTML = LIST_CREDIT + days
     .map((day) => {
       const dayLabel = new Date(`${day.date}T00:00:00`).toLocaleDateString("en-US", {
         weekday: "long",
@@ -505,6 +507,7 @@ function renderTable(features) {
   }).join("");
 
   container.innerHTML = `
+    ${LIST_CREDIT}
     <div class="table-toolbar">
       <label>Category
         <select id="filter-category">

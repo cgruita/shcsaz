@@ -693,3 +693,19 @@ header .credit-logo {
   }
   header .credit-logo { height: 28px; }
 }
+
+/* Slim Light On credit atop event list/table */
+.list-credit {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: 2px 4px;
+  margin: 0 0 4px;
+  font-size: 0.65rem;
+  color: #8a96a3;
+  text-decoration: none;
+}
+.list-credit:hover { color: #4a5868; }
+.list-credit img { display: block; height: 26px; width: auto; }
+.split[data-view="split"] #event-table-view .list-credit { display: none; }
