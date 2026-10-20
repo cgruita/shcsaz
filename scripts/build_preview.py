@@ -31,7 +31,7 @@ def _t(t):
     m = re.match(r"\s*(\d{1,2})(?::(\d{2}))?\s*([AaPp])", t or "")
     if not m:
         return None
-    h, mm, ap = m.group(1), m.group(2), m.group(3).lower()
+    h, mm, ap = m.group(1), m.group(2), m.group(3).lower() + "m"
     return (h + (":" + mm if mm and mm != "00" else "")), ap
 
 
