@@ -144,6 +144,12 @@ def build() -> None:
 
     print(f"Wrote {len(features)} event(s) to {OUTPUT_PATH}")
 
+    try:
+        from build_preview import build_preview
+        build_preview()
+    except Exception as e:  # preview is optional; never block the events build
+        print(f"WARNING: preview not rebuilt: {e}")
+
 
 if __name__ == "__main__":
     build()

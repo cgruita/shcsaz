@@ -2,3 +2,4 @@
 __pycache__/
 *.pyc
 Flyover urls.txt
+data/tile_cache/
