@@ -367,7 +367,7 @@ function updateGlLabelFilter() {
   map.setFilter("event-labels", glPopupId ? ["!=", ["get", "id"], glPopupId] : null);
 }
 
-const LIST_CREDIT = `<a class="list-credit" href="https://lightonhomes.com" target="_blank" rel="noopener" aria-label="Map by Light On (opens in new tab)"><span>Map by</span><img src="images/light-on-logo.png" height="26" alt="Light On – Assisted Living Photography" /></a>`;
+const LIST_CREDIT = `<a class="list-credit" href="https://lightonhomes.com" target="_blank" rel="noopener" aria-label="Map by Light On (opens in new tab)"><span>Map by</span><img src="images/light-on-logo-lg.png" height="48" alt="Light On – Assisted Living Photography" /></a>`;
 
 function renderEventList(features) {
   const list = document.getElementById("event-list");
