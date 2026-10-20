@@ -17,6 +17,7 @@ body {
 }
 
 header {
+  position: relative;
   padding: 1rem;
   background: #0f2a43;
   color: white;
@@ -661,4 +662,34 @@ header p {
 }
 #map-version:not([hidden]) {
   display: block !important;
+}
+
+/* Quiet "Map by" credit, top-right of header */
+header .credit {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  color: #8fa3b8;
+  opacity: 0.85;
+  text-decoration: none;
+}
+header .credit:hover { opacity: 1; }
+header .credit-logo {
+  display: block;
+  height: 32px;
+  width: auto;
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+}
+@media (max-width: 640px) {
+  header .credit {
+    position: static;
+    margin-top: 0.5rem;
+  }
+  header .credit-logo { height: 28px; }
 }
