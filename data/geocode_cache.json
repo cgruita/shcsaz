@@ -262,5 +262,33 @@
   "456 N Mesa Dr, Mesa": [
     33.42368,
     -111.823313
+  ],
+  "17636 W Pasadena Ave, Litchfield Park": [
+    33.509231,
+    -112.439856
+  ],
+  "20554 N 101st Ave, Peoria": [
+    33.66914,
+    -112.277136
+  ],
+  "19116 N Colonnade Way, Surprise": [
+    33.6578,
+    -112.377875
+  ],
+  "2655 N Pebble Creek Pkwy, Goodyear": [
+    33.47664,
+    -112.391475
+  ],
+  "16455 E Avenue of the Fountains, Fountain Hills": [
+    33.609011,
+    -111.727067
+  ],
+  "2525 E Southern Ave, Tempe": [
+    33.392506,
+    -111.883993
+  ],
+  "8170 N 90th St, Scottsdale": [
+    33.554488,
+    -111.888115
   ]
 }
