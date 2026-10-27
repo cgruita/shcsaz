@@ -6,32 +6,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.439856,
-          33.509231
+          -111.871303,
+          33.292342
         ]
       },
       "properties": {
         "id": "e001",
-        "lat": 33.509231,
-        "lon": -112.439856,
-        "name": "Peaceful Horizons Grand Opening",
-        "category": "Ribbon Cutting",
+        "lat": 33.292342,
+        "lon": -111.871303,
+        "name": "Meet & Greet with Krystal Casteel",
+        "category": "Networking",
         "recurring": false,
         "rsvp": true,
-        "date": "2026-10-20",
-        "date_label": "Tue, Oct 20",
-        "start_time": "11:00 AM",
-        "end_time": "3:00 PM",
-        "venue": "Peaceful Horizons Assisted Living",
-        "address": "17636 W Pasadena Ave",
-        "city": "Litchfield Park",
-        "description": "Grand opening of their second assisted living home; tour the home and meet the care team; nurse and pastor owned",
-        "event_url": "https://www.PeacefulHorizonsAssistedLiving.com",
-        "image_url": "images/peaceful-horizons-2026-10-20.jpg",
+        "date": "2026-10-26",
+        "date_label": "Mon, Oct 26",
+        "start_time": "3:00 PM",
+        "end_time": "5:00 PM",
+        "venue": "Pennington Gardens Assisted Living & Memory Care",
+        "address": "977 S Pennington Dr",
+        "city": "Chandler",
+        "description": "Afternoon of celebration and connection welcoming Krystal; drinks and light snacks in the Dining Room; AL / memory care",
+        "event_url": "https://penningtongardens.com",
+        "image_url": "images/pennington-gardens-2026-10-26.jpg",
         "has_image": true,
-        "contact": "(623) 323-9068 / Info@PeacefulHorizonsAssistedLiving.com",
-        "weekday": "Tuesday",
-        "color": "#DC2626"
+        "contact": "480-814-9046",
+        "weekday": "Monday",
+        "color": "#0891B2"
       }
     },
     {
@@ -39,30 +39,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.277136,
-          33.66914
+          -111.877525,
+          33.57575
         ]
       },
       "properties": {
         "id": "e002",
-        "lat": 33.66914,
-        "lon": -112.277136,
-        "name": "Pumpkins, Professionals & Possibilities",
+        "lat": 33.57575,
+        "lon": -111.877525,
+        "name": "Harvest of Memories Pie Social",
         "category": "Networking",
         "recurring": false,
         "rsvp": true,
-        "date": "2026-10-20",
-        "date_label": "Tue, Oct 20",
-        "start_time": "3:30 PM",
-        "end_time": "5:30 PM",
-        "venue": "Desert Winds Retirement Community",
-        "address": "20554 N 101st Ave",
-        "city": "Peoria",
-        "description": "Fall refreshments; pumpkin connection activity; business card exchange; held at the IL building of a campus with AL / memory care (AL building at 20545 N Lake Pleasant Rd)",
-        "event_url": "https://desertwindsretirement.com",
-        "image_url": "images/desert-winds-2026-10-20.jpg",
+        "date": "2026-10-27",
+        "date_label": "Tue, Oct 27",
+        "start_time": "3:00 PM",
+        "end_time": "4:30 PM",
+        "venue": "Mosaic Gardens Memory Care at Scottsdale",
+        "address": "9450 E Mountain View Rd",
+        "city": "Scottsdale",
+        "description": "Networking pie social with fresh apple / pumpkin / pecan pie; memory care community",
+        "event_url": "https://mosaicgardensscottsdale.com",
+        "image_url": "images/mosaic-gardens-2026-10-27.jpg",
         "has_image": true,
-        "contact": "623-362-1200",
+        "contact": "480-769-8201",
         "weekday": "Tuesday",
         "color": "#DC2626"
       }
@@ -72,131 +72,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.377875,
-          33.6578
+          -111.918546,
+          33.485125
         ]
       },
       "properties": {
         "id": "e003",
-        "lat": 33.6578,
-        "lon": -112.377875,
-        "name": "Masquerade Fall Fundraiser",
-        "category": "Misc",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-10-20",
-        "date_label": "Tue, Oct 20",
-        "start_time": "4:30 PM",
-        "end_time": "7:30 PM",
-        "venue": "The Colonnade (Sun Health Communities)",
-        "address": "19116 N Colonnade Way",
-        "city": "Surprise",
-        "description": "Sun City West Alliance of Business and Community fall fundraiser benefiting Fostering Hearts; wear a mask; food and drinks; ticketed; raffle baskets requested",
-        "event_url": "https://swipesimple.com/links/lnk_99d33afc8ad717fec6222f0346f15811",
-        "image_url": "images/colonnade-2026-10-20.jpg",
-        "has_image": true,
-        "contact": "Toni Nelson (602) 908-2454",
-        "weekday": "Tuesday",
-        "color": "#DC2626"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.391475,
-          33.47664
-        ]
-      },
-      "properties": {
-        "id": "e004",
-        "lat": 33.47664,
-        "lon": -112.391475,
-        "name": "West Valley Spotlight Breakfast",
+        "lat": 33.485125,
+        "lon": -111.918546,
+        "name": "Caramel Apple Bar",
         "category": "Networking",
         "recurring": false,
         "rsvp": true,
-        "date": "2026-10-21",
-        "date_label": "Wed, Oct 21",
-        "start_time": "9:00 AM",
-        "end_time": "10:30 AM",
-        "venue": "The Groves Senior Living (Stellar Living)",
-        "address": "2655 N Pebble Creek Pkwy",
-        "city": "Goodyear",
-        "description": "Spotlight West Valley inside dining breakfast hosted at the community; RSVP by Oct 19",
-        "event_url": "",
-        "image_url": "images/groves-2026-10-21.jpg",
-        "has_image": true,
-        "contact": "623-935-9058",
-        "weekday": "Wednesday",
-        "color": "#2563EB"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.727067,
-          33.609011
-        ]
-      },
-      "properties": {
-        "id": "e005",
-        "lat": 33.609011,
-        "lon": -111.727067,
-        "name": "HSP Phoenix Scottsdale Networking Social",
-        "category": "Networking",
-        "recurring": true,
-        "rsvp": true,
-        "date": "2026-10-21",
-        "date_label": "Wed, Oct 21",
+        "date": "2026-10-27",
+        "date_label": "Tue, Oct 27",
         "start_time": "3:30 PM",
         "end_time": "5:00 PM",
-        "venue": "Fountain View Village (Cogir)",
-        "address": "16455 E Avenue of the Fountains",
-        "city": "Fountain Hills",
-        "description": "Every 3rd Wednesday HSP mixer; bring a door prize for a short intro; IL / AL / memory care; limited to 55; RSVP required; park in visitor spots",
-        "event_url": "https://www.facebook.com/share/g/1HxzZqi3sw",
-        "image_url": "images/fountain-view-2026-10-21.jpg",
+        "venue": "The Springs of Scottsdale (Stellar)",
+        "address": "3212 N Miller Rd",
+        "city": "Scottsdale",
+        "description": "Sweet afternoon caramel apple bar; IL / AL community",
+        "event_url": "https://stellarliving.com/communities/the-springs-scottsdale-senior-assisted-living-scottsdale-az/",
+        "image_url": "images/springs-scottsdale-2026-10-27.jpg",
         "has_image": true,
-        "contact": "Deborah Arconti 480-512-2303 / Charlie Clifford 602-284-1831 / Zach Gariti 608-658-9187",
-        "weekday": "Wednesday",
-        "color": "#2563EB"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.115546,
-          33.623719
-        ]
-      },
-      "properties": {
-        "id": "e006",
-        "lat": 33.623719,
-        "lon": -112.115546,
-        "name": "AZCOA North Valley Breakfast Meeting",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-10-22",
-        "date_label": "Thu, Oct 22",
-        "start_time": "9:30 AM",
-        "end_time": "11:00 AM",
-        "venue": "Park Terrace Senior Living by Cogir",
-        "address": "2577 W Greenway Rd",
-        "city": "Phoenix",
-        "description": "Arizona Coalition on Aging North Valley meeting; breakfast at the community; IL / AL / memory care",
-        "event_url": "https://azcoa.org",
-        "image_url": "images/park-terrace-2026-10-22.jpg",
-        "has_image": true,
-        "contact": "(602) 883-2935",
-        "weekday": "Thursday",
-        "color": "#16A34A"
+        "contact": "480-666-6273 / 480-660-8169",
+        "weekday": "Tuesday",
+        "color": "#DC2626"
       }
     },
     {
@@ -209,27 +110,27 @@
         ]
       },
       "properties": {
-        "id": "e007",
+        "id": "e004",
         "lat": 33.605598,
         "lon": -112.261607,
-        "name": "Donuts and Coffee with Veterans",
+        "name": "Wine Down Wednesday",
         "category": "Networking",
         "recurring": false,
         "rsvp": true,
-        "date": "2026-10-22",
-        "date_label": "Thu, Oct 22",
-        "start_time": "2:30 PM",
-        "end_time": "3:00 PM",
+        "date": "2026-10-28",
+        "date_label": "Wed, Oct 28",
+        "start_time": "3:00 PM",
+        "end_time": "5:00 PM",
         "venue": "Cogir of Peoria (Memory Care)",
         "address": "13391 N 94th Dr",
         "city": "Peoria",
-        "description": "Donuts and coffee honoring veterans; RSVP by Oct 20",
+        "description": "Wine and appetizers; RSVP by Oct 26",
         "event_url": "https://CogirofPeoria.com",
-        "image_url": "images/cogir-peoria-2026-10-22.jpg",
+        "image_url": "images/cogir-peoria-2026-10-28.jpg",
         "has_image": true,
         "contact": "623-977-1431 / ContactPeoria@CogirUSA.com",
-        "weekday": "Thursday",
-        "color": "#16A34A"
+        "weekday": "Wednesday",
+        "color": "#2563EB"
       }
     },
     {
@@ -237,129 +138,63 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.375175,
-          33.65114
+          -112.277136,
+          33.66914
         ]
       },
       "properties": {
-        "id": "e008",
-        "lat": 33.65114,
-        "lon": -112.375175,
-        "name": "Boo Basket Marketing Event",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-10-22",
-        "date_label": "Thu, Oct 22",
-        "start_time": "3:30 PM",
-        "end_time": "5:00 PM",
-        "venue": "The Park at Surprise",
-        "address": "14630 W Parkwood Dr",
-        "city": "Surprise",
-        "description": "Bring a Boo Basket ($25 minimum); sponsored by Billet Health and Hospice; IL community with AL / memory care access",
-        "event_url": "",
-        "image_url": "images/park-at-surprise-2026-10-22.jpg",
-        "has_image": true,
-        "contact": "Nicole Carlen 623-594-9042",
-        "weekday": "Thursday",
-        "color": "#16A34A"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.883993,
-          33.392506
-        ]
-      },
-      "properties": {
-        "id": "e009",
-        "lat": 33.392506,
-        "lon": -111.883993,
-        "name": "Halloween Mix & Mingle",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-10-23",
-        "date_label": "Fri, Oct 23",
-        "start_time": "2:00 PM",
-        "end_time": "4:00 PM",
-        "venue": "Friendship Village Tempe Health Care Center",
-        "address": "2525 E Southern Ave",
-        "city": "Tempe",
-        "description": "Networking with healthcare professionals and referral partners; refreshments; costumes optional with prize for best costume; Health Care Center community room",
-        "event_url": "https://www.friendshipvillageaz.com",
-        "image_url": "images/friendship-village-2026-10-23.jpg",
-        "has_image": true,
-        "contact": "",
-        "weekday": "Friday",
-        "color": "#9333EA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.922493,
-          33.579119
-        ]
-      },
-      "properties": {
-        "id": "e010",
-        "lat": 33.579119,
-        "lon": -111.922493,
-        "name": "4th Friday Cocktails & Connections",
-        "category": "Networking",
-        "recurring": true,
-        "rsvp": true,
-        "date": "2026-10-23",
-        "date_label": "Fri, Oct 23",
-        "start_time": "3:30 PM",
-        "end_time": "5:00 PM",
-        "venue": "Sunrise of Scottsdale",
-        "address": "7370 E Gold Dust Ave",
-        "city": "Scottsdale",
-        "description": "Monthly 4th Friday happy hour; light bites and signature cocktail; meet the team and industry professionals",
-        "event_url": "https://www.facebook.com/events/3053412771672026/",
-        "image_url": "images/sunrise-scottsdale-2026-10-23.jpg",
-        "has_image": true,
-        "contact": "480-609-5115 / amy.bloomfield@sunriseseniorliving.com",
-        "weekday": "Friday",
-        "color": "#9333EA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.888115,
-          33.554488
-        ]
-      },
-      "properties": {
-        "id": "e011",
-        "lat": 33.554488,
-        "lon": -111.888115,
-        "name": "Fall Festival",
+        "id": "e006",
+        "lat": 33.66914,
+        "lon": -112.277136,
+        "name": "Halloween at Desert Winds",
         "category": "Misc",
         "recurring": false,
         "rsvp": false,
-        "date": "2026-10-23",
-        "date_label": "Fri, Oct 23",
+        "date": "2026-10-30",
+        "date_label": "Fri, Oct 30",
+        "start_time": "4:00 PM",
+        "end_time": "6:00 PM",
+        "venue": "Desert Winds Retirement Community",
+        "address": "20554 N 101st Ave",
+        "city": "Peoria",
+        "description": "Open to the public; bring the kids for trick-or-treating and Halloween fun; IL building of a campus with AL / memory care",
+        "event_url": "https://desertwindsretirement.com",
+        "image_url": "images/desert-winds-2026-10-30.jpg",
+        "has_image": true,
+        "contact": "623-362-1200",
+        "weekday": "Friday",
+        "color": "#9333EA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.944116,
+          33.62725
+        ]
+      },
+      "properties": {
+        "id": "e007",
+        "lat": 33.62725,
+        "lon": -111.944116,
+        "name": "Trick or Treat",
+        "category": "Misc",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-10-30",
+        "date_label": "Fri, Oct 30",
         "start_time": "5:00 PM",
         "end_time": "7:00 PM",
-        "venue": "Legacy Village of Salt River",
-        "address": "8170 N 90th St",
+        "venue": "Brookdale North Scottsdale",
+        "address": "15436 N 64th St",
         "city": "Scottsdale",
-        "description": "Evening of autumn fun; live music; games; food and specialty cocktails; IL / AL / memory care",
-        "event_url": "https://LegacyVillageSaltRiver.com",
-        "image_url": "images/legacy-village-2026-10-23.jpg",
+        "description": "Spooktacular evening of trick-or-treating with residents; costumes and candy; all ages welcome; AL / memory care",
+        "event_url": "https://www.brookdale.com/en/communities/brookdale-north-scottsdale.html",
+        "image_url": "images/brookdale-north-scottsdale-2026-10-30.jpg",
         "has_image": true,
-        "contact": "480-527-2000",
+        "contact": "480-948-6950",
         "weekday": "Friday",
         "color": "#9333EA"
       }
