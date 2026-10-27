@@ -14,7 +14,7 @@
         "id": "e001",
         "lat": 33.292342,
         "lon": -111.871303,
-        "name": "Meet & Greet with Krystal Casteel",
+        "name": "Pennington Meet & Greet",
         "category": "Networking",
         "recurring": false,
         "rsvp": true,
@@ -47,7 +47,7 @@
         "id": "e002",
         "lat": 33.57575,
         "lon": -111.877525,
-        "name": "Harvest of Memories Pie Social",
+        "name": "Mosaic Pie Social",
         "category": "Networking",
         "recurring": false,
         "rsvp": true,
@@ -59,7 +59,7 @@
         "address": "9450 E Mountain View Rd",
         "city": "Scottsdale",
         "description": "Networking pie social with fresh apple / pumpkin / pecan pie; memory care community",
-        "event_url": "https://mosaicgardensscottsdale.com",
+        "event_url": "https://www.facebook.com/events/29106646735627580/",
         "image_url": "images/mosaic-gardens-2026-10-27.jpg",
         "has_image": true,
         "contact": "480-769-8201",
@@ -80,7 +80,7 @@
         "id": "e003",
         "lat": 33.485125,
         "lon": -111.918546,
-        "name": "Caramel Apple Bar",
+        "name": "Springs Caramel Apples",
         "category": "Networking",
         "recurring": false,
         "rsvp": true,
@@ -92,7 +92,7 @@
         "address": "3212 N Miller Rd",
         "city": "Scottsdale",
         "description": "Sweet afternoon caramel apple bar; IL / AL community",
-        "event_url": "https://stellarliving.com/communities/the-springs-scottsdale-senior-assisted-living-scottsdale-az/",
+        "event_url": "https://www.facebook.com/events/1627083528886817/",
         "image_url": "images/springs-scottsdale-2026-10-27.jpg",
         "has_image": true,
         "contact": "480-666-6273 / 480-660-8169",
@@ -105,15 +105,48 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -112.45162,
+          33.425136
+        ]
+      },
+      "properties": {
+        "id": "e004",
+        "lat": 33.425136,
+        "lon": -112.45162,
+        "name": "Shiloh Grand Opening",
+        "category": "Ribbon Cutting",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-10-28",
+        "date_label": "Wed, Oct 28",
+        "start_time": "11:00 AM",
+        "end_time": "3:00 PM",
+        "venue": "Shiloh Cottage Assisted Living",
+        "address": "18207 W Ashley Dr",
+        "city": "Goodyear",
+        "description": "Grand opening of their second location; tour the home and meet the care team; 24/7 care staff; private and shared rooms; AL home",
+        "event_url": "",
+        "image_url": "images/shiloh-cottage-goodyear-2026-10-28.jpg",
+        "has_image": true,
+        "contact": "Rasha Hanna-Brown",
+        "weekday": "Wednesday",
+        "color": "#2563EB"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -112.261607,
           33.605598
         ]
       },
       "properties": {
-        "id": "e004",
+        "id": "e005",
         "lat": 33.605598,
         "lon": -112.261607,
-        "name": "Wine Down Wednesday",
+        "name": "Cogir Peoria Wine Down",
         "category": "Networking",
         "recurring": false,
         "rsvp": true,
@@ -125,7 +158,7 @@
         "address": "13391 N 94th Dr",
         "city": "Peoria",
         "description": "Wine and appetizers; RSVP by Oct 26",
-        "event_url": "https://CogirofPeoria.com",
+        "event_url": "https://www.facebook.com/events/1973305080297057/",
         "image_url": "images/cogir-peoria-2026-10-28.jpg",
         "has_image": true,
         "contact": "623-977-1431 / ContactPeoria@CogirUSA.com",
@@ -143,10 +176,10 @@
         ]
       },
       "properties": {
-        "id": "e006",
+        "id": "e007",
         "lat": 33.66914,
         "lon": -112.277136,
-        "name": "Halloween at Desert Winds",
+        "name": "Desert Winds Halloween",
         "category": "Misc",
         "recurring": false,
         "rsvp": false,
@@ -176,10 +209,10 @@
         ]
       },
       "properties": {
-        "id": "e007",
+        "id": "e008",
         "lat": 33.62725,
         "lon": -111.944116,
-        "name": "Trick or Treat",
+        "name": "Brookdale Trick or Treat",
         "category": "Misc",
         "recurring": false,
         "rsvp": false,
