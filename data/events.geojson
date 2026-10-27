@@ -6,39 +6,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -111.871303,
-          33.292342
-        ]
-      },
-      "properties": {
-        "id": "e001",
-        "lat": 33.292342,
-        "lon": -111.871303,
-        "name": "Pennington Meet & Greet",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-10-26",
-        "date_label": "Mon, Oct 26",
-        "start_time": "3:00 PM",
-        "end_time": "5:00 PM",
-        "venue": "Pennington Gardens Assisted Living & Memory Care",
-        "address": "977 S Pennington Dr",
-        "city": "Chandler",
-        "description": "Afternoon of celebration and connection welcoming Krystal; drinks and light snacks in the Dining Room; AL / memory care",
-        "event_url": "https://penningtongardens.com",
-        "image_url": "images/pennington-gardens-2026-10-26.jpg",
-        "has_image": true,
-        "contact": "480-814-9046",
-        "weekday": "Monday",
-        "color": "#0891B2"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -111.877525,
           33.57575
         ]
