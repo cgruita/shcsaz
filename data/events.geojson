@@ -6,6 +6,39 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -112.224201,
+          33.662171
+        ]
+      },
+      "properties": {
+        "id": "e007",
+        "lat": 33.662171,
+        "lon": -112.224201,
+        "name": "Inspira Breakfast",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-11-04",
+        "date_label": "Wed, Nov 04",
+        "start_time": "8:00 AM",
+        "end_time": "10:00 AM",
+        "venue": "Inspira Arrowhead",
+        "address": "20298 N 78th Ave",
+        "city": "Glendale",
+        "description": "SHCSAZ group breakfast",
+        "event_url": "https://www.facebook.com/events/2231318781122721",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#2563EB"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -112.39105,
           33.63431
         ]
@@ -26,7 +59,7 @@
         "address": "15358 W Post Cir",
         "city": "Surprise",
         "description": "Tour the home and meet the owner; AL home",
-        "event_url": "",
+        "event_url": "https://www.facebook.com/events/1921338282167678",
         "image_url": "images/silver-haven-2026-11-04.jpg",
         "has_image": true,
         "contact": "480-971-2535 / silverhavenaz@gmail.com",
@@ -125,7 +158,7 @@
         "address": "15833 W Clubhouse Dr",
         "city": "Goodyear",
         "description": "Brunch and beverages for senior living professionals; complimentary headshots; explore the community",
-        "event_url": "",
+        "event_url": "https://www.facebook.com/events/1072673942495499",
         "image_url": "images/robson-reserve-2026-11-05.jpg",
         "has_image": true,
         "contact": "Jamie Thurman 623-440-4891 (RSVP by 10/30)",
@@ -171,6 +204,39 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -112.280404,
+          33.688281
+        ]
+      },
+      "properties": {
+        "id": "e008",
+        "lat": 33.688281,
+        "lon": -112.280404,
+        "name": "Emma AL Open House",
+        "category": "Open House",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-11-05",
+        "date_label": "Thu, Nov 05",
+        "start_time": "1:00 PM",
+        "end_time": "4:00 PM",
+        "venue": "Emma Assisted Living LLC",
+        "address": "10267 W Cashman Dr",
+        "city": "Peoria",
+        "description": "Open house; AL home; SHCSAZ group event",
+        "event_url": "https://www.facebook.com/events/2311523179638068",
+        "image_url": "images/emma-peoria-2026-11-05.jpg",
+        "has_image": true,
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#16A34A"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -112.375175,
           33.65114
         ]
@@ -191,10 +257,43 @@
         "address": "14630 W Parkwood Dr",
         "city": "Surprise",
         "description": "HSP West November social hosted by Koelsch Communities; 50/50 raffle and door prizes; RSVP to HSPWest@gmail.com by Nov 2",
-        "event_url": "https://hspwest.com",
+        "event_url": "https://www.facebook.com/events/1673730274111337",
         "image_url": "images/park-surprise-2026-11-05.jpg",
         "has_image": true,
         "contact": "HSPWest@gmail.com",
+        "weekday": "Thursday",
+        "color": "#16A34A"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.047359,
+          33.49283
+        ]
+      },
+      "properties": {
+        "id": "e009",
+        "lat": 33.49283,
+        "lon": -112.047359,
+        "name": "Vintage Golden Hour",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-11-05",
+        "date_label": "Thu, Nov 05",
+        "start_time": "4:30 PM",
+        "end_time": "6:00 PM",
+        "venue": "Vintage Silver Center",
+        "address": "3909 N 16th St",
+        "city": "Phoenix",
+        "description": "Golden Hour old-school networking; food and drinks; SHCSAZ group event",
+        "event_url": "https://www.facebook.com/events/1115381234586577",
+        "image_url": "images/vintage-silver-2026-11-05.jpg",
+        "has_image": true,
+        "contact": "602-492-2170",
         "weekday": "Thursday",
         "color": "#16A34A"
       }
