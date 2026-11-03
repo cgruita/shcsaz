@@ -6,32 +6,65 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -111.877525,
-          33.57575
+          -112.39105,
+          33.63431
+        ]
+      },
+      "properties": {
+        "id": "e001",
+        "lat": 33.63431,
+        "lon": -112.39105,
+        "name": "Silver Haven Tours",
+        "category": "Open House",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-11-04",
+        "date_label": "Wed, Nov 04",
+        "start_time": "10:00 AM",
+        "end_time": "2:00 PM",
+        "venue": "Silver Haven Residential Assisted Living",
+        "address": "15358 W Post Cir",
+        "city": "Surprise",
+        "description": "Tour the home and meet the owner; AL home",
+        "event_url": "",
+        "image_url": "images/silver-haven-2026-11-04.jpg",
+        "has_image": true,
+        "contact": "480-971-2535 / silverhavenaz@gmail.com",
+        "weekday": "Wednesday",
+        "color": "#2563EB"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.884012,
+          33.585778
         ]
       },
       "properties": {
         "id": "e002",
-        "lat": 33.57575,
-        "lon": -111.877525,
-        "name": "Mosaic Pie Social",
+        "lat": 33.585778,
+        "lon": -111.884012,
+        "name": "Ranch Estates Gathering",
         "category": "Networking",
         "recurring": false,
-        "rsvp": true,
-        "date": "2026-10-27",
-        "date_label": "Tue, Oct 27",
+        "rsvp": false,
+        "date": "2026-11-04",
+        "date_label": "Wed, Nov 04",
         "start_time": "3:00 PM",
-        "end_time": "4:30 PM",
-        "venue": "Mosaic Gardens Memory Care at Scottsdale",
-        "address": "9450 E Mountain View Rd",
+        "end_time": "5:00 PM",
+        "venue": "The Ranch Estates at Scottsdale",
+        "address": "9160 E Desert Cove Ave",
         "city": "Scottsdale",
-        "description": "Networking pie social with fresh apple / pumpkin / pecan pie; memory care community",
-        "event_url": "https://www.facebook.com/events/29106646735627580/",
-        "image_url": "images/mosaic-gardens-2026-10-27.jpg",
+        "description": "A Grateful Gathering - celebrate friendsgiving; AL / memory care",
+        "event_url": "",
+        "image_url": "images/ranch-estates-2026-11-04.jpg",
         "has_image": true,
-        "contact": "480-769-8201",
-        "weekday": "Tuesday",
-        "color": "#DC2626"
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#2563EB"
       }
     },
     {
@@ -39,32 +72,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -111.918546,
-          33.485125
+          -111.85984,
+          33.29814
         ]
       },
       "properties": {
         "id": "e003",
-        "lat": 33.485125,
-        "lon": -111.918546,
-        "name": "Springs Caramel Apples",
+        "lat": 33.29814,
+        "lon": -111.85984,
+        "name": "AZCOA East Valley Mixer",
         "category": "Networking",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-10-27",
-        "date_label": "Tue, Oct 27",
+        "recurring": true,
+        "rsvp": false,
+        "date": "2026-11-04",
+        "date_label": "Wed, Nov 04",
         "start_time": "3:30 PM",
         "end_time": "5:00 PM",
-        "venue": "The Springs of Scottsdale (Stellar)",
-        "address": "3212 N Miller Rd",
-        "city": "Scottsdale",
-        "description": "Sweet afternoon caramel apple bar; IL / AL community",
-        "event_url": "https://www.facebook.com/events/1627083528886817/",
-        "image_url": "images/springs-scottsdale-2026-10-27.jpg",
+        "venue": "Solterra Senior Living at Chandler",
+        "address": "350 S Alma School Rd",
+        "city": "Chandler",
+        "description": "East Valley COA networking mixer every first Wednesday; complimentary appetizers and drinks",
+        "event_url": "",
+        "image_url": "images/solterra-chandler-2026-11-04.jpg",
         "has_image": true,
-        "contact": "480-666-6273 / 480-660-8169",
-        "weekday": "Tuesday",
-        "color": "#DC2626"
+        "contact": "",
+        "weekday": "Wednesday",
+        "color": "#2563EB"
       }
     },
     {
@@ -72,32 +105,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.45162,
-          33.425136
+          -112.397455,
+          33.48542
         ]
       },
       "properties": {
         "id": "e004",
-        "lat": 33.425136,
-        "lon": -112.45162,
-        "name": "Shiloh Grand Opening",
-        "category": "Ribbon Cutting",
+        "lat": 33.48542,
+        "lon": -112.397455,
+        "name": "Robson Sip & Socialize",
+        "category": "Networking",
         "recurring": false,
-        "rsvp": false,
-        "date": "2026-10-28",
-        "date_label": "Wed, Oct 28",
-        "start_time": "11:00 AM",
-        "end_time": "3:00 PM",
-        "venue": "Shiloh Cottage Assisted Living",
-        "address": "18207 W Ashley Dr",
+        "rsvp": true,
+        "date": "2026-11-05",
+        "date_label": "Thu, Nov 05",
+        "start_time": "10:00 AM",
+        "end_time": "1:00 PM",
+        "venue": "Robson Reserve at PebbleCreek",
+        "address": "15833 W Clubhouse Dr",
         "city": "Goodyear",
-        "description": "Grand opening of their second location; tour the home and meet the care team; 24/7 care staff; private and shared rooms; AL home",
+        "description": "Brunch and beverages for senior living professionals; complimentary headshots; explore the community",
         "event_url": "",
-        "image_url": "images/shiloh-cottage-goodyear-2026-10-28.jpg",
+        "image_url": "images/robson-reserve-2026-11-05.jpg",
         "has_image": true,
-        "contact": "Rasha Hanna-Brown",
-        "weekday": "Wednesday",
-        "color": "#2563EB"
+        "contact": "Jamie Thurman 623-440-4891 (RSVP by 10/30)",
+        "weekday": "Thursday",
+        "color": "#16A34A"
       }
     },
     {
@@ -105,98 +138,65 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.261607,
-          33.605598
+          -111.773311,
+          33.234622
         ]
       },
       "properties": {
         "id": "e005",
-        "lat": 33.605598,
-        "lon": -112.261607,
-        "name": "Cogir Peoria Wine Down",
+        "lat": 33.234622,
+        "lon": -111.773311,
+        "name": "Park Villas Open House",
+        "category": "Open House",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-11-05",
+        "date_label": "Thu, Nov 05",
+        "start_time": "10:00 AM",
+        "end_time": "12:00 PM",
+        "venue": "Park Senior Villas",
+        "address": "4950 S Lindsay Rd",
+        "city": "Chandler",
+        "description": "First look at the new expansion; light bites and raffle; AL / memory care",
+        "event_url": "https://parkseniorvillas.com",
+        "image_url": "images/park-senior-villas-2026-11-05.jpg",
+        "has_image": true,
+        "contact": "480-808-7794",
+        "weekday": "Thursday",
+        "color": "#16A34A"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.375175,
+          33.65114
+        ]
+      },
+      "properties": {
+        "id": "e006",
+        "lat": 33.65114,
+        "lon": -112.375175,
+        "name": "HSP West Social",
         "category": "Networking",
         "recurring": false,
         "rsvp": true,
-        "date": "2026-10-28",
-        "date_label": "Wed, Oct 28",
-        "start_time": "3:00 PM",
-        "end_time": "5:00 PM",
-        "venue": "Cogir of Peoria (Memory Care)",
-        "address": "13391 N 94th Dr",
-        "city": "Peoria",
-        "description": "Wine and appetizers; RSVP by Oct 26",
-        "event_url": "https://www.facebook.com/events/1973305080297057/",
-        "image_url": "images/cogir-peoria-2026-10-28.jpg",
-        "has_image": true,
-        "contact": "623-977-1431 / ContactPeoria@CogirUSA.com",
-        "weekday": "Wednesday",
-        "color": "#2563EB"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.277136,
-          33.66914
-        ]
-      },
-      "properties": {
-        "id": "e007",
-        "lat": 33.66914,
-        "lon": -112.277136,
-        "name": "Desert Winds Halloween",
-        "category": "Misc",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-10-30",
-        "date_label": "Fri, Oct 30",
+        "date": "2026-11-05",
+        "date_label": "Thu, Nov 05",
         "start_time": "4:00 PM",
-        "end_time": "6:00 PM",
-        "venue": "Desert Winds Retirement Community",
-        "address": "20554 N 101st Ave",
-        "city": "Peoria",
-        "description": "Open to the public; bring the kids for trick-or-treating and Halloween fun; IL building of a campus with AL / memory care",
-        "event_url": "https://desertwindsretirement.com",
-        "image_url": "images/desert-winds-2026-10-30.jpg",
+        "end_time": "",
+        "venue": "The Park at Surprise",
+        "address": "14630 W Parkwood Dr",
+        "city": "Surprise",
+        "description": "HSP West November social hosted by Koelsch Communities; 50/50 raffle and door prizes; RSVP to HSPWest@gmail.com by Nov 2",
+        "event_url": "https://hspwest.com",
+        "image_url": "images/park-surprise-2026-11-05.jpg",
         "has_image": true,
-        "contact": "623-362-1200",
-        "weekday": "Friday",
-        "color": "#9333EA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.944116,
-          33.62725
-        ]
-      },
-      "properties": {
-        "id": "e008",
-        "lat": 33.62725,
-        "lon": -111.944116,
-        "name": "Brookdale Trick or Treat",
-        "category": "Misc",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-10-30",
-        "date_label": "Fri, Oct 30",
-        "start_time": "5:00 PM",
-        "end_time": "7:00 PM",
-        "venue": "Brookdale North Scottsdale",
-        "address": "15436 N 64th St",
-        "city": "Scottsdale",
-        "description": "Spooktacular evening of trick-or-treating with residents; costumes and candy; all ages welcome; AL / memory care",
-        "event_url": "https://www.brookdale.com/en/communities/brookdale-north-scottsdale.html",
-        "image_url": "images/brookdale-north-scottsdale-2026-10-30.jpg",
-        "has_image": true,
-        "contact": "480-948-6950",
-        "weekday": "Friday",
-        "color": "#9333EA"
+        "contact": "HSPWest@gmail.com",
+        "weekday": "Thursday",
+        "color": "#16A34A"
       }
     }
   ]
