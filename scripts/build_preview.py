@@ -14,7 +14,7 @@ LOGO_LG = os.path.join(ROOT, "images", "light-on-logo-lg.png")
 LOGO = os.path.join(ROOT, "images", "light-on-logo.png")
 INDEX = os.path.join(ROOT, "index.html")
 TILE_CACHE = os.path.join(ROOT, "data", "tile_cache")
-SITE = "https://cgruita.github.io/shcsaz/"
+SITE = "https://assistedlivingevents.com/"
 W, H, PANEL = 1200, 630, 470
 NAVY, MUTED, LINE = "#0f2a43", "#b9c7d6", "#3b5875"
 FD = "/System/Library/Fonts/Supplemental/"
@@ -61,7 +61,7 @@ def tile(z, x, y):
     if not os.path.exists(p):
         req = urllib.request.Request(
             f"https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-            headers={"User-Agent": "shcsaz-preview/1.0 (+https://cgruita.github.io/shcsaz/)"})
+            headers={"User-Agent": "shcsaz-preview/1.0 (+https://assistedlivingevents.com/)"})
         with urllib.request.urlopen(req, timeout=20) as r, open(p, "wb") as f:
             f.write(r.read())
     return Image.open(p).convert("RGB")
@@ -200,7 +200,7 @@ def render(S, out):
         lx, ly = x0 + q(72), H2 - q(30) - lh2
         d.rounded_rectangle((lx - q(8), ly - q(4), lx + logo.width + q(8), ly + lh2 + q(4)), radius=q(8), fill="white")
         img.paste(logo, (lx, ly), logo)
-    d.text((P2 - q(30), H2 - q(30) - q(17)), "cgruita.github.io/shcsaz", font=font("Arial.ttf", q(14)), fill=MUTED, anchor="rm")
+    d.text((P2 - q(30), H2 - q(30) - q(17)), "assistedlivingevents.com", font=font("Arial.ttf", q(14)), fill=MUTED, anchor="rm")
 
     img.save(out, optimize=True)
     print(f"Wrote {out} ({n} events, {label})")
