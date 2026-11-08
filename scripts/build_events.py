@@ -62,23 +62,17 @@ def normalize_category(row: dict) -> str:
 
 def build() -> None:
     today = datetime.date.today()
-    current_start, week_end = current_week_bounds(today)
-    # The map shows last week too, so events from both weeks are loaded.
-    week_start = current_start - datetime.timedelta(days=7)
+    week_start, week_end = current_week_bounds(today)
+    csv_path = config.week_csv_path(today)
 
-    rows = []
-    for monday in (week_start, current_start):
-        csv_path = config.week_csv_path(monday)
-        try:
-            rows.extend(fetch_events.fetch(csv_path))
-        except FileNotFoundError:
-            if monday == current_start:
-                print(
-                    f"No source for the week of {monday.isoformat()} - "
-                    f"expected {os.path.relpath(csv_path)}"
-                )
-                sys.exit(1)
-            print(f"No source for last week ({os.path.relpath(csv_path)}), skipping it")
+    try:
+        rows = fetch_events.fetch(csv_path)
+    except FileNotFoundError:
+        print(
+            f"No source for the week of {week_start.isoformat()} - "
+            f"expected {os.path.relpath(csv_path)}"
+        )
+        sys.exit(1)
 
     cache = geocode_module.load_cache()
 
