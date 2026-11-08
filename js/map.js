@@ -1031,13 +1031,17 @@ function weekRangeLabel(features) {
     .filter(Boolean)
     .sort();
   if (!dates.length) return "No events this week";
-  const start = new Date(dates[0] + "T12:00:00");
-  const day = start.getDay(); // 0 = Sun
-  const mondayOffset = day === 0 ? -6 : 1 - day;
-  const monday = new Date(start);
-  monday.setDate(start.getDate() + mondayOffset);
-  const saturday = new Date(monday);
-  saturday.setDate(monday.getDate() + 5);
+  // Monday of the week containing an ISO date (dates are sorted, so the
+  // first and last entries span the earliest and latest weeks shown).
+  const mondayOf = (iso) => {
+    const d = new Date(iso + "T12:00:00");
+    const day = d.getDay(); // 0 = Sun
+    d.setDate(d.getDate() + (day === 0 ? -6 : 1 - day));
+    return d;
+  };
+  const monday = mondayOf(dates[0]);
+  const saturday = mondayOf(dates[dates.length - 1]);
+  saturday.setDate(saturday.getDate() + 5);
   const months = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December",

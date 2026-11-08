@@ -104,8 +104,10 @@ def fit(draw, text, f, maxw):
 
 
 def week_label(dates):
+    # Span from the Monday of the earliest event's week to the Sunday of the latest one's.
     mon = min(dates) - datetime.timedelta(days=min(dates).weekday())
-    sun = mon + datetime.timedelta(days=6)
+    last = max(dates)
+    sun = last + datetime.timedelta(days=6 - last.weekday())
     if mon.month == sun.month:
         return f"{mon:%b} {mon.day}–{sun.day}", mon
     return f"{mon:%b} {mon.day} – {sun:%b} {sun.day}", mon
