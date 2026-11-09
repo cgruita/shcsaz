@@ -1,1 +1,12 @@
 id,name,category,start_date,start_time,end_time,venue,address,city,description,event_url,image_url,contact,recurring,rsvp,include
+e001,Spotlight EV Breakfast,Networking,2026-11-10,9:00 AM,10:30 AM,Abbington Senior Living,3239 S Mercy Rd,Gilbert,Spotlight East Valley breakfast hosted at Abbington; flyer time runs to 10:30 (text said 10),,images/abbington-gilbert-2026-11-10.jpg,480-630-4262,no,yes,yes
+e002,AZCOA West Meeting,Networking,2026-11-10,9:30 AM,11:00 AM,The Park at Surprise,14630 W Parkwood Dr,Surprise,West Valley AZCOA networking; Nancy text said Park at Copper Creek Surprise but that community is in Chandler — using Park at Surprise pending confirm,https://www.azcoa.org,,,yes,no,yes
+e003,Acoya Mesa Heroes,Networking,2026-11-11,10:00 AM,12:00 PM,Acoya Mesa,6502 E Brown Rd,Mesa,Honoring Our Heroes Veterans Day event,,,480-275-8300,no,yes,yes
+e004,Acoya Shea Heroes,Networking,2026-11-11,10:00 AM,11:00 AM,Acoya Shea,7373 E Shea Blvd,Scottsdale,Honoring Our Heroes Veterans Day event,,,480-912-1300,no,yes,yes
+e005,HSP East Valley,Networking,2026-11-11,3:30 PM,5:00 PM,Canyon Winds,2851 N Boulder Canyon,Mesa,HSP East Valley mixer; Canyon Winds IL building (campus also has AL/MC),https://www.facebook.com/events/955729117266669,,hspeastvalley@gmail.com,no,yes,yes
+e006,Spotlight Scottsdale,Networking,2026-11-12,9:00 AM,10:30 AM,Mosaic Gardens Memory Care at Scottsdale,9450 E Mountain View Rd,Scottsdale,Spotlight Scottsdale/Phoenix breakfast,,,,no,yes,yes
+e007,Aging Mythbusters,Networking,2026-11-12,2:00 PM,3:15 PM,Cadence Living Chandler,100 W Queen Creek Rd,Chandler,Education session at Cadence Living Chandler,https://www.facebook.com/events/1529754275877507,,,no,no,yes
+e008,Maravilla Networking,Networking,2026-11-12,3:00 PM,5:00 PM,Maravilla Scottsdale,7325 E Princess Blvd,Scottsdale,Networking social at Maravilla Scottsdale,,,,no,no,yes
+e009,Acoya Mesa Karaoke,Networking,2026-11-12,3:00 PM,5:00 PM,Acoya Mesa,6502 E Brown Rd,Mesa,Karaoke happy hour with Rockin Rob; hosted at the community,,images/acoya-mesa-karaoke-2026-11-12.jpg,,no,no,yes
+e010,Elmwood Opening,Ribbon Cutting,2026-11-13,11:00 AM,1:00 PM,Elmwood Senior Living,2555 N Price Rd,Chandler,Remodel grand opening,https://www.facebook.com/events/1034639086314908,,,no,no,yes
+e011,Casalina Opening,Open House,2026-11-14,12:00 PM,4:00 PM,Casalina Residential Assisted Living,22706 N 184th Ave,Surprise,Grand opening of Casalina assisted living,,,,no,no,yes

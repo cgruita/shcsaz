@@ -6,230 +6,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.224201,
-          33.662171
-        ]
-      },
-      "properties": {
-        "id": "e007",
-        "lat": 33.662171,
-        "lon": -112.224201,
-        "name": "Inspira Breakfast",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-11-04",
-        "date_label": "Wed, Nov 04",
-        "start_time": "8:00 AM",
-        "end_time": "10:00 AM",
-        "venue": "Inspira Arrowhead",
-        "address": "20298 N 78th Ave",
-        "city": "Glendale",
-        "description": "SHCSAZ group breakfast",
-        "event_url": "https://www.facebook.com/events/2231318781122721",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Wednesday",
-        "color": "#2563EB"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.39105,
-          33.63431
+          -111.74478,
+          33.291802
         ]
       },
       "properties": {
         "id": "e001",
-        "lat": 33.63431,
-        "lon": -112.39105,
-        "name": "Silver Haven Tours",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-11-04",
-        "date_label": "Wed, Nov 04",
-        "start_time": "10:00 AM",
-        "end_time": "2:00 PM",
-        "venue": "Silver Haven Residential Assisted Living",
-        "address": "15358 W Post Cir",
-        "city": "Surprise",
-        "description": "Tour the home and meet the owner; AL home",
-        "event_url": "https://www.facebook.com/events/1921338282167678",
-        "image_url": "images/silver-haven-2026-11-04.jpg",
-        "has_image": true,
-        "contact": "480-971-2535 / silverhavenaz@gmail.com",
-        "weekday": "Wednesday",
-        "color": "#2563EB"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.884012,
-          33.585778
-        ]
-      },
-      "properties": {
-        "id": "e002",
-        "lat": 33.585778,
-        "lon": -111.884012,
-        "name": "Ranch Estates Gathering",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-11-04",
-        "date_label": "Wed, Nov 04",
-        "start_time": "3:00 PM",
-        "end_time": "5:00 PM",
-        "venue": "The Ranch Estates at Scottsdale",
-        "address": "9160 E Desert Cove Ave",
-        "city": "Scottsdale",
-        "description": "A Grateful Gathering - celebrate friendsgiving; AL / memory care",
-        "event_url": "",
-        "image_url": "images/ranch-estates-2026-11-04.jpg",
-        "has_image": true,
-        "contact": "",
-        "weekday": "Wednesday",
-        "color": "#2563EB"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.85984,
-          33.29814
-        ]
-      },
-      "properties": {
-        "id": "e003",
-        "lat": 33.29814,
-        "lon": -111.85984,
-        "name": "AZCOA East Valley Mixer",
-        "category": "Networking",
-        "recurring": true,
-        "rsvp": false,
-        "date": "2026-11-04",
-        "date_label": "Wed, Nov 04",
-        "start_time": "3:30 PM",
-        "end_time": "5:00 PM",
-        "venue": "Solterra Senior Living at Chandler",
-        "address": "350 S Alma School Rd",
-        "city": "Chandler",
-        "description": "East Valley COA networking mixer every first Wednesday; complimentary appetizers and drinks",
-        "event_url": "",
-        "image_url": "images/solterra-chandler-2026-11-04.jpg",
-        "has_image": true,
-        "contact": "",
-        "weekday": "Wednesday",
-        "color": "#2563EB"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.397455,
-          33.48542
-        ]
-      },
-      "properties": {
-        "id": "e004",
-        "lat": 33.48542,
-        "lon": -112.397455,
-        "name": "Robson Sip & Socialize",
+        "lat": 33.291802,
+        "lon": -111.74478,
+        "name": "Spotlight EV Breakfast",
         "category": "Networking",
         "recurring": false,
         "rsvp": true,
-        "date": "2026-11-05",
-        "date_label": "Thu, Nov 05",
-        "start_time": "10:00 AM",
-        "end_time": "1:00 PM",
-        "venue": "Robson Reserve at PebbleCreek",
-        "address": "15833 W Clubhouse Dr",
-        "city": "Goodyear",
-        "description": "Brunch and beverages for senior living professionals; complimentary headshots; explore the community",
-        "event_url": "https://www.facebook.com/events/1072673942495499",
-        "image_url": "images/robson-reserve-2026-11-05.jpg",
+        "date": "2026-11-10",
+        "date_label": "Tue, Nov 10",
+        "start_time": "9:00 AM",
+        "end_time": "10:30 AM",
+        "venue": "Abbington Senior Living",
+        "address": "3239 S Mercy Rd",
+        "city": "Gilbert",
+        "description": "Spotlight East Valley breakfast hosted at Abbington; flyer time runs to 10:30 (text said 10)",
+        "event_url": "",
+        "image_url": "images/abbington-gilbert-2026-11-10.jpg",
         "has_image": true,
-        "contact": "Jamie Thurman 623-440-4891 (RSVP by 10/30)",
-        "weekday": "Thursday",
-        "color": "#16A34A"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.773311,
-          33.234622
-        ]
-      },
-      "properties": {
-        "id": "e005",
-        "lat": 33.234622,
-        "lon": -111.773311,
-        "name": "Park Villas Open House",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-11-05",
-        "date_label": "Thu, Nov 05",
-        "start_time": "10:00 AM",
-        "end_time": "12:00 PM",
-        "venue": "Park Senior Villas",
-        "address": "4950 S Lindsay Rd",
-        "city": "Chandler",
-        "description": "First look at the new expansion; light bites and raffle; AL / memory care",
-        "event_url": "https://parkseniorvillas.com",
-        "image_url": "images/park-senior-villas-2026-11-05.jpg",
-        "has_image": true,
-        "contact": "480-808-7794",
-        "weekday": "Thursday",
-        "color": "#16A34A"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.280404,
-          33.688281
-        ]
-      },
-      "properties": {
-        "id": "e008",
-        "lat": 33.688281,
-        "lon": -112.280404,
-        "name": "Emma AL Open House",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-11-05",
-        "date_label": "Thu, Nov 05",
-        "start_time": "1:00 PM",
-        "end_time": "4:00 PM",
-        "venue": "Emma Assisted Living LLC",
-        "address": "10267 W Cashman Dr",
-        "city": "Peoria",
-        "description": "Open house; AL home; SHCSAZ group event",
-        "event_url": "https://www.facebook.com/events/2311523179638068",
-        "image_url": "images/emma-peoria-2026-11-05.jpg",
-        "has_image": true,
-        "contact": "",
-        "weekday": "Thursday",
-        "color": "#16A34A"
+        "contact": "480-630-4262",
+        "weekday": "Tuesday",
+        "color": "#DC2626"
       }
     },
     {
@@ -242,25 +44,157 @@
         ]
       },
       "properties": {
-        "id": "e006",
+        "id": "e002",
         "lat": 33.65114,
         "lon": -112.375175,
-        "name": "HSP West Social",
+        "name": "AZCOA West Meeting",
         "category": "Networking",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-11-05",
-        "date_label": "Thu, Nov 05",
-        "start_time": "4:00 PM",
-        "end_time": "",
+        "recurring": true,
+        "rsvp": false,
+        "date": "2026-11-10",
+        "date_label": "Tue, Nov 10",
+        "start_time": "9:30 AM",
+        "end_time": "11:00 AM",
         "venue": "The Park at Surprise",
         "address": "14630 W Parkwood Dr",
         "city": "Surprise",
-        "description": "HSP West November social hosted by Koelsch Communities; 50/50 raffle and door prizes; RSVP to HSPWest@gmail.com by Nov 2",
-        "event_url": "https://www.facebook.com/events/1673730274111337",
-        "image_url": "images/park-surprise-2026-11-05.jpg",
-        "has_image": true,
-        "contact": "HSPWest@gmail.com",
+        "description": "West Valley AZCOA networking; Nancy text said Park at Copper Creek Surprise but that community is in Chandler \u2014 using Park at Surprise pending confirm",
+        "event_url": "https://www.azcoa.org",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Tuesday",
+        "color": "#DC2626"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.69023,
+          33.43832
+        ]
+      },
+      "properties": {
+        "id": "e003",
+        "lat": 33.43832,
+        "lon": -111.69023,
+        "name": "Acoya Mesa Heroes",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-11-11",
+        "date_label": "Wed, Nov 11",
+        "start_time": "10:00 AM",
+        "end_time": "12:00 PM",
+        "venue": "Acoya Mesa",
+        "address": "6502 E Brown Rd",
+        "city": "Mesa",
+        "description": "Honoring Our Heroes Veterans Day event",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "480-275-8300",
+        "weekday": "Wednesday",
+        "color": "#2563EB"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.922271,
+          33.581608
+        ]
+      },
+      "properties": {
+        "id": "e004",
+        "lat": 33.581608,
+        "lon": -111.922271,
+        "name": "Acoya Shea Heroes",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-11-11",
+        "date_label": "Wed, Nov 11",
+        "start_time": "10:00 AM",
+        "end_time": "11:00 AM",
+        "venue": "Acoya Shea",
+        "address": "7373 E Shea Blvd",
+        "city": "Scottsdale",
+        "description": "Honoring Our Heroes Veterans Day event",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "480-912-1300",
+        "weekday": "Wednesday",
+        "color": "#2563EB"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.674594,
+          33.467965
+        ]
+      },
+      "properties": {
+        "id": "e005",
+        "lat": 33.467965,
+        "lon": -111.674594,
+        "name": "HSP East Valley",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-11-11",
+        "date_label": "Wed, Nov 11",
+        "start_time": "3:30 PM",
+        "end_time": "5:00 PM",
+        "venue": "Canyon Winds",
+        "address": "2851 N Boulder Canyon",
+        "city": "Mesa",
+        "description": "HSP East Valley mixer; Canyon Winds IL building (campus also has AL/MC)",
+        "event_url": "https://www.facebook.com/events/955729117266669",
+        "image_url": "",
+        "has_image": false,
+        "contact": "hspeastvalley@gmail.com",
+        "weekday": "Wednesday",
+        "color": "#2563EB"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.877525,
+          33.57575
+        ]
+      },
+      "properties": {
+        "id": "e006",
+        "lat": 33.57575,
+        "lon": -111.877525,
+        "name": "Spotlight Scottsdale",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": true,
+        "date": "2026-11-12",
+        "date_label": "Thu, Nov 12",
+        "start_time": "9:00 AM",
+        "end_time": "10:30 AM",
+        "venue": "Mosaic Gardens Memory Care at Scottsdale",
+        "address": "9450 E Mountain View Rd",
+        "city": "Scottsdale",
+        "description": "Spotlight Scottsdale/Phoenix breakfast",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
         "weekday": "Thursday",
         "color": "#16A34A"
       }
@@ -270,32 +204,164 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.047359,
-          33.49283
+          -111.84311,
+          33.26364
+        ]
+      },
+      "properties": {
+        "id": "e007",
+        "lat": 33.26364,
+        "lon": -111.84311,
+        "name": "Aging Mythbusters",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-11-12",
+        "date_label": "Thu, Nov 12",
+        "start_time": "2:00 PM",
+        "end_time": "3:15 PM",
+        "venue": "Cadence Living Chandler",
+        "address": "100 W Queen Creek Rd",
+        "city": "Chandler",
+        "description": "Education session at Cadence Living Chandler",
+        "event_url": "https://www.facebook.com/events/1529754275877507",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#16A34A"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.922968,
+          33.644281
+        ]
+      },
+      "properties": {
+        "id": "e008",
+        "lat": 33.644281,
+        "lon": -111.922968,
+        "name": "Maravilla Networking",
+        "category": "Networking",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-11-12",
+        "date_label": "Thu, Nov 12",
+        "start_time": "3:00 PM",
+        "end_time": "5:00 PM",
+        "venue": "Maravilla Scottsdale",
+        "address": "7325 E Princess Blvd",
+        "city": "Scottsdale",
+        "description": "Networking social at Maravilla Scottsdale",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Thursday",
+        "color": "#16A34A"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.69023,
+          33.43832
         ]
       },
       "properties": {
         "id": "e009",
-        "lat": 33.49283,
-        "lon": -112.047359,
-        "name": "Vintage Golden Hour",
+        "lat": 33.43832,
+        "lon": -111.69023,
+        "name": "Acoya Mesa Karaoke",
         "category": "Networking",
         "recurring": false,
         "rsvp": false,
-        "date": "2026-11-05",
-        "date_label": "Thu, Nov 05",
-        "start_time": "4:30 PM",
-        "end_time": "6:00 PM",
-        "venue": "Vintage Silver Center",
-        "address": "3909 N 16th St",
-        "city": "Phoenix",
-        "description": "Golden Hour old-school networking; food and drinks; SHCSAZ group event",
-        "event_url": "https://www.facebook.com/events/1115381234586577",
-        "image_url": "images/vintage-silver-2026-11-05.jpg",
+        "date": "2026-11-12",
+        "date_label": "Thu, Nov 12",
+        "start_time": "3:00 PM",
+        "end_time": "5:00 PM",
+        "venue": "Acoya Mesa",
+        "address": "6502 E Brown Rd",
+        "city": "Mesa",
+        "description": "Karaoke happy hour with Rockin Rob; hosted at the community",
+        "event_url": "",
+        "image_url": "images/acoya-mesa-karaoke-2026-11-12.jpg",
         "has_image": true,
-        "contact": "602-492-2170",
+        "contact": "",
         "weekday": "Thursday",
         "color": "#16A34A"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.892333,
+          33.343882
+        ]
+      },
+      "properties": {
+        "id": "e010",
+        "lat": 33.343882,
+        "lon": -111.892333,
+        "name": "Elmwood Opening",
+        "category": "Ribbon Cutting",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-11-13",
+        "date_label": "Fri, Nov 13",
+        "start_time": "11:00 AM",
+        "end_time": "1:00 PM",
+        "venue": "Elmwood Senior Living",
+        "address": "2555 N Price Rd",
+        "city": "Chandler",
+        "description": "Remodel grand opening",
+        "event_url": "https://www.facebook.com/events/1034639086314908",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Friday",
+        "color": "#9333EA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.454704,
+          33.690508
+        ]
+      },
+      "properties": {
+        "id": "e011",
+        "lat": 33.690508,
+        "lon": -112.454704,
+        "name": "Casalina Opening",
+        "category": "Open House",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-11-14",
+        "date_label": "Sat, Nov 14",
+        "start_time": "12:00 PM",
+        "end_time": "4:00 PM",
+        "venue": "Casalina Residential Assisted Living",
+        "address": "22706 N 184th Ave",
+        "city": "Surprise",
+        "description": "Grand opening of Casalina assisted living",
+        "event_url": "",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Saturday",
+        "color": "#D97706"
       }
     }
   ]
