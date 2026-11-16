@@ -1,31 +1,31 @@
 # Next week AL events
 
-Week of Mon Nov 9 – Sun Nov 15, 2026.
-Source: Nancy Winters weekly email ("Welcome to the 2nd Week November of Connecting!", Nov 8; forwarded to Gmail Nov 9) + attached flyers + SHCSAZ Facebook Events tab. Flyers win over text. Map names: Spotlight EV Breakfast, AZCOA West Meeting, Acoya Mesa Heroes, Acoya Shea Heroes, HSP East Valley, Spotlight Scottsdale, Aging Mythbusters, Maravilla Networking, Acoya Mesa Karaoke, Elmwood Opening, Casalina Opening. Map: data/weeks/2026-11-09.csv (build loads the CSV named by the week's Monday), version 2026-11-08-1 (committed on the Mini, not pushed). 11 events on map. Previews: 11.09.2026/preview-2026-11-08(.png|@2x.png).
+Week of Mon Nov 16 – Sun Nov 22, 2026.
+Source: Nancy Winters weekly email ("Welcome to Week 3 of November Connecting and Growing your Business! Let's Go!", Nov 14; forwarded to Gmail Nov 16) + attached flyers. Flyers win over text. Facebook Events tab is being checked separately and may add more later. Map names: Royal Bliss Open House, Legacy Village Gratitude, Spotlight WV Breakfast, HSP Scottsdale, Coronado Opening, SHCSAZ Happy Hour, Ventana Gratitude Party, Acoya Mesa Jungle, Sol Living Opening, Legacy House Hoedown, Sunrise Cocktails, Brookdale Open House. Map: data/weeks/2026-11-16.csv (build loads the CSV named by the week's Monday), version 2026-11-15-1 (committed on the Mini, not pushed). 12 events on map. Previews: 11.16.2026/preview-2026-11-15(.png|@2x.png).
 
 | id | Date | Time | Event | Host | Address | Care | Source | include |
 |---|---|---|---|---|---|---|---|---|
-| e001 | Tue Nov 10 | 9–10:30am | Spotlight East Valley Breakfast | Abbington Senior Living | 3239 S Mercy Rd, Gilbert 85295 | senior living | flyer IMG_0828 (text said 9–10); RSVP 480-630-4262 | yes |
-| e002 | Tue Nov 10 | 9:30–11am | AZCOA West Meeting | The Park at Surprise | 14630 W Parkwood Dr, Surprise 85374 | AL | Nancy text said "Park at Copper Creek Surprise" (Copper Creek is in Chandler); attached flyer is Oct template for Park at Surprise — FLAG confirm host | yes |
-| e003 | Wed Nov 11 | 10am–12pm | Acoya Mesa Honoring Our Heroes | Acoya Mesa | 6502 E Brown Rd, Mesa 85205 | AL | text; RSVP 480-275-8300 | yes |
-| e004 | Wed Nov 11 | 10–11am | Acoya Shea Honoring Our Heroes | Acoya Shea | 7373 E Shea Blvd, Scottsdale 85253 | AL | text; RSVP 480-912-1300 | yes |
-| e005 | Wed Nov 11 | 3:30–5pm | HSP East Valley | Canyon Winds | 2851 N Boulder Canyon, Mesa 85207 | IL bldg; campus AL/MC | text + FB https://www.facebook.com/events/955729117266669; RSVP hspeastvalley@gmail.com; street verified as Boulder Canyon | yes |
-| e006 | Thu Nov 12 | 9–10:30am | Spotlight Scottsdale/PHX Breakfast | Mosaic Gardens Memory Care at Scottsdale | 9450 E Mountain View Rd, Scottsdale 85258 | MC | text | yes |
-| e007 | Thu Nov 12 | 2–3:15pm | Aging Mythbusters | Cadence Living Chandler | 100 W Queen Creek Rd, Chandler 85248 | senior living | SHCSAZ FB https://www.facebook.com/events/1529754275877507 | yes |
-| e008 | Thu Nov 12 | 3–5pm | Maravilla Scottsdale Networking Social | Maravilla Scottsdale | 7325 E Princess Blvd, Scottsdale 85255 | CCRC | text | yes |
-| e009 | Thu Nov 12 | 3–5pm | Acoya Mesa Karaoke Happy Hour | Acoya Mesa | 6502 E Brown Rd, Mesa 85205 | AL | flyer Nov Karaoke.PNG (Rockin Rob performs; community hosts) | yes |
-| e010 | Fri Nov 13 | 11am–1pm | Elmwood Remodel Grand Opening | Elmwood Senior Living | 2555 N Price Rd, Chandler 85224 | senior living | SHCSAZ FB https://www.facebook.com/events/1034639086314908 | yes |
-| e011 | Sat Nov 14 | 12–4pm | Casalina AL Grand Opening | Casalina Residential Assisted Living | 22706 N 184th Ave, Surprise 85387 | AL home | text | yes |
+| e001 | Tue Nov 17 | 10am–2pm | Royal Bliss Open House | Royal Bliss Care Homes | 3064 S Martingale Rd, Gilbert 85295 | AL home | flyer image003; RSVP 480-439-8768 | yes |
+| e002 | Tue Nov 17 | 3:30–5pm | Fall into Gratitude | Legacy Village of Salt River | 8170 N 90th St, Scottsdale 85258 | AL/IL/MC | flyer image004; RSVP 480-527-2002 | yes |
+| e003 | Wed Nov 18 | 9–10:30am | West Valley Spotlight Breakfast | Inspira Arrowhead | 20240 N 78th Ave, Glendale 85308 | AL/IL/MC | flyer image022 (text said "luncheon"); RSVP 623-235-6400 | yes |
+| e004 | Wed Nov 18 | 3:30–5pm | HSP Phoenix Scottsdale Social | Gardens Care Scottsdale | 9185 E Desert Cove Ave, Scottsdale 85260 | IL/AL/MC | flyer image008; https://www.facebook.com/share/g/1HtoZpEkvy | yes |
+| e005 | Thu Nov 19 | 12–3pm | Coronado AL Grand Opening | Coronado Assisted Living Home | 6909 E Coronado Rd, Scottsdale 85257 | AL home | flyer image011 (newly remodeled open house); RSVP 319-330-4680 | yes |
+| e006 | Thu Nov 19 | 3–5pm | SHCSAZ Thanksgiving Happy Hour | Canyon Winds Assisted Living | 7311 E Oasis St, Mesa 85207 | AL (campus IL at 2851 N Boulder Canyon) | flyer image013; https://www.facebook.com/share/1DwwF1B2dg/ | yes |
+| e007 | Thu Nov 19 | 4–6pm | Ventana Winds Gratitude Party | Ventana Winds | 12322 N 113th Ave, Youngtown 85363 | AL/MC | flyer image034; RSVP 623-583-2460 by Nov 16 | yes |
+| e008 | Fri Nov 20 | 9–10:30am | 3rd Friday Welcome to the Jungle | Acoya Mesa | 6502 E Brown Rd, Mesa 85205 | AL | text + FB https://www.facebook.com/share/1DqzvnhEYk | yes |
+| e009 | Fri Nov 20 | 11am–3pm | Sol Living Home Grand Opening | Sol Living Home | 5509 N 193rd Ave, Litchfield Park 85340 | AL home | flyer image031; 602-884-7014 | yes |
+| e010 | Fri Nov 20 | 2–6pm | Western Hoedown & Craft Fair | Legacy House of Mesa | 5625 E McKellips Rd, Mesa 85215 | AL/MC | flyer image014 (text said 2–5pm); live music 3–4pm | yes |
+| e011 | Fri Nov 20 | 3:30–5pm | Cocktails & Connections | Sunrise of Scottsdale | 7370 E Gold Dust Ave, Scottsdale 85258 | AL/MC | flyer image027; RSVP 480-609-5115 | yes |
+| e012 | Fri Nov 20 | 3:30–5:30pm | Meet & Greet Open House | Brookdale East Arbor | 6060 E Arbor Ave, Mesa 85206 | AL | flyer image033; Andrea Palmer 602-469-8292 | yes |
 
 ## Dropped / skip (this window)
-- Mon Nov 9 — Ribbon Cutting William Chop House Mesa — SKIP (restaurant/chamber)
-- Tue Nov 10, 9am–1pm — Lovin Life Expo, Mesa Convention Center — SKIP (vendor expo)
-- Tue Nov 10 — 101 Referral (Dave & Buster's); HomeWatch La Casa de Cristo; Medicare 101 Little Mesa Café; Lunch Learn The Links Frill Peoria; Color Me Mesa ribbon; PASRS Happy Hour Mosaic Gardens; Copper State Planning open house; Rockin Rob Arizona Golf; Network Live Fogo; OrthoArizona ribbon; 101 Zoom; Forward Loans webinar — SKIP
-- Tue Nov 10, 9am–2pm — Free blood pressure clinic, Park Terrace Senior Living — SKIP (clinic, not networking; borderline)
-- Wed Nov 11 — LegalShield coffee Rudy's; Sandridge Veterans Day BBQ (SNF/post-acute); CBA Lunch Bunch; Alignable Surprise; Go Local Arizona Back Nine — SKIP
-- Thu Nov 12 — Chandler Business Alliance American Legion; other restaurant/chamber — SKIP
-- Fri/Sat — non-AL chamber/restaurant leftovers — SKIP
+- Tue Nov 17 — ProREAL Networking (Nouvelle Lighting); Marcie's Marketing Brew coffee (6134 E Main St, Mesa); BidBox Auctions Mesa Chamber ribbon cutting; 101 Referral lunch at The Park at Copper Creek, Chandler (901 S 94th St); Rockin Rob karaoke at Arizona Golf Resort; Epic West Valley Chamber at City of Hope; 101 Referral Zoom; Forward Loans homebuyer webinar — SKIP
+- Wed Nov 18 — LegalShield / Empower coffee mixer at Rudy's BBQ; PASRS monthly education at Cogir of Morrison Ranch (funeral-industry speaker); Gentle Hearts Coffee & Connections at Qamaria Yemeni Coffee (flyer dated Thu Nov 19, still a coffee mixer); Tempe 101 Referral at Times Media Group; Go Local Arizona at Haymaker Thunderbird, Peoria; Wicked Awesome Happy Hour at Cider Corps — SKIP
+- Wed Nov 18, 9am–1pm — Wings of Wellness Expo, Palm Lakes Village, 16415 N 33rd Way, Phoenix — SKIP (vendor expo / clinic elements at a 55+ mobile-home community, not AL; Hummingbird ALH is on the flyer; borderline)
+- Thu Nov 19 — Chandler Business Alliance at American Legion; 101 Referral at Mimi's Café Desert Ridge; Everything East Mesa lunch at The Hub; Apache Junction Chamber mixer; Rockin Rob karaoke at Pacino's — SKIP
+- Thu Nov 19 — Everkind open house (logged ahead last week, 12–3pm at 19535 N 55th Dr, Glendale) — not in Nancy's email or flyers this week, so left off pending confirmation
+- Fri Nov 20 — Sandbox Networking at Sunflower Cremation; Industrial Shoeworks Mesa Chamber ribbon cutting; Aviation Fascination at Heliponents, 4930 E Falcon Dr, Mesa (chamber aviation event) — SKIP
+- Attachment image018 — Mesa Monthly Mixer hosted by The Villages at Red Mountain, 8035 E Brown Rd, Mesa — no date on the flyer and not in Nancy's text, so left off
 
-## Later weeks (logged ahead)
-- Thu Nov 19, 3–5pm — SHCSAZ Thanksgiving Happy Hour at Canyon Winds, 2851 N Boulder Canyon, Mesa — KEEP
-- Thu Nov 19 — Everkind open house (same day; details TBD) — check
+## Later weeks
+- None logged ahead from this email.
