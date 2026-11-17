@@ -1,7 +1,7 @@
 # Next week AL events
 
 Week of Mon Nov 16 – Sun Nov 22, 2026.
-Source: Nancy Winters weekly email ("Welcome to Week 3 of November Connecting and Growing your Business! Let's Go!", Nov 14; forwarded to Gmail Nov 16) + attached flyers + SHCSAZ Facebook Events tab. Flyers win over text. Map names: Royal Bliss Open House, Legacy Village Gratitude, Spotlight WV Breakfast, Wings of Wellness, HSP Scottsdale, Coffee & Connections, Coronado Opening, Everkind Open House, Ma Maison Open House, SHCSAZ Happy Hour, Ventana Gratitude Party, Acoya Mesa Jungle, Sol Living Opening, Legacy House Hoedown, Sunrise Cocktails, Brookdale Open House. Map: data/weeks/2026-11-16.csv (build loads the CSV named by the week's Monday), version 2026-11-15-2 (committed on the Mini, not pushed). 16 events on map. Previews: 11.16.2026/preview-2026-11-15(.png|@2x.png).
+Source: Nancy Winters weekly email ("Welcome to Week 3 of November Connecting and Growing your Business! Let's Go!", Nov 14; forwarded to Gmail Nov 16) + attached flyers + SHCSAZ Facebook Events tab. Flyers win over text. Map names: Royal Bliss Open House, Legacy Village Gratitude, Spotlight WV Breakfast, Wings of Wellness, HSP Scottsdale, Coffee & Connections, Coronado Opening, Everkind Open House, Ma Maison Open House, SHCSAZ Happy Hour, Ventana Gratitude Party, Acoya Mesa Jungle, Sol Living Opening, Legacy House Hoedown, Sunrise Cocktails, Brookdale Open House, Tenderway Care Open House. Map: data/weeks/2026-11-16.csv (build loads the CSV named by the week's Monday), version 2026-11-15-3 (committed on the Mini, not pushed). 17 events on map. Previews: 11.16.2026/preview-2026-11-15(.png|@2x.png).
 
 | id | Date | Time | Event | Host | Address | Care | Source | include |
 |---|---|---|---|---|---|---|---|---|
@@ -21,6 +21,7 @@ Source: Nancy Winters weekly email ("Welcome to Week 3 of November Connecting an
 | e010 | Fri Nov 20 | 2–6pm | Western Hoedown & Craft Fair | Legacy House of Mesa | 5625 E McKellips Rd, Mesa 85215 | AL/MC | flyer image014 (text said 2–5pm); live music 3–4pm | yes |
 | e011 | Fri Nov 20 | 3:30–5pm | Cocktails & Connections | Sunrise of Scottsdale | 7370 E Gold Dust Ave, Scottsdale 85258 | AL/MC | flyer image027; RSVP 480-609-5115 | yes |
 | e012 | Fri Nov 20 | 3:30–5:30pm | Meet & Greet Open House | Brookdale East Arbor | 6060 E Arbor Ave, Mesa 85206 | AL | flyer image033; Andrea Palmer 602-469-8292 | yes |
+| e017 | Sat Nov 21 | 10am–2pm | Tenderway Care Open House | Tenderway Care Assisted Living | 1985 W Anderson Ave, Phoenix 85023 | AL home | SHCSAZ FB https://www.facebook.com/photo/?fbid=122197917488854415&set=gm.4639590666275290&idorvanity=1630408510526869; newly licensed 10-bed home (Evelyn Carey post) | yes |
 
 ## Dropped / skip (this window)
 - Tue Nov 17 — ProREAL Networking (Nouvelle Lighting); Marcie's Marketing Brew coffee (6134 E Main St, Mesa); BidBox Auctions Mesa Chamber ribbon cutting; 101 Referral lunch at The Park at Copper Creek, Chandler (901 S 94th St); Rockin Rob karaoke at Arizona Golf Resort; Epic West Valley Chamber at City of Hope; 101 Referral Zoom; Forward Loans homebuyer webinar — SKIP

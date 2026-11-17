@@ -528,6 +528,39 @@
         "weekday": "Thursday",
         "color": "#16A34A"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.102899,
+          33.642806
+        ]
+      },
+      "properties": {
+        "id": "e017",
+        "lat": 33.642806,
+        "lon": -112.102899,
+        "name": "Tenderway Care Open House",
+        "category": "Open House",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-11-21",
+        "date_label": "Sat, Nov 21",
+        "start_time": "10:00 AM",
+        "end_time": "2:00 PM",
+        "venue": "Tenderway Care Assisted Living",
+        "address": "1985 W Anderson Ave",
+        "city": "Phoenix",
+        "description": "newly licensed 10-bed assisted living home (converted from single-family home); light appetizers and refreshments.",
+        "event_url": "https://www.facebook.com/photo/?fbid=122197917488854415&set=gm.4639590666275290&idorvanity=1630408510526869",
+        "image_url": "",
+        "has_image": false,
+        "contact": "",
+        "weekday": "Saturday",
+        "color": "#D97706"
+      }
     }
   ]
 }
