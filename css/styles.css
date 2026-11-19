@@ -19,6 +19,7 @@ body {
 header {
   position: relative;
   padding: 1rem;
+  padding-top: calc(1rem + env(safe-area-inset-top, 0px));
   background: #0f2a43;
   color: white;
   flex: none;

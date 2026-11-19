@@ -9,18 +9,25 @@
   <meta property="og:title" content="Senior Living Events · Nov 16–22" />
   <meta property="og:description" content="Nov 16–22 · 17 assisted living events across the Valley" />
   <meta property="og:url" content="https://assistedlivingevents.com/" />
-  <meta property="og:image" content="https://assistedlivingevents.com/images/preview.png?v=2026-11-15-3" />
+  <meta property="og:image" content="https://assistedlivingevents.com/images/preview.png?v=2026-11-15-4" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Senior Living Events · Nov 16–22" />
   <meta name="twitter:description" content="Nov 16–22 · 17 assisted living events across the Valley" />
-  <meta name="twitter:image" content="https://assistedlivingevents.com/images/preview.png?v=2026-11-15-3" />
+  <meta name="twitter:image" content="https://assistedlivingevents.com/images/preview.png?v=2026-11-15-4" />
   <!-- og:end -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f2a43" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="AL Events" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet" />
   <link href="vendor/leaflet/leaflet.css" rel="stylesheet" />
-  <link href="css/styles.css?v=2026-11-15-3" rel="stylesheet" />
+  <link href="css/styles.css?v=2026-11-15-4" rel="stylesheet" />
 </head>
 <body>
   <header>
@@ -89,8 +96,33 @@
     })();
   </script>
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
-  <script src="js/config.js?v=2026-11-15-3"></script>
-  <script src="js/map.js?v=2026-11-15-3"></script>
+  <script src="js/config.js?v=2026-11-15-4"></script>
+  <script src="js/map.js?v=2026-11-15-4"></script>
+  <script>
+    // Register the service worker only on https so local http previews
+    // are never intercepted. Network-first in sw.js keeps weekly updates fresh.
+    if ("serviceWorker" in navigator && location.protocol === "https:") {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("/sw.js");
+      });
+    }
+  </script>
+  <script>
+    // GoatCounter still counts PWA launches; tag the path so they are
+    // distinguishable from regular visits when query params are kept.
+    window.goatcounter = {
+      path: function (p) {
+        try {
+          if (new URLSearchParams(location.search).get("source") !== "pwa") return p;
+          if (p && p.indexOf("source=pwa") !== -1) return p;
+          var base = p || location.pathname;
+          return base + (base.indexOf("?") === -1 ? "?" : "&") + "source=pwa";
+        } catch (e) {
+          return p;
+        }
+      }
+    };
+  </script>
   <script data-goatcounter="https://assistedlivingevents.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 </body>
