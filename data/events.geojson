@@ -6,296 +6,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -111.716496,
-          33.294937
+          -112.375175,
+          33.65114
         ]
       },
       "properties": {
         "id": "e001",
-        "lat": 33.294937,
-        "lon": -111.716496,
-        "name": "Royal Bliss Open House",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-11-17",
-        "date_label": "Tue, Nov 17",
+        "lat": 33.65114,
+        "lon": -112.375175,
+        "name": "Senior Connect Roundtable",
+        "category": "Networking",
+        "recurring": true,
+        "rsvp": false,
+        "date": "2026-11-24",
+        "date_label": "Tue, Nov 24",
         "start_time": "10:00 AM",
-        "end_time": "2:00 PM",
-        "venue": "Royal Bliss Care Homes",
-        "address": "3064 S Martingale Rd",
-        "city": "Gilbert",
-        "description": "Nurse-owned assisted living open house; tour the home and meet the team",
+        "end_time": "",
+        "venue": "The Park at Surprise",
+        "address": "14630 W Parkwood Dr",
+        "city": "Surprise",
+        "description": "SHCSAZ Senior Connect On The Go Thanksgiving Edition roundtable, with Billet Health, for those serving seniors; last Tuesday of the month.",
         "event_url": "",
-        "image_url": "images/royal-bliss-gilbert-2026-11-17.jpg",
+        "image_url": "images/senior-connect-surprise-2026-11-24.jpg",
         "has_image": true,
-        "contact": "480-439-8768",
+        "contact": "623-523-2984",
         "weekday": "Tuesday",
         "color": "#DC2626"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.888115,
-          33.554488
-        ]
-      },
-      "properties": {
-        "id": "e002",
-        "lat": 33.554488,
-        "lon": -111.888115,
-        "name": "Legacy Village Gratitude",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-11-17",
-        "date_label": "Tue, Nov 17",
-        "start_time": "3:30 PM",
-        "end_time": "5:00 PM",
-        "venue": "Legacy Village of Salt River",
-        "address": "8170 N 90th St",
-        "city": "Scottsdale",
-        "description": "Fall into Gratitude community partners celebration",
-        "event_url": "",
-        "image_url": "images/legacy-village-2026-11-17.jpg",
-        "has_image": true,
-        "contact": "480-527-2002",
-        "weekday": "Tuesday",
-        "color": "#DC2626"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.228432,
-          33.66835
-        ]
-      },
-      "properties": {
-        "id": "e003",
-        "lat": 33.66835,
-        "lon": -112.228432,
-        "name": "Spotlight WV Breakfast",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-11-18",
-        "date_label": "Wed, Nov 18",
-        "start_time": "9:00 AM",
-        "end_time": "10:30 AM",
-        "venue": "Inspira Arrowhead",
-        "address": "20240 N 78th Ave",
-        "city": "Glendale",
-        "description": "West Valley Spotlight breakfast on the patio; Nancy text called it a luncheon but the flyer is breakfast 9-10:30",
-        "event_url": "",
-        "image_url": "images/inspira-arrowhead-2026-11-18.jpg",
-        "has_image": true,
-        "contact": "623-235-6400",
-        "weekday": "Wednesday",
-        "color": "#2563EB"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.883473,
-          33.584755
-        ]
-      },
-      "properties": {
-        "id": "e004",
-        "lat": 33.584755,
-        "lon": -111.883473,
-        "name": "HSP Scottsdale",
-        "category": "Networking",
-        "recurring": true,
-        "rsvp": true,
-        "date": "2026-11-18",
-        "date_label": "Wed, Nov 18",
-        "start_time": "3:30 PM",
-        "end_time": "5:00 PM",
-        "venue": "Gardens Care Scottsdale",
-        "address": "9185 E Desert Cove Ave",
-        "city": "Scottsdale",
-        "description": "HSP Phoenix Scottsdale networking social; limited to 50 guests",
-        "event_url": "https://www.facebook.com/share/g/1HtoZpEkvy",
-        "image_url": "images/gardens-care-2026-11-18.jpg",
-        "has_image": true,
-        "contact": "480-512-2303",
-        "weekday": "Wednesday",
-        "color": "#2563EB"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.931805,
-          33.467546
-        ]
-      },
-      "properties": {
-        "id": "e005",
-        "lat": 33.467546,
-        "lon": -111.931805,
-        "name": "Coronado Opening",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-11-19",
-        "date_label": "Thu, Nov 19",
-        "start_time": "12:00 PM",
-        "end_time": "3:00 PM",
-        "venue": "Coronado Assisted Living Home",
-        "address": "6909 E Coronado Rd",
-        "city": "Scottsdale",
-        "description": "Grand opening and newly remodeled open house; tours, lunch, and meet the team",
-        "event_url": "",
-        "image_url": "images/coronado-scottsdale-2026-11-19.jpg",
-        "has_image": true,
-        "contact": "319-330-4680",
-        "weekday": "Thursday",
-        "color": "#16A34A"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.673667,
-          33.467425
-        ]
-      },
-      "properties": {
-        "id": "e006",
-        "lat": 33.467425,
-        "lon": -111.673667,
-        "name": "SHCSAZ Happy Hour",
-        "category": "Networking",
-        "recurring": true,
-        "rsvp": false,
-        "date": "2026-11-19",
-        "date_label": "Thu, Nov 19",
-        "start_time": "3:00 PM",
-        "end_time": "5:00 PM",
-        "venue": "Canyon Winds Assisted Living",
-        "address": "7311 E Oasis St",
-        "city": "Mesa",
-        "description": "SHCSAZ Thanksgiving Gathering; flyer confirms the AL building at Oasis St (campus IL is at 2851 N Boulder Canyon)",
-        "event_url": "https://www.facebook.com/share/1DwwF1B2dg/",
-        "image_url": "images/canyon-winds-2026-11-19.jpg",
-        "has_image": true,
-        "contact": "",
-        "weekday": "Thursday",
-        "color": "#16A34A"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.302865,
-          33.59748
-        ]
-      },
-      "properties": {
-        "id": "e007",
-        "lat": 33.59748,
-        "lon": -112.302865,
-        "name": "Ventana Gratitude Party",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": true,
-        "date": "2026-11-19",
-        "date_label": "Thu, Nov 19",
-        "start_time": "4:00 PM",
-        "end_time": "6:00 PM",
-        "venue": "Ventana Winds",
-        "address": "12322 N 113th Ave",
-        "city": "Youngtown",
-        "description": "Gratitude Party for community partners; RSVP by Nov 16",
-        "event_url": "",
-        "image_url": "images/ventana-winds-2026-11-19.jpg",
-        "has_image": true,
-        "contact": "623-583-2460",
-        "weekday": "Thursday",
-        "color": "#16A34A"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.69023,
-          33.43832
-        ]
-      },
-      "properties": {
-        "id": "e008",
-        "lat": 33.43832,
-        "lon": -111.69023,
-        "name": "Acoya Mesa Jungle",
-        "category": "Networking",
-        "recurring": true,
-        "rsvp": false,
-        "date": "2026-11-20",
-        "date_label": "Fri, Nov 20",
-        "start_time": "9:00 AM",
-        "end_time": "10:30 AM",
-        "venue": "Acoya Mesa",
-        "address": "6502 E Brown Rd",
-        "city": "Mesa",
-        "description": "3rd Friday Welcome to the Jungle community networking",
-        "event_url": "https://www.facebook.com/share/1DqzvnhEYk",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Friday",
-        "color": "#9333EA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.474141,
-          33.515406
-        ]
-      },
-      "properties": {
-        "id": "e009",
-        "lat": 33.515406,
-        "lon": -112.474141,
-        "name": "Sol Living Opening",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-11-20",
-        "date_label": "Fri, Nov 20",
-        "start_time": "11:00 AM",
-        "end_time": "3:00 PM",
-        "venue": "Sol Living Home",
-        "address": "5509 N 193rd Ave",
-        "city": "Litchfield Park",
-        "description": "Grand opening of Sol Living assisted living home",
-        "event_url": "",
-        "image_url": "images/sol-living-litchfield-2026-11-20.jpg",
-        "has_image": true,
-        "contact": "602-884-7014",
-        "weekday": "Friday",
-        "color": "#9333EA"
       }
     },
     {
@@ -308,27 +44,27 @@
         ]
       },
       "properties": {
-        "id": "e010",
+        "id": "e002",
         "lat": 33.450405,
         "lon": -111.708856,
-        "name": "Legacy House Hoedown",
+        "name": "Legacy House Appreciation",
         "category": "Networking",
         "recurring": false,
         "rsvp": false,
-        "date": "2026-11-20",
-        "date_label": "Fri, Nov 20",
+        "date": "2026-11-24",
+        "date_label": "Tue, Nov 24",
         "start_time": "2:00 PM",
-        "end_time": "6:00 PM",
+        "end_time": "4:00 PM",
         "venue": "Legacy House of Mesa",
         "address": "5625 E McKellips Rd",
         "city": "Mesa",
-        "description": "Western Hoedown and craft fair; flyer time runs to 6pm (text said 5pm); live music 3-4pm",
+        "description": "Referral partner appreciation, Giving Thanks Giving Back; bring a holiday toy for Sunshine Acres Children's Home for a raffle ticket.",
         "event_url": "",
-        "image_url": "images/legacy-house-mesa-2026-11-20.jpg",
+        "image_url": "images/legacy-house-mesa-2026-11-24.jpg",
         "has_image": true,
         "contact": "480-985-0300",
-        "weekday": "Friday",
-        "color": "#9333EA"
+        "weekday": "Tuesday",
+        "color": "#DC2626"
       }
     },
     {
@@ -336,94 +72,28 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -111.922493,
-          33.579119
+          -111.884012,
+          33.585778
         ]
       },
       "properties": {
-        "id": "e011",
-        "lat": 33.579119,
-        "lon": -111.922493,
-        "name": "Sunrise Cocktails",
+        "id": "e003",
+        "lat": 33.585778,
+        "lon": -111.884012,
+        "name": "McKenna's Next Chapter",
         "category": "Networking",
-        "recurring": true,
-        "rsvp": true,
-        "date": "2026-11-20",
-        "date_label": "Fri, Nov 20",
-        "start_time": "3:30 PM",
-        "end_time": "5:00 PM",
-        "venue": "Sunrise of Scottsdale",
-        "address": "7370 E Gold Dust Ave",
+        "recurring": false,
+        "rsvp": false,
+        "date": "2026-11-25",
+        "date_label": "Wed, Nov 25",
+        "start_time": "1:00 PM",
+        "end_time": "",
+        "venue": "The Ranch Estates at Scottsdale",
+        "address": "9160 E Desert Cove Ave",
         "city": "Scottsdale",
-        "description": "Monthly Cocktails and Connections held a week early; salted caramel martini theme",
+        "description": "From the Ranch to the Region celebration for McKenna in the dining room; cake and refreshments.",
         "event_url": "",
-        "image_url": "images/sunrise-scottsdale-2026-11-20.jpg",
-        "has_image": true,
-        "contact": "480-609-5115",
-        "weekday": "Friday",
-        "color": "#9333EA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.70002,
-          33.414316
-        ]
-      },
-      "properties": {
-        "id": "e012",
-        "lat": 33.414316,
-        "lon": -111.70002,
-        "name": "Brookdale Open House",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-11-20",
-        "date_label": "Fri, Nov 20",
-        "start_time": "3:30 PM",
-        "end_time": "5:30 PM",
-        "venue": "Brookdale East Arbor",
-        "address": "6060 E Arbor Ave",
-        "city": "Mesa",
-        "description": "Meet and greet open house for new executive director Christina Johnson; newly renovated apartments",
-        "event_url": "",
-        "image_url": "images/brookdale-east-arbor-2026-11-20.jpg",
-        "has_image": true,
-        "contact": "602-469-8292",
-        "weekday": "Friday",
-        "color": "#9333EA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.01244,
-          33.634984
-        ]
-      },
-      "properties": {
-        "id": "e013",
-        "lat": 33.634984,
-        "lon": -112.01244,
-        "name": "Wings of Wellness",
-        "category": "Networking",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-11-18",
-        "date_label": "Wed, Nov 18",
-        "start_time": "9:00 AM",
-        "end_time": "1:00 PM",
-        "venue": "Palm Lakes Village",
-        "address": "16415 N 33rd Way",
-        "city": "Phoenix",
-        "description": "Senior expo hosted by Hummingbird ALH; included as a one-off exception (same event as Clive Russell's Wings of Wellness Recharge)",
-        "event_url": "https://www.facebook.com/events/3029002757444962/",
-        "image_url": "images/wings-of-wellness-2026-11-18.jpg",
+        "image_url": "images/ranch-estates-scottsdale-2026-11-25.jpg",
         "has_image": true,
         "contact": "",
         "weekday": "Wednesday",
@@ -435,131 +105,32 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.151572,
-          33.639238
+          -112.261607,
+          33.605598
         ]
       },
       "properties": {
-        "id": "e014",
-        "lat": 33.639238,
-        "lon": -112.151572,
-        "name": "Coffee & Connections",
+        "id": "e004",
+        "lat": 33.605598,
+        "lon": -112.261607,
+        "name": "Cogir Wine Down",
         "category": "Networking",
         "recurring": false,
-        "rsvp": false,
-        "date": "2026-11-19",
-        "date_label": "Thu, Nov 19",
-        "start_time": "9:00 AM",
-        "end_time": "10:30 AM",
-        "venue": "Qamaria Yemeni Coffee Co.",
-        "address": "4251 W Bell Rd",
-        "city": "Phoenix",
-        "description": "Senior living professionals networking hosted by Gentle Hearts Living Solutions (Jonathan Grosvenor)",
-        "event_url": "https://www.facebook.com/events/1744995633237676/",
-        "image_url": "images/coffee-connections-2026-11-19.jpg",
-        "has_image": true,
-        "contact": "623-341-8793",
-        "weekday": "Thursday",
-        "color": "#16A34A"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.177325,
-          33.663266
-        ]
-      },
-      "properties": {
-        "id": "e015",
-        "lat": 33.663266,
-        "lon": -112.177325,
-        "name": "Everkind Open House",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-11-19",
-        "date_label": "Thu, Nov 19",
-        "start_time": "12:00 PM",
-        "end_time": "3:00 PM",
-        "venue": "Everkind Care Homes",
-        "address": "19535 N 55th Dr",
-        "city": "Glendale",
-        "description": "Open house at Everkind Care Homes",
-        "event_url": "https://www.facebook.com/events/1090747057298270",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Thursday",
-        "color": "#16A34A"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.258735,
-          33.709857
-        ]
-      },
-      "properties": {
-        "id": "e016",
-        "lat": 33.709857,
-        "lon": -112.258735,
-        "name": "Ma Maison Open House",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-11-19",
-        "date_label": "Thu, Nov 19",
-        "start_time": "1:30 PM",
-        "end_time": "3:30 PM",
-        "venue": "Ma Maison Sunset View",
-        "address": "24885 N 93rd Ave",
+        "rsvp": true,
+        "date": "2026-11-25",
+        "date_label": "Wed, Nov 25",
+        "start_time": "3:00 PM",
+        "end_time": "5:00 PM",
+        "venue": "Cogir of Peoria",
+        "address": "13391 N 94th Dr",
         "city": "Peoria",
-        "description": "Afternoon Recharge and Open House at Ma Maison Sunset View Assisted Living",
-        "event_url": "https://www.facebook.com/events/4651640108398962",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Thursday",
-        "color": "#16A34A"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -112.102899,
-          33.642806
-        ]
-      },
-      "properties": {
-        "id": "e017",
-        "lat": 33.642806,
-        "lon": -112.102899,
-        "name": "Tenderway Care Open House",
-        "category": "Open House",
-        "recurring": false,
-        "rsvp": false,
-        "date": "2026-11-21",
-        "date_label": "Sat, Nov 21",
-        "start_time": "10:00 AM",
-        "end_time": "2:00 PM",
-        "venue": "Tenderway Care Assisted Living",
-        "address": "1985 W Anderson Ave",
-        "city": "Phoenix",
-        "description": "newly licensed 10-bed assisted living home (converted from single-family home); light appetizers and refreshments.",
-        "event_url": "https://www.facebook.com/photo/?fbid=122197917488854415&set=gm.4639590666275290&idorvanity=1630408510526869",
-        "image_url": "",
-        "has_image": false,
-        "contact": "",
-        "weekday": "Saturday",
-        "color": "#D97706"
+        "description": "Wine Down Wednesday; wine and light appetizers. RSVP by Nov 23.",
+        "event_url": "",
+        "image_url": "images/cogir-peoria-2026-11-25.jpg",
+        "has_image": true,
+        "contact": "623-977-1431",
+        "weekday": "Wednesday",
+        "color": "#2563EB"
       }
     }
   ]

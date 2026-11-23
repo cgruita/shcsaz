@@ -1,13 +1,13 @@
 /* Weekly cache name: bump this whenever MAP_VERSION changes
    (js/config.js, version.txt, and the ?v= params in index.html). */
-const CACHE_NAME = "al-events-2026-11-15-4";
+const CACHE_NAME = "al-events-2026-11-22-1";
 
 const PRECACHE = [
   "/",
   "/index.html",
-  "/css/styles.css?v=2026-11-15-4",
-  "/js/config.js?v=2026-11-15-4",
-  "/js/map.js?v=2026-11-15-4",
+  "/css/styles.css?v=2026-11-22-1",
+  "/js/config.js?v=2026-11-22-1",
+  "/js/map.js?v=2026-11-22-1",
   "/manifest.webmanifest",
   "/version.txt",
   "/data/events.geojson",
