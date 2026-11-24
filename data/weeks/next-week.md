@@ -28,4 +28,5 @@ Source: Nancy Winters weekly email ("Welcome to the Last Week of November Connec
 - Tue Dec 1, 4–5:30pm — Inspira Arrowhead Open House: Old Fashioneds & Ornaments (20240 N 78th Ave, Glendale, from last week's venue)
 - Wed Dec 2, 8–10am — Cogir of Peoria First Wednesday Networking Breakfast, 13391 N 94th Dr, Peoria
 - Thu Dec 3, 3:30–5pm — Christmas Concert with Tremble Clefs Arizona at Glory Days, Mesa
+- Fri Dec 4, 11am–12pm — Grand Opening & Ribbon Cutting: FirstLight Home Care Queen Creek (SHCSAZ / Voss Speros event; home care agency, kept as SHCSAZ event per Cristian Nov 23), Queen Creek Chamber of Commerce, 22246 S Ellsworth Rd, Queen Creek 85142 — https://www.facebook.com/events/1655733102865889/
 - Dec 17 — SHCSAZ Ugly Sweater Party
